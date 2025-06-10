@@ -88,7 +88,6 @@ function marqueeInit() {
     initIndex ++;
 }
 
-
 // window.onload = () => {
 //     setTimeout(() => {
 //     }, 1000)
