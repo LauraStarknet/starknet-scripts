@@ -108,7 +108,7 @@ const observer = new MutationObserver(callback);
 
 function loadAll() {
     let myInterval = setInterval(() => {
-        if(document.querySelector('#load-more-button')) document.querySelector('#load-more-button').click();
+        if(document.querySelector('#load-more-button') && document.querySelector('#load-more-button').className.indexOf('.jetboost-hidden') === -1) document.querySelector('#load-more-button').click();
         else {
             checkFilters()
             clearInterval(myInterval)
