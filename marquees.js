@@ -30,7 +30,6 @@ function marqueeInit() {
         centerWhite(el);
 
         function handleMouseEnter(i) {
-            console.log(i, initIndex)
             if(i === initIndex) {
                 coloredTexts.forEach(chi => chi.style.opacity = '1');
                 allSets.forEach(chi => chi.style.opacity = '1');
@@ -73,6 +72,7 @@ function marqueeInit() {
 
         function handleMouseLeave(i) {
             if(i === initIndex) {
+                coloredTexts.forEach(chi => chi.style.opacity = '0');
                 isHovering = false;
             }
         }
