@@ -6,6 +6,7 @@ let sorted = false;
 
 // const selectedFilterAmount = document.querySelectorAll('.tier-0-card').length
 function createTag() {
+    console.log('create tag fn');
     const allCards = document.querySelector('#grantees-wrapper').querySelectorAll('.grantee-card');
     for(let i = 0; i < allCards.length; i++) {
         if(allCards[i].className.indexOf('tag-fn') === -1) {
@@ -26,6 +27,7 @@ function createTag() {
 }
 
 function unsortCards () {
+    console.log('unsort cards fn');
     document.querySelector('#grantees-wrapper--sorted').classList.add('hidden');
     document.querySelector('#grantees-wrapper').classList.remove('hidden');
     const tierZero = document.querySelector('#grantees-wrapper').querySelectorAll('.grantee-card')
@@ -37,6 +39,7 @@ function unsortCards () {
 }
 
 function sortCards () {
+    console.log('sort cards fn');
     document.querySelector('#grantees-wrapper').classList.add('hidden');
     document.querySelector('#grantees-wrapper--sorted').classList.remove('hidden');
     const tierZero = document.querySelector('#grantees-wrapper').querySelectorAll('.grantee-card')
@@ -85,6 +88,7 @@ function sortCards () {
 }
 
 function checkFilters() {
+    console.log('check filters fn');
     ScrollTrigger.refresh();
     const selectedFiltersAmount = document.querySelectorAll('.jetboost-filter-active').length
     console.log(`checking filters: ${selectedFiltersAmount} filters on`)
