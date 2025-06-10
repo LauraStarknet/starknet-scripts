@@ -131,11 +131,11 @@ function init() {
 
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        init();
-    }, 1000)
-})
+// document.addEventListener('DOMContentLoaded', () => {
+// })
+setTimeout(() => {
+    init();
+}, 1000)
 
 
 // Later, you can stop observing
