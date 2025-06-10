@@ -94,5 +94,8 @@ function marqueeInit() {
 // };
 console.log('Marquee code activating')
 marqueeInit()
-window.addEventListener('resize', marqueeInit)
+window.addEventListener('resize', () => {
+    console.log('RESIZING '+initIndex)
+    marqueeInit();
+})
 
