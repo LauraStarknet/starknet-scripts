@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Sparkle</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            padding: 0;
+        }
+        .sparkling-wrapper {
+            width: 100vw;
+            height: 100vh; 
+            position: relative;
+        }
+       .sparkling__span {
+        position: absolute;
+        font-size: 10px;
+        color: white;
+        opacity: 0;
+        transition-duration: .5s;
+        transition-property: opacity;
+        animation: fadeIn 0.5s forwards linear;
+       }
+       @keyframes fadeIn {
+        100% {opacity: 1;}
+       }
+
+       .screen {
+         width: 100vw;
+            height: 100vh; 
+            border: solid 10px orange;
+       }
+
+    </style>
+</head>
+
+<body>
+    <div class="screen"></div>
+      <div class="screen"></div>
+        <div class="screen"></div>
+    <div class="sparkling-wrapper"></div>
+      <div class="screen"></div>
+      <div class="screen"></div>
+    <script src="./words.js"></script>
+</body>
+
+</html>

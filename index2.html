@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0C0A18;
+        }
+        .sticky-scroll {
+            height: 562.5vw;
+            width: 100vw;
+            position: relative;
+            overflow: visible;
+        }
+        .scroll-parent {
+            position: sticky;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: scroll;
+            scroll-snap-type: x mandatory;
+            /* scroll-snap-points-y: repeat(100vh); */
+        }
+        .scroll-wrapper {
+            width: fit-content;
+            display: flex;
+            height: 100vh;
+            scroll-snap-type: x mandatory;
+            padding: 0 50vw;
+        }
+        .scroll-child {
+            width: 50vw;
+            background-color: #0C0A18;
+            color: white;
+            height: 100vh;
+            display: flex;
+            scroll-snap-align: center;
+            align-items: center;
+            justify-content: center;
+            font-size: 200px;
+            border-right: solid 2px #0C0A18;
+            text-align: center;
+        }
+
+        .scroll-child video {
+            transform: scale(0.3);
+            opacity: 0.2;
+            transform-origin: center;
+            transition-duration: 1s;
+            width: 40vw;
+        }
+        .scroll-child.visible video {
+            transform: scale(1);
+            opacity: 0.5;
+        }
+
+        .text-parent {
+            z-index: 2;
+            color: white;
+            width: 100vw;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            margin-top: -100vh;
+            pointer-events: none;
+        }
+
+        .text-child {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition-duration: .5s;
+            transition-property: opacity;
+        }
+        .text-child.visible {
+            opacity: 1;
+            pointer-events: auto;;
+        }
+        a {
+            pointer-events: auto !important;
+            background-color: orange;
+        }
+        a:hover {
+            background-color: red;
+        }
+
+        .dapp-list {
+            position: fixed;
+            z-index: 100;
+            color: white;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sticky-scroll">
+
+        <div class="scroll-parent">
+            <div class="scroll-wrapper">
+                <div class="scroll-child" id="scroll-child--0"></div>
+                <div class="scroll-child" id="scroll-child--1"><video muted loop><source src="https://player.vimeo.com/progressive_redirect/playback/1079270347/rendition/1080p/file.mp4?loc=external&signature=bf769e34870734bb92ee035c4f3692677742bcf7107d42a61720ac8877c0f12f"></video></div>
+                <div class="scroll-child" id="scroll-child--2"><video muted loop><source src="https://player.vimeo.com/progressive_redirect/playback/1079270347/rendition/1080p/file.mp4?loc=external&signature=bf769e34870734bb92ee035c4f3692677742bcf7107d42a61720ac8877c0f12f"></video></div>
+                <div class="scroll-child" id="scroll-child--3"><video muted loop><source src="https://player.vimeo.com/progressive_redirect/playback/1079270347/rendition/1080p/file.mp4?loc=external&signature=bf769e34870734bb92ee035c4f3692677742bcf7107d42a61720ac8877c0f12f"></video></div>
+                <div class="scroll-child" id="scroll-child--4"><video muted loop><source src="https://player.vimeo.com/progressive_redirect/playback/1079270347/rendition/1080p/file.mp4?loc=external&signature=bf769e34870734bb92ee035c4f3692677742bcf7107d42a61720ac8877c0f12f"></video></div>
+            </div>
+        </div>
+        <div class="text-parent">
+            <div class="text-child text-child--0">
+                <h2>Intro Title</h2>
+                <p>Intro text</p>
+            </div>
+            <div class="text-child text-child--1">
+                <h2>Text 1</h2>
+                <p>Undertext 1</p>
+                <a href="https://google.com" target="_blank"><button>Button 1</button></a>
+            </div>
+            <div class="text-child text-child--2">
+                <h2>Text 2</h2>
+                <p>Undertext 2</p>
+                <button>Button 2</button>
+            </div>
+            <div class="text-child text-child--3">
+                <h2>Text 3</h2>
+                <p>Undertext 3</p>
+                <button>Button 3</button>
+            </div>
+            <div class="text-child text-child--4">
+                <h2>Text 4</h2>
+                <p>Undertext 4</p>
+                <button>Button 4</button>
+            </div>
+        </div>
+        <div class="dapp-list">
+            ArchetypalTech
+Atemu
+AWRPG
+Blob Arena
+Block Heroes
+Boltwade Studio
+Brew Master
+Briq
+Call The Banners
+Castle Hexapolis
+Craft Island
+D'Island
+DiamondPit
+Dope War
+Elerium
+Eternum
+Fallen Order
+Focus Tree
+Force Prime Heroes
+GOL2
+GrugsLair
+Influence
+Influence Asset Manager
+Jokers of Neon
+Loot Survivor
+Loot Underworld
+Mancala
+Mississippi
+ML Village (Games & AI)
+Monkey Mind
+NoGame
+Norvos
+Octoguns
+Paved
+Pilcrow and Star Productions
+Pistols at 10 blocks
+PixeLaw
+Plan Combat
+Provable Games
+Realms.World
+Rising Revenant
+Roll Your Own
+Slayer
+Stark Sailor
+Starkane
+Starkland
+Starkshoot
+Tale Weaver
+Teandy
+The Ninth
+Txspace
+Underdark
+Underware (Gaming Studio)
+Underworlds
+WarpackMasters
+Wendash
+Wilder World
+XAR
+YGG JAPAN
+zDefender
+zkorp
+zKube
+ArchetypalTech
+Atemu
+AWRPG
+Blob Arena
+Block Heroes
+Boltwade Studio
+Brew Master
+Briq
+Call The Banners
+Castle Hexapolis
+Craft Island
+D'Island
+DiamondPit
+Dope War
+Elerium
+Eternum
+Fallen Order
+Focus Tree
+Force Prime Heroes
+GOL2
+GrugsLair
+Influence
+Influence Asset Manager
+Jokers of Neon
+Loot Survivor
+Loot Underworld
+Mancala
+Mississippi
+ML Village (Games & AI)
+Monkey Mind
+NoGame
+Norvos
+Octoguns
+Paved
+Pilcrow and Star Productions
+Pistols at 10 blocks
+PixeLaw
+Plan Combat
+Provable Games
+Realms.World
+Rising Revenant
+Roll Your Own
+Slayer
+Stark Sailor
+Starkane
+Starkland
+Starkshoot
+Tale Weaver
+Teandy
+The Ninth
+Txspace
+Underdark
+Underware (Gaming Studio)
+Underworlds
+WarpackMasters
+Wendash
+Wilder World
+XAR
+YGG JAPAN
+zDefender
+zkorp
+zKube
+        </div>
+    </div>
+    <script src="./scriptShapes.js"></script>
+</body>
+
+</html>

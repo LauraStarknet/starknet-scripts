@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .marquee-wrapper {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            height: 100px;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            width: 100vw;
+        }
+
+        .marquee-track {
+            display: flex;
+            white-space: nowrap;
+            animation: none;
+            animation: scroll 4s infinite linear;
+            width: 100vw;
+        }
+
+        .marquee-set {
+            display: flex;
+            gap: 1rem;
+            padding-right: 20px;
+            transition-duration: .5s;
+            transition-property: opacity;;
+            /* spacing between loops */
+        }
+
+        .marquee-text {
+            font-size: 54px;
+            white-space: nowrap;
+            transition: opacity 0.3s ease;
+        }
+
+        .colored {
+            color: #f90;
+            opacity: 0;
+            transition-duration: .5s;
+            transition-property: opacity;
+        }
+
+        .white {
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="marquee-wrapper">
+        <div class="marquee-track">
+            <div class="marquee-set">
+                <span class="marquee-text colored">take a look at our</span>
+                <span class="marquee-text white">instagram</span>
+            </div>
+            <div class="marquee-set">
+                <span class="marquee-text colored">take a look at our</span>
+                <span class="marquee-text white">instagram</span>
+            </div>
+            <div class="marquee-set">
+                <span class="marquee-text colored">take a look at our</span>
+                <span class="marquee-text white">instagram</span>
+            </div>
+            <div class="marquee-set">
+                <span class="marquee-text colored">take a look at our</span>
+                <span class="marquee-text white">instagram</span>
+            </div>
+            <div class="marquee-set">
+                <span class="marquee-text colored">take a look at our</span>
+                <span class="marquee-text white">instagram</span>
+            </div>
+        </div>
+    </div>
+     <div class="marquee-wrapper">
+        <div class="marquee-track">
+            <div class="marquee-set">
+                <span class="marquee-text colored">explore our</span>
+                <span class="marquee-text white">blog</span>
+            </div>
+            <div class="marquee-set">
+                <span class="marquee-text colored">explore our</span>
+                <span class="marquee-text white">blog</span>
+            </div>
+            <div class="marquee-set">
+                <span class="marquee-text colored">explore our</span>
+                <span class="marquee-text white">blog</span>
+            </div>
+            <div class="marquee-set">
+                <span class="marquee-text colored">explore our</span>
+                <span class="marquee-text white">blog</span>
+            </div>
+            <div class="marquee-set">
+                <span class="marquee-text colored">explore our</span>
+                <span class="marquee-text white">blog</span>
+            </div>
+        </div>
+    </div>
+     <div class="marquee-wrapper">
+        <div class="marquee-track">
+            <div class="marquee-set">
+                <span class="marquee-text colored">follow us on</span>
+                <span class="marquee-text white">twitter</span>
+            </div>
+            <div class="marquee-set">
+                <span class="marquee-text colored">follow us on</span>
+                <span class="marquee-text white">twitter</span>
+            </div>
+            <div class="marquee-set">
+                <span class="marquee-text colored">follow us on</span>
+                <span class="marquee-text white">twitter</span>
+            </div>
+            <div class="marquee-set">
+                <span class="marquee-text colored">follow us on</span>
+                <span class="marquee-text white">twitter</span>
+            </div>
+            <div class="marquee-set">
+                <span class="marquee-text colored">follow us on</span>
+                <span class="marquee-text white">twitter</span>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
