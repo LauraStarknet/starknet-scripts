@@ -89,11 +89,11 @@ function marqueeInit() {
 }
 
 
-document.addEventListener('DOMContentLoaded', () => {
+window.onload = () => {
     console.log('Marquee code activating')
     setTimeout(() => {
         marqueeInit()
     }, 1000)
     window.addEventListener('resize', marqueeInit)
-})
+};
 
