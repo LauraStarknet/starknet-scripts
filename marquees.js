@@ -19,7 +19,7 @@ function marqueeInit() {
             set = el.querySelector('.marquee-set');
             totalWidth = set.clientWidth;
             const whiteWidth = el.querySelector('.white').getBoundingClientRect().width
-            allSets.forEach((el, i) => { if (i !== 1) el.style.opacity = '0' });
+            allSets.forEach((el, j) => { if (j !== 1) el.style.opacity = '0' });
             let newTranslate = - totalWidth + (window.innerWidth / 2) - totalWidth + (whiteWidth / 2) + 10;
             track = el.querySelector('.marquee-track');
             track.style.transform = `translateX(${newTranslate}px)`
@@ -40,7 +40,7 @@ function marqueeInit() {
                         if (currentTransform - (translateNumber - totalWidth) < 3) {
                             if (!isHovering) {
                                 coloredTexts.forEach(el => el.style.opacity = '0');
-                                allSets.forEach((el, i) => { if (i !== 1) el.style.opacity = '0' });
+                                allSets.forEach((el, j) => { if (j !== 1) el.style.opacity = '0' });
                                 clearInterval(myInterval);
                                 animationRunning = false;
                                 restart = true
