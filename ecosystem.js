@@ -89,7 +89,7 @@ function sortCards () {
 
 function checkFilters() {
     console.log('check filters fn');
-    ScrollTrigger.refresh();
+    // ScrollTrigger.refresh();
     const selectedFiltersAmount = document.querySelectorAll('.jetboost-filter-active').length
     console.log(`checking filters: ${selectedFiltersAmount} filters on`)
     if(selectedFiltersAmount > 0) sortCards();
