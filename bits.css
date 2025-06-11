@@ -1,0 +1,42 @@
+.event-item:nth-child(3n) .right-column {
+    color: green;
+}
+.event-item:nth-child(3n + 1) .right-column {
+    color: green;
+}
+.event-item:nth-child(3n + 2) .right-column {
+    color: green;
+}
+
+.event-item .right-column a {
+    color: inherit !important;
+}
+
+.event-item {
+    z-index: 1;
+}
+.event-item:hover {
+    z-index: 2;
+}
+.event-item:hover + .event-item {
+   border-image-source: transparent;
+}
+
+.event-item:nth-child(3n):hover .gradient-border {
+    border-image-source: linear-gradient(to right, rgba(155, 127, 250, 0) 0%, rgba(155, 127, 250, 1) 50%, rgba(155, 127, 250, 0) 100%) !important;
+}
+.event-item:nth-child(3n + 1):hover .gradient-border {
+    border-image-source: linear-gradient(to right, rgba(155, 127, 250, 0) 0%, rgba(155, 127, 250, 1) 50%, rgba(155, 127, 250, 0) 100%) !important;
+}
+.event-item:nth-child(3n + 2):hover .gradient-border {
+   border-image-source: linear-gradient(to right, rgba(155, 127, 250, 0) 0%, rgba(155, 127, 250, 1) 50%, rgba(155, 127, 250, 0) 100%) !important;
+}
+
+.event-item .gradient-border {
+   border-image-source: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%) !important;
+}
+
+
+
+
+linear-gradient(to right, rgba(155, 127, 250, 0) 0%, rgba(155, 127, 250, 1) 50%, rgba(155, 127, 250, 0) 100%)
