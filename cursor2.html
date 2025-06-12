@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <style>
+        html, body, canvas {
+  width: 100%;
+  height: 100%;
+}
+
+* {
+        cursor:none;
+}
+
+canvas {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0.05;
+  filter: blur(10px);
+  /* mix-blend-mode: overlay; */
+  /* mix-blend-mode:lighten;  darken, saturation, color */
+  /* backdrop-filter: blur(40px); */
+}
+
+body {
+  margin: 0;
+  position: fixed;
+  overflow: hidden;
+  cursor: none;
+  background-color: black;
+  color: orange;
+}
+
+video,img {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.cursor {
+  z-index: 100;
+  /* background-color: #ff4c24; */
+  border: 1px solid #ffffff50;
+  border-radius: 100em;
+  width: 4em;
+  height: 4em;
+  transition: background-color .375s cubic-bezier(.625, .05, 0, 1), height .375s cubic-bezier(.625, .05, 0, 1), width .375s cubic-bezier(.625, .05, 0, 1);
+  position: fixed;
+  inset: 0% auto auto 0%;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cursor__dot {
+    position: fixed;
+    z-index: 100;
+    pointer-events: none;
+    width: 7px;
+    inset: 0% auto auto 0%;
+    height: 7px;
+    background-color: white;
+    border-radius: 50%;
+    transition: background-color .375s cubic-bezier(.625, .05, 0, 1), height .375s cubic-bezier(.625, .05, 0, 1), width .375s cubic-bezier(.625, .05, 0, 1);
+}
+
+body:has( a:hover) .cursor,
+body:has( button:hover) .cursor,
+body:has( [data-cursor]:hover) .cursor{
+  width: 5em;
+  height: 5em;
+  border-color: #ffc0cb50;
+  /* background-color: rgba(255, 76, 36, 0.3); */
+}
+body:has( a:hover) .cursor__dot,
+body:has( button:hover) .cursor__dot,
+body:has( [data-cursor]:hover) .cursor__dot{
+      background-color: pink;
+      width: 10px;
+    height: 10px;
+}
+
+button {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    z-index: 1000;
+    width: 200px;
+    height: 70px;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .cursor {
+    display: none;
+  }
+}
+
+    </style>
+</head>
+
+<body>
+   <canvas></canvas>
+   <!-- <video loop muted autoplay>
+    <source src="/home.mov" />
+   </video> -->
+ <img src="/homepage.png" />
+   <button></button>
+   <div class="cursor"></div>
+    <div class="cursor__dot"></div>
+   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="./cursor2.js"></script>
+    <script src="./osmoCursor.js"></script>
+</body>
+
+</html>

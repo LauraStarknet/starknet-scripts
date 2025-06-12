@@ -13,13 +13,14 @@
 }
 
 .event-item {
-    z-index: 1;
+    margin-top: -1px;
 }
-.event-item:hover {
-    z-index: 2;
+
+.event-item:hover + .event-item .gradient-border {
+   border-top-style: hidden;
 }
-.event-item:hover + .event-item {
-   border-image-source: transparent;
+.event-item:hover .gradient-border + .event-item {
+    margin-top: 0px;
 }
 
 .event-item:nth-child(3n):hover .gradient-border {
