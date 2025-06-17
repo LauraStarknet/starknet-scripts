@@ -1,5 +1,5 @@
 const target = document.querySelectorAll('.scroll-child');
-const scrollSpeed = 1.2;
+const scrollSpeed = 1.27;
 
 function outro(el) {
   el.classList.remove('visible');
@@ -41,11 +41,11 @@ window.addEventListener('scroll', (e) => {
     if (document.querySelector('.scroll-parent')) {
       document.querySelector('.scroll-parent').scrollTo({
         top: 0,
-        left: (-topScroll + 150) / scrollSpeed,
+        left: (-topScroll + 250) / scrollSpeed,
         behavior: "smooth",
       });
       if (topScroll < -(5 * window.innerWidth / scrollSpeed) && typeAnimationRunning) finishType()
-      console.log(topScroll, window.innerHeight)
+      // console.log(topScroll, window.innerHeight)
     }
   }
 })
@@ -53,13 +53,13 @@ window.addEventListener('scroll', (e) => {
 
 let i = 0;
 let txt = ''; /* The text */
-let speed = 3; /* The speed/duration of the effect in milliseconds */
+let speed = 10; /* The speed/duration of the effect in milliseconds */
 let myInterval2;
 let typeAnimationRunning = false;
 
 
 function initType() {
-  console.log('initType');
+  // console.log('initType');
   if (txt === '') txt = document.querySelector(".dapp-list").innerHTML.replaceAll("<br>", "%");
   document.querySelector(".dapp-list").innerHTML = '';
   document.querySelector(".dapp-list").style.opacity = '0.4';
@@ -77,9 +77,9 @@ function finishType() {
 
 function typeWriter() {
   if (i < txt.length) {
-    document.querySelector(".dapp-list").innerHTML += txt.charAt(i).replace('%', '<br>');
+    document.querySelector(".dapp-list").innerHTML += txt.slice(i, i+5).replace('%', '<br>');
     document.querySelector(".dapp-list").scrollTop = document.querySelector(".dapp-list").scrollHeight;
-    i++;
+    i = i+6;
   }
   else i = 0;
 }

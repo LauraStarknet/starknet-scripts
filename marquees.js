@@ -80,18 +80,22 @@ function marqueeInit() {
         let currentIndex = Number(initIndex);
         let nextIndex = Number(initIndex+1);
 
+        function stopAnim() {
+            clearInterval(myInterval);
+            animationRunning = false;
+            restart = true
+        }
+
         el.removeEventListener('mouseenter', () => handleMouseEnter(currentIndex));
         el.removeEventListener('mouseleave', () => handleMouseLeave(currentIndex));
         el.addEventListener('mouseenter', () => handleMouseEnter(nextIndex));
         el.addEventListener('mouseleave', () => handleMouseLeave(nextIndex));
+        window.addEventListener('resize', stopAnim)
     })
     initIndex ++;
 }
 
-// window.onload = () => {
-//     setTimeout(() => {
-//     }, 1000)
-// };
+
 console.log('Marquee code activating')
 marqueeInit()
 window.addEventListener('resize', () => {

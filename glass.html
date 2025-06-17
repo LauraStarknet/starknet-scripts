@@ -28,8 +28,8 @@ canvas {
 body {
   margin: 0;
   cursor: none;
-  background-color: white;
-  color: orange;
+  background-color: black;
+  /* color: orange; */
   height: 100vh;
   position: fixed;
   overflow: hidden;
@@ -136,16 +136,24 @@ button {
 }
 
 iframe {
-  width: 110vw;
-  height: 110vh;
+  width: 100vw;
+  height: 100vh;
   z-index: -1;
   position: fixed;
-  top: -5vw;
-  left:-5vh;
   border: none;
-  filter: blur(50px);
-  opacity: 0.95;
+  opacity: 1;
   pointer-events: none;
+}
+
+.iframe-glass {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+  background-color: #ffffff25;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(20px);
 }
 
 body {
@@ -156,14 +164,17 @@ img {
   z-index: -1;
 }
 .small {
-  transform: scale(0.98);
+  transform: scale(0.989);
   width: 100vw;
-  margin: 16px;
-  margin-top: 20px;
+  margin: 10px;
+  margin-top: 10px;
   transform-origin: top left;
-  border-radius: 10px;
-  height: 98vh;
+  border-radius: 4px;
+  height: 98.6vh;
+  border: solid 1px #ffffff10;
   overflow: scroll;
+  position: absolute;
+  /* display: none; */
 } 
 
     </style>
@@ -175,6 +186,7 @@ img {
     <source src="/home.mov" />
    </video> -->
 <iframe src="/glass2.html"></iframe>
+<div class="iframe-glass"></div>
 <div class="small">
  <img src="/basecampfull.png" />
     <button></button>
