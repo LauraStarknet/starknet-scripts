@@ -2,7 +2,7 @@ let initIndex = 0;
 
 function marqueeInit() {
     const wrapperList = document.querySelectorAll('.marquee-wrapper');
-    wrapperList.forEach((el) => {
+    wrapperList.forEach((el, index) => {
         let myInterval;
         let isHovering = false
         let animationRunning = false;
@@ -14,6 +14,7 @@ function marqueeInit() {
         let track;
         let coloredTexts = el.querySelectorAll('.colored');
         let restart = true;
+        let twoNumber = index % 2 === 0 ? -2 : 2;
 
         function centerWhite(el) {
             set = el.querySelector('.marquee-set');

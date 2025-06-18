@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <style>
+        html,
+        body,
+        canvas {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            padding: 10px;
+            background: #ffffff20;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            /* border-radius: 50px; */
+            overflow: visible;
+            /* linear-gradient(#000 0 0) content-box,
+                linear-gradient(#000 0 0); */
+            -webkit-mask:
+                linear-gradient(#000 0 0) content-box,
+                linear-gradient(#000 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: xor;
+            pointer-events: none;
+            z-index: 1;
+        }
+        /* .glass-frame {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            backdrop-filter: blur(15px);
+            z-index: 100;
+            top: 0;
+            left: 0;
+            clip-path: inset(10px round 20px);
+        } */
+
+        main {
+            border-radius: 50px;
+            z-index: 2;
+            margin-top: -10px;
+            margin-left: -10px;
+        }
+
+        svg {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            /* background-color: #ffffff20; */
+            z-index: 100;
+            top: 0;
+            left: 0;
+        }
+
+        img {
+            width: 100vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="glass-frame"></div>
+    <!-- <svg width="100vw" height="100vh" viewBox="0 0 1000 1000" preserveAspectRatio="none">
+        <rect height="1000px" width="1000px" fill="white" mask="url(#cut)"/>
+        <mask id="cut">
+            <rect height="980px" width="980px" fill="white" x="10" y="10" ry="50px" rx="50px"/>
+        </mask>
+        <defs>
+    </defs>
+    </svg> -->
+    <main>
+        <img src="/basecampfull.png" />
+    </main>
+</body>
+
+</html>
