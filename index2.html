@@ -79,12 +79,17 @@
             top: 0;
             left: 0;
             display: none;
+            opacity: 0;
+            margin-top: 100vh;
+            transition: margin 0s linear .5s, opacity .5s linear;
             /* transition-duration: .5s;
             transition-property: opacity; */
         }
         .text-child.visible {
             display: flex;
             pointer-events: auto;
+            opacity: 1;
+            margin-top: 0;
         }
         a {
             pointer-events: auto !important;

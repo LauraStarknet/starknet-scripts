@@ -2,181 +2,243 @@
 <html>
 
 <head>
-    <meta charset="UTF-8" />
-    <title>title</title>
-    <style>
-body {
-  background-color: black;
-}
-* {
-        cursor:none;
-}
+  <meta charset="UTF-8" />
+  <title>title</title>
+  <style>
+    body {
+      background-color: black;
+    }
 
-.cursor {
-  z-index: 200;
-  border: 1px solid #ffffff30;
-  border-radius: 50%;
-  width: 3em;
-  height: 3em;
-  transition: background-color .375s cubic-bezier(.625, .05, 0, 1), height .375s cubic-bezier(.625, .05, 0, 1), width .375s cubic-bezier(.625, .05, 0, 1), opacity .5s linear;
-  position: fixed;
-  inset: 0% auto auto 0%;
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    * {
+      cursor: none;
+    }
 
-.cursor, .cursor__dot, .cursor__anim {
-    mix-blend-mode: difference;
-}
+    .cursor {
+      z-index: 200;
+      border: 1px solid #F3F2F130;
+      border-radius: 50%;
+      width: 3em;
+      height: 3em;
+      transition: background-color .375s cubic-bezier(.625, .05, 0, 1), height .375s cubic-bezier(.625, .05, 0, 1), width .375s cubic-bezier(.625, .05, 0, 1), opacity .5s linear, width .5s linear, border .5s linear;
+      position: fixed;
+      inset: 0% auto auto 0%;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-.cursor__inner {
-    position: fixed;
-    z-index: 200;
-    pointer-events: none;
-    width: 10px;
-    height: 10px;
-    inset: 0% auto auto 0%;
-}
+    .cursor,
+    .cursor__dot,
+    .cursor__anim,
+    .cursor--text {
+      mix-blend-mode: difference !important;
+    }
 
-.cursor__dot {
-    width: 7px;
-    height: 7px;
-    margin-left: 1px;
-    margin-top: 1px;
-    border: 1px solid #ffffff;
-    border-radius: 50%;
-    transition: opacity .3s linear;
-    position: absolute;
-    opacity: 1;
-}
+    .cursor__inner {
+      position: fixed;
+      z-index: 200;
+      pointer-events: none;
+      width: 10px;
+      height: 10px;
+      inset: 0% auto auto 0%;
+    }
 
-.cursor__anim {
-    width: 9px;
-    height: 9px;
-    opacity: 0;
-    position: absolute;
-    margin-left: 1px;
-    margin-top: 1px;
-    transition: opacity .3s linear;
-}
+    .cursor__dot {
+      width: 7px;
+      height: 7px;
+      margin-left: 1px;
+      margin-top: 1px;
+      border: 1px solid #F3F2F1;
+      border-radius: 50%;
+      transition: opacity .3s linear;
+      position: absolute;
+      opacity: 1;
+    }
 
-.cursor__glow--blue {
-  width: 160px;
-  height: 160px;
-  margin-left: -75px;
-  margin-top: -75px;
-  background: radial-gradient(50% 50% at 50% 50%, rgba(91, 126, 207, 0.70) 0%, rgba(91, 126, 207, 0.00) 100%);
-  border-radius: 50%;
-  position: absolute;
-  opacity: 0;
-  transition: opacity .5s linear;
-}
+    .cursor__anim {
+      width: 9px;
+      height: 9px;
+      opacity: 0;
+      position: absolute;
+      inset: 0% auto auto 0%;
+      transition: opacity .3s linear;
+    }
 
-.cursor__glow--pink {
-  width: 160px;
-  height: 160px;
-  margin-left: -75px;
-  margin-top: -75px;
-  background: radial-gradient(50% 50% at 50% 50%, #EAAEAE 0%, rgba(234, 174, 174, 0.00) 100%);
-  border-radius: 50%;
-  position: absolute;
-  opacity: 0;
-  transition: opacity .5s linear;
-}
+    .cursor--text {
+      position: absolute;
+      color: #F3F2F1;
+      font-size: 10px;
+      font-family: monospace;
+      text-transform: uppercase;
+      /* inset: 0% auto auto 0%; */
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .3s linear;
+    }
 
-.cursor__inner.cursor__inner--moving .cursor__anim {
-  opacity: 1;
-}
-.cursor__inner.cursor__inner--moving .cursor__dot {
-  opacity: 0;
-}
+    .cursor__read, 
+    .cursor__drag,
+    .cursor__click {
+      transform: translateX(-33%);
+    }
 
-body:has( a:hover) .cursor,
-body:has( button:hover) .cursor,
-body:has( [data-cursor]:hover) .cursor{
-  width: 1.25em;
-  height: 1.25em;
-  border-color: #EAAEAE50;
-}
-body:has( a:hover) .cursor__dot,
-body:has( button:hover) .cursor__dot,
-body:has( [data-cursor]:hover) .cursor__dot{
-    background-color: #EAAEAE;
-    border: 0px solid #ffffff00;
-    margin: 0;
-    width: 10px;
-    height: 10px;
-    opacity: 1 !important;
-}
+    .cursor__glow--blue {
+      width: 160px;
+      height: 160px;
+      margin-left: -75px;
+      margin-top: -75px;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(91, 126, 207, 0.70) 0%, rgba(91, 126, 207, 0.00) 100%);
+      border-radius: 50%;
+      position: absolute;
+      opacity: 0;
+      transition: opacity .5s linear;
+      mix-blend-mode: lighten;
+    }
 
-body:has( a:hover) .cursor__anim,
-body:has( button:hover) .cursor__anim,
-body:has( [data-cursor]:hover) .cursor__anim {
-    opacity: 0 !important;
-}
+    .cursor__glow--pink {
+      width: 160px;
+      height: 160px;
+      margin-left: -75px;
+      margin-top: -75px;
+      background: radial-gradient(50% 50% at 50% 50%, #EAAEAE 0%, rgba(234, 174, 174, 0.00) 100%);
+      border-radius: 50%;
+      position: absolute;
+      opacity: 0;
+      transition: opacity .5s linear;
+      mix-blend-mode: lighten;
+    }
 
-body:has( .glow--pink:hover) .cursor, body:has( .glow--blue:hover) .cursor {
-    opacity: 0;
-}
+    .cursor__inner.cursor__inner--moving .cursor__anim {
+      opacity: 1;
+    }
+
+    .cursor__inner.cursor__inner--moving .cursor__dot {
+      opacity: 0;
+    }
+
+    body:has(a:hover) .cursor,
+    body:has(button:hover) .cursor,
+    body:has([data-cursor]:hover) .cursor {
+      width: 1.25em;
+      height: 1.25em;
+      border-color: #EAAEAE50;
+    }
+
+    body:has(a:hover) .cursor__dot,
+    body:has(button:hover) .cursor__dot,
+    body:has([data-cursor]:hover) .cursor__dot {
+      background-color: #EAAEAE;
+      border: 0px solid #F3F2F100;
+      margin: 0;
+      width: 10px;
+      height: 10px;
+      opacity: 1 !important;
+    }
+
+    body:has(a:hover) .cursor__anim,
+    body:has(button:hover) .cursor__anim,
+    body:has([data-cursor]:hover) .cursor__anim {
+      opacity: 0 !important;
+    }
+
+    body:has(.glow--pink:hover) .cursor,
+    body:has(.glow--blue:hover) .cursor {
+      opacity: 0;
+    }
 
 
-body:has( .glow--blue:hover) .cursor__glow--blue, body:has( .glow--pink:hover) .cursor__glow--pink {
-    opacity: 0.6;
-}
+    body:has(.glow--blue:hover) .cursor__glow--blue,
+    body:has(.glow--pink:hover) .cursor__glow--pink {
+      opacity: 0.6;
+    }
 
-body:has( .glow--pink:hover) .cursor__dot, body:has( .glow--pink:hover) .cursor__anim, 
-body:has( .glow--blue:hover) .cursor__dot, body:has( .glow--blue:hover) .cursor__anim {
-  mix-blend-mode: normal;
-}
+    body:has(.glow--pink:hover) .cursor__dot,
+    body:has(.glow--pink:hover) .cursor__anim,
+    body:has(.glow--blue:hover) .cursor__dot,
+    body:has(.glow--blue:hover) .cursor__anim {
+      mix-blend-mode: normal;
+    }
+
+    body:has(.cursor--drag:hover) .cursor__drag,
+    body:has(.cursor--click:hover) .cursor__click,
+    body:has(.cursor--read:hover) .cursor__read,
+    body:has(.cursor--next:hover) .cursor__next,
+    body:has(.cursor--prev:hover) .cursor__prev {
+      opacity: 1;
+    }
+
+    body:has(.cursor--drag:hover) .cursor,
+    body:has(.cursor--click:hover) .cursor,
+    body:has(.cursor--read:hover) .cursor,
+    body:has(.cursor--next:hover) .cursor,
+    body:has(.cursor--prev:hover) .cursor {
+      /* opacity: 0; */
+      width: 4.5em;
+      height: 3.4em;
+      border-radius: 1.8rem;
+      border-width: 0px 1px 0px 1px;
+      /* border-color: transparent #F3F2F130 transparent #F3F2F130; */
+      /* height: 3em; */
+    }
 
 
-@media (hover: none) and (pointer: coarse) {
-  .cursor {
-    display: none;
-  }
-}
+    body:has(.cursor--drag:hover) .cursor__dot,
+    body:has(.cursor--drag:hover) .cursor__anim,
+    body:has(.cursor--read:hover) .cursor__dot,
+    body:has(.cursor--read:hover) .cursor__anim,
+    body:has(.cursor--click:hover) .cursor__dot,
+    body:has(.cursor--click:hover) .cursor__anim,
+    body:has(.cursor--next:hover) .cursor__dot,
+    body:has(.cursor--next:hover) .cursor__anim,
+    body:has(.cursor--prev:hover) .cursor__dot,
+    body:has(.cursor--prev:hover) .cursor__anim {
+      opacity: 0 !important;
+    }
 
-.card {
-  width: 500px;
-  height: 500px;
-  position: fixed;
-  top: 100px;
-  left: 100px;
-  background-color: darkslategrey;
-}
 
-    </style>
-    <script>
-        let cursorTimeOut;
-        window.addEventListener("mousemove", e => {
-            if(cursorTimeOut) clearTimeout(cursorTimeOut)
-            cursorTimeOut = setTimeout(() => {
-                document.querySelector('.cursor__inner').classList.remove('cursor__inner--moving')
-            }, 100)
-            if(document.querySelector('.cursor__inner--moving')) return;
-            else document.querySelector('.cursor__inner').classList.add('cursor__inner--moving')
-        });
-    </script>
+
+    @media (hover: none) and (pointer: coarse) {
+      .cursor {
+        display: none;
+      }
+    }
+
+    .card {
+      width: 500px;
+      height: 500px;
+      top: 100px;
+      left: 100px;
+      background-color: darkslategrey;
+    }
+  </style>
 </head>
 
 <body>
- <!-- <img src="/homepage.png" /> -->
- <div class="card glow--pink">
-   This is a test
-   <button>HELLOOOOO</button>
+  <!-- <img src="/homepage.png" /> -->
+  <div class="card cursor--prev">
+    This is a test
+    <button>HELLOOOOO</button>
+  </div>
+  <div class="card cursor--next">
+    This is a test
+    <button>HELLOOOOO</button>
   </div>
   <div class="glow"></div>
-   <div class="cursor"></div>
-    <div class="cursor__inner">
-        <div class="cursor__dot"></div>
-        <div class="cursor__glow--blue"></div>
-        <div class="cursor__glow--pink"></div>
+  <div class="cursor"></div>
+  <div class="cursor__inner">
+    <div class="cursor__dot"></div>
+    <div class="cursor__glow--blue"></div>
+    <div class="cursor__glow--pink"></div>
+    <div class="cursor--text cursor__drag paragraph-s">Drag</div>
+    <div class="cursor--text cursor__read paragraph-s">Read</div>
+    <div class="cursor--text cursor__click paragraph-s">Click</div>
+    <div class="cursor--text cursor__next paragraph-m">→</div>
+    <div class="cursor--text cursor__prev paragraph-m">←</div>
         <img class="cursor__anim" src="/cursor.gif" />
     </div>
-   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="./osmoCursor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="./osmoCursor2.js"></script>
 </body>
 
 </html>
