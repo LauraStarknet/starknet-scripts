@@ -19,7 +19,7 @@
       border-radius: 50%;
       width: 3em;
       height: 3em;
-      transition: background-color .375s cubic-bezier(.625, .05, 0, 1), height .375s cubic-bezier(.625, .05, 0, 1), width .375s cubic-bezier(.625, .05, 0, 1), opacity .5s linear, width .5s linear, border .5s linear;
+      transition: background-color .375s cubic-bezier(.625, .05, 0, 1), height .375s cubic-bezier(.625, .05, 0, 1), width .375s cubic-bezier(.625, .05, 0, 1), opacity .375s cubic-bezier(.625, .05, 0, 1), border-color .375s cubic-bezier(.625, .05, 0, 1);
       position: fixed;
       inset: 0% auto auto 0%;
       pointer-events: none;
@@ -192,7 +192,8 @@
     body:has(.cursor--next:hover) .cursor__dot,
     body:has(.cursor--next:hover) .cursor__anim,
     body:has(.cursor--prev:hover) .cursor__dot,
-    body:has(.cursor--prev:hover) .cursor__anim {
+    body:has(.cursor--prev:hover) .cursor__anim,
+    body:has(.cursor--read:hover) .cursor__drag {
       opacity: 0 !important;
     }
 
