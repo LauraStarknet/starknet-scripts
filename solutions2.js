@@ -53,7 +53,7 @@ window.addEventListener('scroll', (e) => {
 
 let i = 0;
 let txt = ''; /* The text */
-let speed = 10; /* The speed/duration of the effect in milliseconds */
+let speed = 30; /* The speed/duration of the effect in milliseconds */
 let myInterval2;
 let typeAnimationRunning = false;
 
