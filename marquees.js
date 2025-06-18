@@ -14,7 +14,6 @@ function marqueeInit() {
         let track;
         let coloredTexts = el.querySelectorAll('.colored');
         let restart = true;
-        let twoNumber = index % 2 === 0 ? -2 : 2;
 
         function centerWhite(el) {
             set = el.querySelector('.marquee-set');
@@ -97,9 +96,10 @@ function marqueeInit() {
 }
 
 
+console.log('Marquee code activating')
 marqueeInit()
-
 window.addEventListener('resize', () => {
+    console.log('RESIZING '+initIndex)
     marqueeInit();
 })
 

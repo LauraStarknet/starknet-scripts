@@ -29,9 +29,7 @@
     }
 
     .cursor,
-    .cursor__dot,
-    .cursor__anim,
-    .cursor--text {
+    .cursor__inner {
       mix-blend-mode: difference !important;
     }
 
@@ -93,7 +91,6 @@
       position: absolute;
       opacity: 0;
       transition: opacity .5s linear;
-      mix-blend-mode: lighten;
     }
 
     .cursor__glow--pink {
@@ -106,7 +103,6 @@
       position: absolute;
       opacity: 0;
       transition: opacity .5s linear;
-      mix-blend-mode: lighten;
     }
 
     .cursor__inner.cursor__inner--moving .cursor__anim {
@@ -153,12 +149,16 @@
       opacity: 0.6;
     }
 
-    body:has(.glow--pink:hover) .cursor__dot,
-    body:has(.glow--pink:hover) .cursor__anim,
-    body:has(.glow--blue:hover) .cursor__dot,
-    body:has(.glow--blue:hover) .cursor__anim {
-      mix-blend-mode: normal;
+    body:has(.glow--pink:hover) .cursor__inner,
+    body:has(.glow--pink:hover) .cursor__inner,
+    body:has(.glow--blue:hover) .cursor__inner,
+    body:has(.glow--blue:hover) .cursor__inner {
+      mix-blend-mode: lighten !important;
     }
+     body:has(.glow--pink:hover) .cursor__dot,
+         body:has(.glow--blue:hover) .cursor__dot {
+          background-color: #F3F2F1;
+         }
 
     body:has(.cursor--drag:hover) .cursor__drag,
     body:has(.cursor--click:hover) .cursor__click,
@@ -220,7 +220,7 @@
     This is a test
     <button>HELLOOOOO</button>
   </div>
-  <div class="card cursor--next">
+  <div class="card glow--pink">
     This is a test
     <button>HELLOOOOO</button>
   </div>

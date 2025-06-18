@@ -10,6 +10,11 @@
             padding: 0;
             background-color: #0C0A18;
         }
+
+        h2 {
+            font-size: 200px;
+            overflow: hidden;
+        }
         .sticky-scroll {
             height: 562.5vw;
             width: 100vw;
@@ -78,18 +83,34 @@
             position: absolute;
             top: 0;
             left: 0;
-            display: none;
+            /* display: none; */
             opacity: 0;
-            margin-top: 100vh;
-            transition: margin 0s linear .5s, opacity .5s linear;
-            /* transition-duration: .5s;
-            transition-property: opacity; */
+            pointer-events: none;
+            /* margin-top: 100vh; */
+            /* transition-duration: .5s; */
+            transition-duration: .5s;
+            transition-property: opacity;
+            display: flex;
         }
         .text-child.visible {
-            display: flex;
+            /* display: flex; */
             pointer-events: auto;
+            opacity: 1; 
+        }
+        .text-child h2 span {
+            display: block;
+            opacity: 0.1;
+            transform: translateY(30px);
+            /* overflow: hidden; */
+            /* transition-delay: 3s !important; */
+            transition-duration: .1s !important;
+            transition-delay: 0s;
+        }
+        .text-child.visible h2 span {
+            transform: translateY(0px);
+            transition-delay: 0s;
             opacity: 1;
-            margin-top: 0;
+            /* color: green; */
         }
         a {
             pointer-events: auto !important;
@@ -122,158 +143,96 @@
         </div>
         <div class="text-parent">
             <div class="text-child text-child--0">
-                <h2>Intro Title</h2>
+                <h2><span>Intro Title</span></h2>
                 <p>Intro text</p>
             </div>
             <div class="text-child text-child--1">
-                <h2>Text 1</h2>
+                <h2><span>Text 1</span></h2>
                 <p>Undertext 1</p>
                 <a href="https://google.com" target="_blank"><button>Button 1</button></a>
             </div>
             <div class="text-child text-child--2">
-                <h2>Text 2</h2>
+                <h2><span>Text 2</span></h2>
                 <p>Undertext 2</p>
                 <button>Button 2</button>
             </div>
             <div class="text-child text-child--3">
-                <h2>Text 3</h2>
+                <h2><span>Text 3</span></h2>
                 <p>Undertext 3</p>
                 <button>Button 3</button>
             </div>
             <div class="text-child text-child--4">
-                <h2>Text 4</h2>
+                <h2><span>Text 4</span></h2>
                 <p>Undertext 4</p>
                 <button>Button 4</button>
             </div>
         </div>
         <div class="dapp-list">
-            ArchetypalTech
-Atemu
-AWRPG
-Blob Arena
-Block Heroes
-Boltwade Studio
-Brew Master
-Briq
-Call The Banners
-Castle Hexapolis
-Craft Island
-D'Island
-DiamondPit
-Dope War
-Elerium
-Eternum
-Fallen Order
-Focus Tree
-Force Prime Heroes
-GOL2
-GrugsLair
-Influence
-Influence Asset Manager
-Jokers of Neon
-Loot Survivor
-Loot Underworld
-Mancala
-Mississippi
-ML Village (Games & AI)
-Monkey Mind
-NoGame
-Norvos
-Octoguns
-Paved
-Pilcrow and Star Productions
-Pistols at 10 blocks
-PixeLaw
-Plan Combat
-Provable Games
-Realms.World
-Rising Revenant
-Roll Your Own
-Slayer
-Stark Sailor
-Starkane
-Starkland
-Starkshoot
-Tale Weaver
-Teandy
-The Ninth
-Txspace
-Underdark
-Underware (Gaming Studio)
-Underworlds
-WarpackMasters
-Wendash
-Wilder World
-XAR
-YGG JAPAN
-zDefender
-zkorp
-zKube
-ArchetypalTech
-Atemu
-AWRPG
-Blob Arena
-Block Heroes
-Boltwade Studio
-Brew Master
-Briq
-Call The Banners
-Castle Hexapolis
-Craft Island
-D'Island
-DiamondPit
-Dope War
-Elerium
-Eternum
-Fallen Order
-Focus Tree
-Force Prime Heroes
-GOL2
-GrugsLair
-Influence
-Influence Asset Manager
-Jokers of Neon
-Loot Survivor
-Loot Underworld
-Mancala
-Mississippi
-ML Village (Games & AI)
-Monkey Mind
-NoGame
-Norvos
-Octoguns
-Paved
-Pilcrow and Star Productions
-Pistols at 10 blocks
-PixeLaw
-Plan Combat
-Provable Games
-Realms.World
-Rising Revenant
-Roll Your Own
-Slayer
-Stark Sailor
-Starkane
-Starkland
-Starkshoot
-Tale Weaver
-Teandy
-The Ninth
-Txspace
-Underdark
-Underware (Gaming Studio)
-Underworlds
-WarpackMasters
-Wendash
-Wilder World
-XAR
-YGG JAPAN
-zDefender
-zkorp
+            ArchetypalTech<br>
+Atemu<br>
+AWRPG<br>
+Blob Arena<br>
+Block Heroes<br>
+Boltwade Studio<br>
+Brew Master<br>
+Briq<br>
+Call The Banners<br>
+Castle Hexapolis<br>
+Craft Island<br>
+D'Island<br>
+DiamondPit<br>
+Dope War<br>
+Elerium<br>
+Eternum<br>
+Fallen Order<br>
+Focus Tree<br>
+Force Prime Heroes<br>
+GOL2<br>
+GrugsLair<br>
+Influence<br>
+Influence Asset Manager<br>
+Jokers of Neon<br>
+Loot Survivor<br>
+Loot Underworld<br>
+Mancala<br>
+Mississippi<br>
+ML Village (Games & AI)<br>
+Monkey Mind<br>
+NoGame<br>
+Norvos<br>
+Octoguns<br>
+Paved<br>
+Pilcrow and Star Productions<br>
+Pistols at 10 blocks<br>
+PixeLaw<br>
+Plan Combat<br>
+Provable Games<br>
+Realms.World<br>
+Rising Revenant<br>
+Roll Your Own<br>
+Slayer<br>
+Stark Sailor<br>
+Starkane<br>
+Starkland<br>
+Starkshoot<br>
+Tale Weaver<br>
+Teandy<br>
+The Ninth<br>
+Txspace<br>
+Underdark<br>
+Underware (Gaming Studio)<br>
+Underworlds<br>
+WarpackMasters<br>
+Wendash<br>
+Wilder World<br>
+XAR<br>
+YGG JAPAN<br>
+zDefender<br>
+zkorp<br>
 zKube
         </div>
     </div>
-    <script src="./scriptShapes.js"></script>
+    <script src="./solutions4.js"></script>
 </body>
 
 </html>

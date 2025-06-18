@@ -52,7 +52,7 @@ window.addEventListener('scroll', (e) => {
 
 
 let i = 0;
-let txt = ''; /* The text */
+let txt = []; /* The text */
 let speed = 100; /* The speed/duration of the effect in milliseconds */
 let myInterval2;
 let typeAnimationRunning = false;
@@ -60,7 +60,7 @@ let typeAnimationRunning = false;
 
 function initType() {
   // console.log('initType');
-  if (txt === '') txt = document.querySelector(".dapp-list").innerHTML.replaceAll("<br>", "%");
+  if (txt.length === 0) txt = document.querySelector(".dapp-list").innerHTML.split("<br>");
   document.querySelector(".dapp-list").innerHTML = '';
   document.querySelector(".dapp-list").style.opacity = '0.4';
   typeAnimationRunning = true;
@@ -77,9 +77,10 @@ function finishType() {
 
 function typeWriter() {
   if (i < txt.length) {
-    document.querySelector(".dapp-list").innerHTML += txt.slice(i, i+20).replaceAll(/%/g, '<br>');
+    document.querySelector(".dapp-list").innerHTML += `${txt[i]}<br>`;
+    // document.querySelector(".dapp-list").innerHTML += txt.slice(i, i+10).replaceAll(/%/g, '<br>');
     document.querySelector(".dapp-list").scrollTop = document.querySelector(".dapp-list").scrollHeight;
-    i = i+21;
+    i++
   }
   else i = 0;
 }
