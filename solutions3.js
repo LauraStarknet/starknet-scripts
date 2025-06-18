@@ -53,7 +53,7 @@ window.addEventListener('scroll', (e) => {
 
 let i = 0;
 let txt = ''; /* The text */
-let speed = 30; /* The speed/duration of the effect in milliseconds */
+let speed = 300; /* The speed/duration of the effect in milliseconds */
 let myInterval2;
 let typeAnimationRunning = false;
 
@@ -77,9 +77,9 @@ function finishType() {
 
 function typeWriter() {
   if (i < txt.length) {
-    document.querySelector(".dapp-list").innerHTML += txt.slice(i, i+5).replace('%', '<br>');
+    document.querySelector(".dapp-list").innerHTML += txt.slice(i, i+50).replace('%', '<br>');
     document.querySelector(".dapp-list").scrollTop = document.querySelector(".dapp-list").scrollHeight;
-    i = i+6;
+    i = i+51;
   }
   else i = 0;
 }
