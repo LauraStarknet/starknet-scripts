@@ -77,9 +77,9 @@ function finishType() {
 
 function typeWriter() {
   if (i < txt.length) {
-    document.querySelector(".dapp-list").innerHTML += txt.slice(i, i+50).replace('%', '<br>');
+    document.querySelector(".dapp-list").innerHTML += txt.slice(i, i+40).replace('%', '<br>');
     document.querySelector(".dapp-list").scrollTop = document.querySelector(".dapp-list").scrollHeight;
-    i = i+51;
+    i = i+41;
   }
   else i = 0;
 }
