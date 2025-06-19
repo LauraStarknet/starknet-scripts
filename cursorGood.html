@@ -66,9 +66,6 @@
     .cursor--text {
       position: absolute;
       color: #F3F2F1;
-      font-size: 10px;
-      font-family: monospace;
-      text-transform: uppercase;
       /* inset: 0% auto auto 0%; */
       pointer-events: none;
       opacity: 0;
@@ -116,6 +113,8 @@
     body:has(a:hover) .cursor,
     body:has(button:hover) .cursor,
     body:has([data-cursor]:hover) .cursor {
+      border: 1px solid #F3F2F130;
+      background-color: transparent;
       width: 1.25em;
       height: 1.25em;
       border-color: #EAAEAE50;
@@ -189,9 +188,13 @@
     body:has(.cursor--prev:hover) .cursor {
       /* opacity: 0; */
       width: 4.5em;
+      background:  radial-gradient(54.97% 54.85% at 50% 50%, rgba(243, 242, 241, 0.06) 0%, rgba(243, 242, 241, 0.00) 100%);
+      /* background: linear-gradient(90deg, rgba(243, 242, 241, 0.00) 0%, rgba(243, 242, 241, 0.04) 50.5%, rgba(243, 242, 241, 0.00) 100%); */
       height: 3.4em;
       border-radius: 1.8rem;
-      border-width: 0px 2px 0px 2px;
+      border-width: 0px 1px 0px 1px;
+      /* border-color: #F3F2F1; */
+      /* backdrop-filter: blur(20px); */
       /* border-color: transparent #F3F2F130 transparent #F3F2F130; */
       /* height: 3em; */
     }
@@ -211,6 +214,21 @@
       opacity: 0 !important;
     }
 
+    body:has(.cursor--drag:hover):has(button:hover) .cursor__drag {
+      opacity: 0 !important;
+    }
+    body:has(.cursor--drag:hover):has(button:hover) .cursor {
+      border: 1px solid #F3F2F130;
+      background-color: transparent;
+      width: 1.25em;
+      height: 1.25em;
+      border-color: #EAAEAE50;
+    }
+
+    body:has(.cursor--drag:hover):has(button:hover) .cursor__dot {
+      opacity: 1 !important;
+    }
+
 
 
     @media (hover: none) and (pointer: coarse) {
@@ -226,19 +244,23 @@
       left: 100px;
       background-color: darkslategrey;
     }
+
+    img {
+      width: 100vw;
+    }
   </style>
 </head>
 
 <body>
-  <!-- <img src="/homepage.png" /> -->
-  <div class="card cursor--prev">
+  <img src="/homepage.png" class="cursor--drag"/>
+  <!-- <div class="card cursor--prev">
     This is a test
     <button>HELLOOOOO</button>
   </div>
   <div class="card cursor--drag">
     This is a test
     <button>HELLOOOOO</button>
-  </div>
+  </div> -->
   <div class="glow"></div>
   <div class="cursor"></div>
   <div class="cursor__inner">

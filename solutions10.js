@@ -74,7 +74,7 @@ function initType() {
   var app = document.querySelector('.dapp-list');
   typewriter = new Typewriter(app, {
     loop: true,
-    delay: 10,
+    delay: 5,
   });
 
   typewriter
@@ -83,7 +83,10 @@ function initType() {
 }
 
 function finishType() {
-  if(typewriter.stop) typewriter.stop()
+  if(typewriter) {
+    typewriter.deleteAll(0)
+    typewriter.stop()
+  }
   // clearInterval(myInterval2);
   typeAnimationRunning = false;
   // document.querySelector(".dapp-list").innerHTML = '';
