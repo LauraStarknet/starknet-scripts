@@ -18,7 +18,7 @@ function intro(el) {
   if (Number(el.id.replace('scroll-child--', '')) > 0 && !typeAnimationRunning) initType();
   setTimeout(() => {
     document.querySelector(`.${elid}`).classList.add('visible');
-  }, 500)
+  }, (Number(el.id.replace('scroll-child--', '')) === 0 && !typeAnimationRunning) ? 10 : 500)
 }
 
 function handleIntersection(entries) {
