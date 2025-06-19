@@ -6,6 +6,9 @@ function outro(el) {
   if (el.querySelector('video')) el.querySelector('video').pause();
   const elid = el.id.replace('scroll', 'text')
   document.querySelector(`.${elid}`).classList.remove('visible');
+  setTimeout(() => {
+   document.querySelector(`.${elid}`).classList.remove('visible');
+  }, 510)
 }
 
 function intro(el) {

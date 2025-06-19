@@ -96,10 +96,9 @@ function marqueeInit() {
 }
 
 
-console.log('Marquee code activating')
+console.log('Marquee code activating 2')
 marqueeInit()
 window.addEventListener('resize', () => {
-    console.log('RESIZING '+initIndex)
     marqueeInit();
 })
 
