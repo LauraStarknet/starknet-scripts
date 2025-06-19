@@ -150,11 +150,25 @@
     }
 
     body:has(.glow--pink:hover) .cursor__inner,
-    body:has(.glow--pink:hover) .cursor__inner,
-    body:has(.glow--blue:hover) .cursor__inner,
     body:has(.glow--blue:hover) .cursor__inner {
       mix-blend-mode: lighten !important;
     }
+
+    body:has(.cursor--drag:hover) .cursor__inner,
+    body:has(.cursor--click:hover) .cursor__inner,
+    body:has(.cursor--read:hover) .cursor__inner,
+    body:has(.cursor--next:hover) .cursor__inner,
+    body:has(.cursor--prev:hover) .cursor__inner {
+      mix-blend-mode: normal !important;
+    }
+    body:has(.cursor--drag:hover) .cursor,
+    body:has(.cursor--click:hover) .cursor,
+    body:has(.cursor--read:hover) .cursor,
+    body:has(.cursor--next:hover) .cursor,
+    body:has(.cursor--prev:hover) .cursor {
+      mix-blend-mode: normal !important;
+    }
+
      body:has(.glow--pink:hover) .cursor__dot,
          body:has(.glow--blue:hover) .cursor__dot {
           background-color: #F3F2F1;
@@ -177,7 +191,7 @@
       width: 4.5em;
       height: 3.4em;
       border-radius: 1.8rem;
-      border-width: 0px 1px 0px 1px;
+      border-width: 0px 2px 0px 2px;
       /* border-color: transparent #F3F2F130 transparent #F3F2F130; */
       /* height: 3em; */
     }
@@ -221,7 +235,7 @@
     This is a test
     <button>HELLOOOOO</button>
   </div>
-  <div class="card glow--pink">
+  <div class="card cursor--drag">
     This is a test
     <button>HELLOOOOO</button>
   </div>
