@@ -7,8 +7,8 @@ function outro(el) {
   const elid = el.id.replace('scroll', 'text')
   document.querySelector(`.${elid}`).classList.remove('visible');
   setTimeout(() => {
-   document.querySelector(`.${elid}`).classList.remove('visible');
-  }, 510)
+    document.querySelector(`.${elid}`).classList.remove('visible');
+  }, 400)
 }
 
 function intro(el) {
@@ -55,35 +55,47 @@ window.addEventListener('scroll', (e) => {
 
 
 let i = 0;
-let txt = []; /* The text */
+let txt = ''; /* The text */
 let speed = 100; /* The speed/duration of the effect in milliseconds */
 let myInterval2;
 let typeAnimationRunning = false;
+// let typewriter;
 
 
 function initType() {
   // console.log('initType');
-  if (txt.length === 0) txt = document.querySelector(".dapp-list").innerHTML.split("<br>");
+  if (txt === '') txt = document.querySelector(".dapp-list").innerHTML;
+  // if (txt.length === 0) txt = document.querySelector(".dapp-list").innerHTML.split("<br>");
   document.querySelector(".dapp-list").innerHTML = '';
   document.querySelector(".dapp-list").style.opacity = '0.4';
   typeAnimationRunning = true;
-  if (myInterval2) clearInterval(myInterval2);
-  myInterval2 = setInterval(() => typeWriter(), speed);
+  // if (myInterval2) clearInterval(myInterval2);
+  // myInterval2 = setInterval(() => typeWriter(), speed);
+  var app = document.querySelector('.dapp-list');
+  typewriter = new Typewriter(app, {
+    loop: true,
+    delay: 10,
+  });
+
+  typewriter
+    .typeString(txt)
+    .start();
 }
 
 function finishType() {
-  clearInterval(myInterval2);
+  if(typewriter.stop) typewriter.stop()
+  // clearInterval(myInterval2);
   typeAnimationRunning = false;
-  document.querySelector(".dapp-list").innerHTML = '';
-  document.querySelector(".dapp-list").style.opacity = '0';
+  // document.querySelector(".dapp-list").innerHTML = '';
+  // document.querySelector(".dapp-list").style.opacity = '0';
 }
 
-function typeWriter() {
-  if (i < txt.length) {
-    document.querySelector(".dapp-list").innerHTML += `${txt[i]}<br>`;
-    // document.querySelector(".dapp-list").innerHTML += txt.slice(i, i+10).replaceAll(/%/g, '<br>');
-    document.querySelector(".dapp-list").scrollTop = document.querySelector(".dapp-list").scrollHeight;
-    i++
-  }
-  else i = 0;
-}
+// function typeWriter() {
+  // if (i < txt.length) {
+  //   document.querySelector(".dapp-list").innerHTML += `${txt[i]}<br>`;
+  //   // document.querySelector(".dapp-list").innerHTML += txt.slice(i, i+10).replaceAll(/%/g, '<br>');
+  //   document.querySelector(".dapp-list").scrollTop = document.querySelector(".dapp-list").scrollHeight;
+  //   i++
+  // }
+  // else i = 0;
+// }
