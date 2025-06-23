@@ -192,17 +192,5 @@ function marqueeInit() {
 console.log('Marquee code activating');
 marqueeInit();
 window.addEventListener('resize', () => {
-    console.log('RESIZING ' + initIndex);
-    // When resizing, we re-initialize all marquees, which will re-center them.
-    // The initIndex needs to be reset for this to work correctly,
-    // as it relates to the index comparison in handleMouseEnter/Leave.
-    // However, if `initIndex` is meant to be a global counter for how many times `marqueeInit` ran,
-    // then resetting it isn't correct. Let's assume `initIndex` is tied to the current
-    // marquee being hovered.
-
-    // A better approach for resize would be to re-call `centerWhite` for each marquee
-    // without completely re-initializing all listeners if possible.
-    // But sticking to your current structure, let's call marqueeInit()
-    // and let it handle listener re-attachment.
     marqueeInit();
 });
