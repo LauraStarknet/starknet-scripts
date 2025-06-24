@@ -33,6 +33,7 @@
             pointer-events: none;
             z-index: 1;
         }
+
         /* .glass-frame {
             width: 100vw;
             height: 100vh;
@@ -64,19 +65,39 @@
         img {
             width: 100vw;
         }
+
+        svg {
+            font-size: 10px;
+            font-family: monospace;
+            text-transform: uppercase;
+        }
+
+        svg path {
+            fill: transparent;
+        }
     </style>
 </head>
 
 <body>
     <div class="glass-frame"></div>
-    <!-- <svg width="100vw" height="100vh" viewBox="0 0 1000 1000" preserveAspectRatio="none">
-        <rect height="1000px" width="1000px" fill="white" mask="url(#cut)"/>
-        <mask id="cut">
+    <svg width="100vw" height="100vh" viewBox="0 0 1000 1000" preserveAspectRatio="none">
+        <rect height="1000px" width="1000px" id="cut" />
+        <path id="curve"
+            d="M 0,7000 C 0,7000 0,350 -50,350 C 152.13333333333333,306 304.26666666666665,262 445,298 C 585.7333333333333,334 715.0666666666668,450 879,472 C 1042.9333333333332,494 1241.4666666666667,422 1440,350 C 1440,350 1440,700 1440,700 Z">
+        </path>
+        <text x="0">
+            <textPath xlink:href="#curve" fill="white">
+                Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon • Full Experience Coming Soon
+            </textPath>
+            <!-- <animate attributeName="x" dur="10s" values="-1000;0" repeatCount="indefinite"></animate> -->
+        </text>
+        <!-- <mask id="cut">
             <rect height="980px" width="980px" fill="white" x="10" y="10" ry="50px" rx="50px"/>
-        </mask>
+            <svg id="svg" viewBox="0 20 1040 700" xmlns="http://www.w3.org/2000/svg">
+        </mask> -->
         <defs>
-    </defs>
-    </svg> -->
+        </defs>
+    </svg>
     <main>
         <img src="/basecampfull.png" />
     </main>
