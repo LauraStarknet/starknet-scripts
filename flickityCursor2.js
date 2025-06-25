@@ -36,7 +36,6 @@ function flickityInit() {
                 if (this.options.freeScroll) {
                     this.isFreeScrolling = true
                 }
-                console.log(e.clientX, e.clientY)
                 xTo(e.clientX);
                 yTo(e.clientY);
                 xTo2(e.clientX);
