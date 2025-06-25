@@ -1,4 +1,4 @@
-function createHeadings() {
+function createHeadings1() {
     const scrollElements = document.querySelectorAll('.animated-heading-scroll, .heading-small');
     const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
@@ -29,7 +29,9 @@ function createHeadings() {
         threshold: 0.5,
     });
     scrollElements.forEach(el => observer.observe(el));
+}
 
+function createHeadings2() {
     const headings = document.querySelectorAll('[data-split="heading"]');
     headings.forEach(heading => {
         const split = SplitText.create(heading, {
@@ -64,9 +66,9 @@ function createHeadings() {
     gsap.registerPlugin(SplitText, ScrollTrigger);
 }
 
-
 document.addEventListener('DOMContentLoaded', function () {
-    createHeadings()
+    createHeadings1()
+    createHeadings2()
 });
 
 let headingTimeOut;
@@ -84,7 +86,7 @@ function headingReset() {
               }
               console.log(newContent)
               heading.innerHTML = newContent;
-              setTimeout(() => createHeadings(), 10);
+              setTimeout(() => createHeadings2(), 10);
           }
         })
     }, 100)
