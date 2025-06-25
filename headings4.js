@@ -1,38 +1,39 @@
-function createHeadings1() {
-    const scrollElements = document.querySelectorAll('.animated-heading-scroll, .heading-small');
-    const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const el = entry.target;
+// function createHeadings1() {
+//     const scrollElements = document.querySelectorAll('.animated-heading-scroll, .heading-small');
+//     const observer = new IntersectionObserver((entries, obs) => {
+//         entries.forEach(entry => {
+//             if (entry.isIntersecting) {
+//                 const el = entry.target;
 
-                if (!el.dataset.splitDone) {
-                    const split = new SplitType(el, { types: 'chars' });
-                    el.dataset.splitDone = 'true';
-                }
+//                 if (!el.dataset.splitDone) {
+//                     const split = new SplitType(el, { types: 'chars' });
+//                     el.dataset.splitDone = 'true';
+//                 }
 
-                gsap.set(el.querySelectorAll('.char'), { opacity: 0, y: 20 });
-                gsap.to(
-                    el.querySelectorAll('.char'),
-                    {
-                        opacity: 1,
-                        y: 0,
-                        stagger: 0.05,
-                        duration: 0.75,
-                        delay: 0.5,
-                        ease: 'power2.out',
-                    }
-                );
-                obs.unobserve(el);
-            }
-        });
-    }, {
-        threshold: 0.5,
-    });
-    scrollElements.forEach(el => observer.observe(el));
-}
+//                 gsap.set(el.querySelectorAll('.char'), { opacity: 0, y: 20 });
+//                 gsap.to(
+//                     el.querySelectorAll('.char'),
+//                     {
+//                         opacity: 1,
+//                         y: 0,
+//                         stagger: 0.05,
+//                         duration: 0.75,
+//                         delay: 0.5,
+//                         ease: 'power2.out',
+//                     }
+//                 );
+//                 obs.unobserve(el);
+//             }
+//         });
+//     }, {
+//         threshold: 0.5,
+//     });
+//     scrollElements.forEach(el => observer.observe(el));
+// }
 
 function createHeadings2() {
     const headings = document.querySelectorAll('[data-split="heading"]');
+    const headingsSmall = document.querySelectorAll('.animated-heading-scroll, .heading-small');
     headings.forEach(heading => {
         const customStart = heading.getAttribute('data-trigger-start');
         const scrollTriggerStart = customStart || "top 70%";
@@ -41,15 +42,32 @@ function createHeadings2() {
             linesClass: "split-line",
             autoSplit: true,
             onSplit(split) {
-                // split.lines.forEach(line => {
-                //     const wrapper = document.createElement("div");
-                //     wrapper.style.overflow = "hidden";
-                //     wrapper.style.display = "block";
-                //     wrapper.style.paddingBlock = "0.12em";
-                //     wrapper.style.marginBlock = "-0.2em";
-                //     line.parentNode.insertBefore(wrapper, line);
-                //     wrapper.appendChild(line);
-                // });
+                return gsap.timeline({
+                    scrollTrigger: {
+                        trigger: heading,
+                        start: scrollTriggerStart,
+                        once: true,
+                    }
+                }).from(split.lines, {
+                   opacity: 1,
+                    y: 0,
+                    stagger: 0.05,
+                    duration: 0.75,
+                    delay: 0.5,
+                    ease: 'power2.out',
+                });
+            }
+        });
+    });
+
+    headingsSmall.forEach(heading => {
+        const customStart = heading.getAttribute('data-trigger-start');
+        const scrollTriggerStart = customStart || "top 70%";
+        SplitText.create(heading, {
+            type: "letter",
+            linesClass: "split-char",
+            autoSplit: true,
+            onSplit(split) {
                 return gsap.timeline({
                     scrollTrigger: {
                         trigger: heading,
@@ -71,7 +89,7 @@ function createHeadings2() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    createHeadings1()
+    // createHeadings1()
     createHeadings2()
 });
 
