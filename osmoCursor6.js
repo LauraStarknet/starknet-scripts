@@ -21,9 +21,14 @@ function initBasicCustomCursor() {
 let cursorTimeOut;
 let cursorShown = false;
 
+function showCursor() {
+  document.querySelector('.cursor__inner').style.opacity = '1';
+  document.querySelector('.cursor').style.opacity = '1';
+}
+
 window.addEventListener("mousemove", e => {
   if(window.innerWidth > 991) {
-    if(!cursorShown) {
+    if(cursorShown === false) {
       showCursor();
       cursorShown = true
     }
@@ -38,12 +43,9 @@ window.addEventListener("mousemove", e => {
 });
 
 function hideCursor() {
+  cursorShown = false;
   document.querySelector('.cursor__inner').style.opacity = '0';
   document.querySelector('.cursor').style.opacity = '0';
-}
-function showCursor() {
-  document.querySelector('.cursor__inner').style.opacity = '1';
-  document.querySelector('.cursor').style.opacity = '1';
 }
 
 document.body.addEventListener("mouseleave", e => {
