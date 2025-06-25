@@ -35,10 +35,6 @@ function createHeadingsAll() {
             charsClass: 'letter',
             autoSplit: true,
             onSplit(split) {
-                // gsap.set(split.chars, {
-                //     opacity: 0,
-                //     y: 20,
-                // });
                 return gsap.timeline({
                     scrollTrigger: {
                         trigger: heading,
