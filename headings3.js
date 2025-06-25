@@ -73,25 +73,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
 let headingTimeOut;
 
-function headingReset() {
-    if(headingTimeOut) clearTimeout(headingTimeOut);
-    headingTimeOut = setTimeout(() => {
-        const headings = document.querySelectorAll('[data-split="heading"]');
-        headings.forEach(heading => {
-          let lineList = heading.querySelectorAll('.split-line');
-          if(lineList.length > 0) {
-              let newContent = ''
-              for(let i = 0; i < lineList.length; i++) {
-                newContent += lineList[i].innerHTML;
-              }
-              console.log(newContent)
-              heading.innerHTML = newContent;
-              setTimeout(() => createHeadings2(), 10);
-          }
-        })
-    }, 100)
-}
+// function headingReset() {
+//     if(headingTimeOut) clearTimeout(headingTimeOut);
+//     headingTimeOut = setTimeout(() => {
+//         const headings = document.querySelectorAll('[data-split="heading"]');
+//         headings.forEach(heading => {
+//           let lineList = heading.querySelectorAll('.split-line');
+//           if(lineList.length > 0) {
+//               let newContent = ''
+//               for(let i = 0; i < lineList.length; i++) {
+//                 newContent += lineList[i].innerHTML;
+//               }
+//               console.log(newContent)
+//               heading.innerHTML = newContent;
+//               setTimeout(() => createHeadings2(), 10);
+//           }
+//         })
+//     }, 100)
+// }
 
-window.addEventListener("resize", () => {
-  if(ScrollTrigger) headingReset()
-})
+// window.addEventListener("resize", () => {
+//   if(ScrollTrigger) headingReset()
+// })
