@@ -31,8 +31,8 @@ function createHeadingsAll() {
         const customStart = heading.getAttribute('data-trigger-start');
         const scrollTriggerStart = customStart || "top 70%";
         SplitText.create(heading, {
-            type: "letter",
-            linesClass: "split-char",
+            type: "chars",
+            linesClass: "letter",
             autoSplit: true,
             onSplit(split) {
                 return gsap.timeline({
