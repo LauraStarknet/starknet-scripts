@@ -28,8 +28,8 @@ function createHeadingsAll() {
                     opacity: 0.8,
                     yPercent: 110,
                     stagger: 0.1,
-                    duration: 0.75,
-                    delay: 0.5,
+                    duration: 0.5,
+                    // delay: 0.1,
                     ease: 'power2.out',
                 });
             }
