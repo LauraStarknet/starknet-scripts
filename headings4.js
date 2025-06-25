@@ -34,32 +34,36 @@ function createHeadings1() {
 function createHeadings2() {
     const headings = document.querySelectorAll('[data-split="heading"]');
     headings.forEach(heading => {
-        const split = SplitText.create(heading, {
-            type: "lines",
-            linesClass: "split-line"
-        });
-        split.lines.forEach(line => {
-            const wrapper = document.createElement("div");
-            wrapper.style.overflow = "hidden";
-            wrapper.style.display = "block";
-            wrapper.style.paddingBlock = "0.12em";
-            wrapper.style.marginBlock = "-0.2em";
-            line.parentNode.insertBefore(wrapper, line);
-            wrapper.appendChild(line);
-        });
         const customStart = heading.getAttribute('data-trigger-start');
         const scrollTriggerStart = customStart || "top 70%";
-        gsap.from(split.lines, {
-            yPercent: 100,
-            delay: 0.25,
-            opacity: 0,
-            duration: 1,
-            ease: "expo.out",
-            stagger: 0.1,
-            scrollTrigger: {
-                trigger: heading,
-                start: scrollTriggerStart,
-                once: true
+        SplitText.create(heading, {
+            type: "lines",
+            linesClass: "split-line",
+            autoSplit: true,
+            onSplit(split) {
+                // split.lines.forEach(line => {
+                //     const wrapper = document.createElement("div");
+                //     wrapper.style.overflow = "hidden";
+                //     wrapper.style.display = "block";
+                //     wrapper.style.paddingBlock = "0.12em";
+                //     wrapper.style.marginBlock = "-0.2em";
+                //     line.parentNode.insertBefore(wrapper, line);
+                //     wrapper.appendChild(line);
+                // });
+                return gsap.timeline({
+                    scrollTrigger: {
+                        trigger: heading,
+                        start: scrollTriggerStart,
+                        once: true,
+                    }
+                }).from(split.lines, {
+                    yPercent: 100,
+                    delay: 0.25,
+                    opacity: 0,
+                    duration: 1,
+                    ease: "expo.out",
+                    stagger: 0.1,
+                });
             }
         });
     });
@@ -71,11 +75,16 @@ document.addEventListener('DOMContentLoaded', function () {
     createHeadings2()
 });
 
-let headingTimeOut;
+// let headingTimeOut;
 
 // function headingReset() {
-//     if(headingTimeOut) clearTimeout(headingTimeOut);
+//     if(headingTimeOut) {
+//         console.log('clearing time out');
+//         clearTimeout(headingTimeOut);
+//     }
+//     console.log('creating time out');
 //     headingTimeOut = setTimeout(() => {
+//         console.log('triggering time out');
 //         const headings = document.querySelectorAll('[data-split="heading"]');
 //         headings.forEach(heading => {
 //           let lineList = heading.querySelectorAll('.split-line');
@@ -84,9 +93,9 @@ let headingTimeOut;
 //               for(let i = 0; i < lineList.length; i++) {
 //                 newContent += lineList[i].innerHTML;
 //               }
-//               console.log(newContent)
+//             //   console.log(newContent)
 //               heading.innerHTML = newContent;
-//               setTimeout(() => createHeadings2(), 10);
+//             //   setTimeout(() => createHeadings2(), 500);
 //           }
 //         })
 //     }, 100)
