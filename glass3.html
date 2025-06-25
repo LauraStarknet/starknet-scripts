@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>title</title>
+  <style>
+    html,
+    body,
+    canvas {
+      width: 100%;
+      height: 100%;
+    }
+
+
+
+    body {
+      margin: 0;
+      background-color: black;
+      /* color: orange; */
+      height: 100vh;
+      position: fixed;
+      overflow: hidden;
+    }
+
+    video,
+    img {
+      width: 100%;
+      height: auto;
+      /* position: absolute; */
+      object-fit: contain;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+
+
+    iframe {
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      position: fixed;
+      border: none;
+      opacity: 1;
+      pointer-events: none;
+    }
+
+    .iframe-glass {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      z-index: -1;
+      background-color: #ffffff25;
+      top: 0;
+      left: 0;
+      backdrop-filter: blur(20px);
+    }
+
+    body {
+      position: relative;
+    }
+
+    img {
+      z-index: -1;
+    }
+
+    .small {
+      width: calc(100vw - 20px);
+      height: calc(100vh - 25px);
+      margin: 10px;
+      margin-top: 15px;
+      transform-origin: top left;
+      border-radius: 50px;
+      border: solid 1px #ffffff10;
+      overflow: scroll;
+      position: absolute;
+      /* display: none; */
+    }
+
+  .marquee3k {
+    font-size: 10px;
+    font-family: monospace;
+    text-transform: uppercase;
+    height: 10px;
+    position: absolute;
+    color: rgba(243, 242, 241, 0.50);
+  }
+
+  .marquee3k p {
+    padding-right: 5px;
+  }
+
+  .marquee3k--top {
+    width: calc(100vw - 24px);
+    left: 12px;
+    top: -8px;
+    overflow: hidden;
+    height: 30px;
+  }
+
+  .marquee-wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+  }
+  </style>
+</head>
+
+<body>
+  <!-- <canvas></canvas> -->
+  <!-- <video loop muted autoplay>
+    <source src="/home.mov" />
+   </video> -->
+  <iframe src="/glass2.html"></iframe>
+  <div class="iframe-glass"></div>
+  <div class="small">
+    <img src="/basecampfull.png" />
+    <button></button>
+  </div>
+
+  <div class="marquee-wrapper">
+    <div class="marquee3k marquee3k--top" 
+         data-speed="0.25"
+         data-reverse="true"
+         data-pausable="bool">
+         <!--you can even have inline images,
+         or any kind of html -->
+         <p>Full Experience Coming Soon • </p>
+     </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <!-- <script src="./cursor2.js"></script> -->
+  <script>
+    document.querySelector('.small').addEventListener('scroll', (e) => {
+      const currentScroll = document.querySelector('.small').scrollTop;
+      console.log(currentScroll)
+      document.querySelector('iframe').contentWindow.scrollTo(0, currentScroll)
+    })
+  </script>
+  <script src="https://cdn.jsdelivr.net/gh/ezekielaquino/Marquee3000@master/marquee3k.js"></script>
+  <script>
+    Marquee3k.init()
+  </script>
+</body>
+
+</html>
