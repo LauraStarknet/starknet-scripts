@@ -5,9 +5,19 @@ function createHeadingsAll() {
         const scrollTriggerStart = customStart || "top 70%";
         SplitText.create(heading, {
             type: "lines",
-            linesClass: "split-line",
+            // linesClass: "split-line",
             autoSplit: true,
+            // mask: "lines",
             onSplit(split) {
+                split.lines.forEach(line => {
+                    const wrapper = document.createElement("div");
+                    wrapper.style.overflow = "hidden";
+                    wrapper.style.display = "block";
+                    wrapper.style.paddingBlock = "0.12em";
+                    wrapper.style.marginBlock = "-0.2em";
+                    line.parentNode.insertBefore(wrapper, line);
+                    wrapper.appendChild(line);
+                });
                 return gsap.timeline({
                     scrollTrigger: {
                         trigger: heading,
@@ -15,15 +25,16 @@ function createHeadingsAll() {
                         once: true,
                     }
                 }).from(split.lines, {
-                    opacity: 1,
-                    y: 0,
-                    stagger: 0.05,
+                    opacity: 0.8,
+                    yPercent: 110,
+                    stagger: 0.1,
                     duration: 0.75,
                     delay: 0.5,
                     ease: 'power2.out',
                 });
             }
         });
+        gsap.registerPlugin(SplitText, ScrollTrigger);
     });
     const headingsSmall = document.querySelectorAll('.animated-heading-scroll, .heading-small');
 
@@ -52,8 +63,8 @@ function createHeadingsAll() {
                 });
             }
         });
+        gsap.registerPlugin(SplitText, ScrollTrigger);
     });
-    gsap.registerPlugin(SplitText, ScrollTrigger);
 }
 
 document.addEventListener('DOMContentLoaded', function () {

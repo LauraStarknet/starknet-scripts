@@ -46,8 +46,9 @@ function showCursor() {
   document.querySelector('.cursor').style.opacity = '1';
 }
 
-window.addEventListener("mouseout", e => {
+document.body.addEventListener("mouseleave", e => {
   hideCursor()
+  // console.log('LEAVE')
 })
 
 // Initialize Basic Custom Cursor
