@@ -1,6 +1,6 @@
 function flickityInit() {
 
-    if(Flickity) {
+    if(window.Flickity) {
 
         Flickity.prototype.dragMove = function(t, e, i) {
                 if (!this.isDraggable) {
