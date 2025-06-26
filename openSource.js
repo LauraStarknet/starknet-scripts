@@ -1,60 +1,41 @@
-const wordList = [
-'DeFi',
-'Gaming',
-'NFT',
-'Creator',
-'Social',
-'AI',
-'RWA',
-'Community',
-'Education',
-'Tooling',
-'Infrastructure',
-'Wallets',
-'Exchanges',
-'Custody',
-'Research',
-'Security/Audit'
-]
-
 // const wordList = [
-// 'full_name',
-// 'starkware-libs/cairo',
-// 'starkware-libs/stwo',
-// 'starknet-io/starknet.js',
-// 'OpenZeppelin/cairo-contracts',
-// 'eqlabs/pathfinder',
-// 'argentlabs/argent-x',
-// 'keep-starknet-strange/madara',
-// 'starknet-edu/starknet-cairo-101',
-// 'ZeroSync/ZeroSync',
-// 'apibara/starknet-react/juno',
-// 'foundry-rs/starknet-foundry',
-// 'xJonathanLEI/starknet-rs',
-// 'software-mansion/starknet.py',
-// 'keep-starknet-strange/alexandria',
-// 'keep-starknet-strange/awesome-starknet/Audit',
-// 'starkscan/starkscan-verifier'
+// 'DeFi',
+// 'Gaming',
+// 'NFT',
+// 'Creator',
+// 'Social',
+// 'AI',
+// 'RWA',
+// 'Community',
+// 'Education',
+// 'Tooling',
+// 'Infrastructure',
+// 'Wallets',
+// 'Exchanges',
+// 'Custody',
+// 'Research',
+// 'Security/Audit'
 // ]
 
-full_name
-starkware-libs/cairo
-starkware-libs/stwo
-starknet-io/starknet.js
-OpenZeppelin/cairo-contracts
-eqlabs/pathfinder
-argentlabs/argent-x
-keep-starknet-strange/madara
-starknet-edu/starknet-cairo-101
-ZeroSync/ZeroSync
-NethermindEth/juno
-apibara/starknet-react
-foundry-rs/starknet-foundry
-xJonathanLEI/starknet-rs
-software-mansion/starknet.py
-keep-starknet-strange/alexandria
-keep-starknet-strange/awesome-starknet
-starkscan/starkscan-verifier
+const wordList = [
+'full_name',
+'starkware-libs/cairo',
+'starkware-libs/stwo',
+'starknet-io/starknet.js',
+'OpenZeppelin/cairo-contracts',
+'eqlabs/pathfinder',
+'argentlabs/argent-x',
+'keep-starknet-strange/madara',
+'starknet-edu/starknet-cairo-101',
+'ZeroSync/ZeroSync',
+'apibara/starknet-react/juno',
+'foundry-rs/starknet-foundry',
+'xJonathanLEI/starknet-rs',
+'software-mansion/starknet.py',
+'keep-starknet-strange/alexandria',
+'keep-starknet-strange/awesome-starknet/Audit',
+'starkscan/starkscan-verifier'
+]
 
 let wordInterval;
 let wordAnimPlaying = false
