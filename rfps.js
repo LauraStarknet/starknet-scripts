@@ -45,7 +45,8 @@ function createWord(i) {
     newSpan.innerHTML = wordList[i];
     newSpan.style.left = `${Math.round(window.innerWidth * Math.random())}px`
     newSpan.style.top = `${Math.round(window.innerHeight * Math.random())}px`
-    newSpan.className = 'sparkling__span';
+    newSpan.style.color = `#F3F2F140`
+    newSpan.className = 'sparkling__span span-s';
     if(document.querySelector('.sparkling-wrapper') === null) clearInterval(wordInterval);
     else {
         document.querySelector('.sparkling-wrapper').appendChild(newSpan);
