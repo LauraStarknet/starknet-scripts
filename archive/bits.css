@@ -19,7 +19,7 @@
 .event-item:hover + .event-item .gradient-border {
    border-top-style: hidden;
 }
-.event-item:hover .gradient-border + .event-item {
+.event-item:hover + .event-item {
     margin-top: 0px;
 }
 

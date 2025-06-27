@@ -2,7 +2,9 @@ function createHeadingsAll() {
     const headings = document.querySelectorAll('[data-split="heading"]');
     headings.forEach(heading => {
         const customStart = heading.getAttribute('data-trigger-start');
+        const customDelay = heading.getAttribute('data-trigger-delay');
         const scrollTriggerStart = customStart || "top 70%";
+        const scrollTriggerDelay = customDelay || 0;
         SplitText.create(heading, {
             type: "lines",
             // linesClass: "split-line",
@@ -29,7 +31,7 @@ function createHeadingsAll() {
                     yPercent: 110,
                     stagger: 0.1,
                     duration: 0.5,
-                    // delay: 0.1,
+                    delay: scrollTriggerDelay,
                     ease: 'power2.out',
                 });
             }
@@ -41,6 +43,8 @@ function createHeadingsAll() {
     headingsSmall.forEach(heading => {
         const customStart = heading.getAttribute('data-trigger-start');
         const scrollTriggerStart = customStart || "top 70%";
+        const customDelay = heading.getAttribute('data-trigger-delay');
+        const scrollTriggerDelay = customDelay || 0.5;
         SplitText.create(heading, {
             type: "chars",
             charsClass: 'letter',
@@ -57,7 +61,7 @@ function createHeadingsAll() {
                     y: 20,
                     stagger: 0.04,
                     duration: 0.75,
-                    delay: 0.5,
+                    delay: scrollTriggerDelay,
                     ease: 'power2.out',
                     filter: 'blur(10px)'
                 });
@@ -71,6 +75,8 @@ function createHeadingsAll() {
     eyebrows.forEach(heading => {
         const customStart = heading.getAttribute('data-trigger-start');
         const scrollTriggerStart = customStart || "top 60%";
+        const customDelay = heading.getAttribute('data-trigger-delay');
+        const scrollTriggerDelay = customDelay || 0;
         SplitText.create(heading, {
             type: "words, chars",
             tagName: "span",
@@ -86,6 +92,7 @@ function createHeadingsAll() {
                      opacity: 0,
                     duration: 0.05,
                     ease: "power1.out",
+                    delay: scrollTriggerDelay,
                     stagger: { amount: 0.4, from: "random" }
                 });
             }
