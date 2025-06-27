@@ -3,7 +3,9 @@ function createHeadingsAll() {
     headings.forEach(heading => {
         const customStart = heading.getAttribute('data-trigger-start');
         const customDelay = heading.getAttribute('data-trigger-delay');
+        const customDuration = heading.getAttribute('data-trigger-duration');
         const scrollTriggerStart = customStart || "top 70%";
+        const scrollTriggerDuration = customDuration || "0.5";
         const scrollTriggerDelay = customDelay || 0;
         SplitText.create(heading, {
             type: "lines",
@@ -30,7 +32,7 @@ function createHeadingsAll() {
                     opacity: 0.8,
                     yPercent: 110,
                     stagger: 0.1,
-                    duration: 0.5,
+                    duration: scrollTriggerDuration,
                     delay: scrollTriggerDelay,
                     ease: 'power2.out',
                 });
@@ -44,6 +46,8 @@ function createHeadingsAll() {
         const customStart = heading.getAttribute('data-trigger-start');
         const scrollTriggerStart = customStart || "top 70%";
         const customDelay = heading.getAttribute('data-trigger-delay');
+        const customDuration = heading.getAttribute('data-trigger-duration');
+        const scrollTriggerDuration = customDuration || "0.75";
         const scrollTriggerDelay = customDelay || 0.5;
         SplitText.create(heading, {
             type: "chars",
@@ -60,7 +64,7 @@ function createHeadingsAll() {
                     opacity: 0,
                     y: 20,
                     stagger: 0.04,
-                    duration: 0.75,
+                    duration: scrollTriggerDuration,
                     delay: scrollTriggerDelay,
                     ease: 'power2.out',
                     filter: 'blur(10px)'
