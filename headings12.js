@@ -100,5 +100,5 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(() => {
             createHeadingsAll()
         }, 10)
-    }, 10)
+    }, 100)
 });
