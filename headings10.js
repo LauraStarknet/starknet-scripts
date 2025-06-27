@@ -23,6 +23,7 @@ function createHeadingsAll() {
                         trigger: heading,
                         start: scrollTriggerStart,
                         once: true,
+                        toggleActions: "none play none reset"
                     }
                 }).from(split.lines, {
                     opacity: 0.8,
@@ -34,6 +35,7 @@ function createHeadingsAll() {
                 });
             }
         });
+        gsap.set(heading, {autoAlpha: 1});
         gsap.registerPlugin(SplitText, ScrollTrigger);
     });
     const headingsSmall = document.querySelectorAll('.animated-heading-scroll, .heading-small');
@@ -51,6 +53,7 @@ function createHeadingsAll() {
                         trigger: heading,
                         start: scrollTriggerStart,
                         once: true,
+                        toggleActions: "none play none reset"
                     }
                 }).from(split.chars, {
                     opacity: 0,
@@ -63,10 +66,43 @@ function createHeadingsAll() {
                 });
             }
         });
+        gsap.set(heading, {autoAlpha: 1});
+        gsap.registerPlugin(SplitText, ScrollTrigger);
+    });
+
+    const eyebrows = document.querySelectorAll('.text-anim');
+
+    eyebrows.forEach(heading => {
+        const customStart = heading.getAttribute('data-trigger-start');
+        const scrollTriggerStart = customStart || "top 60%";
+        SplitText.create(heading, {
+            type: "words, chars",
+            tagName: "span",
+            autoSplit: true,
+            onSplit(split) {
+                return gsap.timeline({
+                    scrollTrigger: {
+                        trigger: heading,
+                        start: scrollTriggerStart,
+                        once: true,
+                        toggleActions: "none play none reset"
+                    }
+                }).from(split.chars, {
+                     opacity: 0,
+                    duration: 0.05,
+                    ease: "power1.out",
+                    stagger: { amount: 0.4, from: "random" }
+                });
+            }
+        });
+        gsap.set(heading, {autoAlpha: 1});
         gsap.registerPlugin(SplitText, ScrollTrigger);
     });
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    createHeadingsAll()
+    window.scrollTo(0,0)
+    setTimeout(() => {
+        createHeadingsAll()
+    }, 10)
 });
