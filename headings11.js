@@ -22,8 +22,7 @@ function createHeadingsAll() {
                     scrollTrigger: {
                         trigger: heading,
                         start: scrollTriggerStart,
-                        once: true,
-                        toggleActions: "none play none reset"
+                        once: true
                     }
                 }).from(split.lines, {
                     opacity: 0.8,
@@ -35,7 +34,6 @@ function createHeadingsAll() {
                 });
             }
         });
-        gsap.set(heading, {autoAlpha: 1});
         gsap.registerPlugin(SplitText, ScrollTrigger);
     });
     const headingsSmall = document.querySelectorAll('.animated-heading-scroll, .heading-small');
@@ -52,8 +50,7 @@ function createHeadingsAll() {
                     scrollTrigger: {
                         trigger: heading,
                         start: scrollTriggerStart,
-                        once: true,
-                        toggleActions: "none play none reset"
+                        once: true
                     }
                 }).from(split.chars, {
                     opacity: 0,
@@ -66,7 +63,6 @@ function createHeadingsAll() {
                 });
             }
         });
-        gsap.set(heading, {autoAlpha: 1});
         gsap.registerPlugin(SplitText, ScrollTrigger);
     });
 
@@ -84,8 +80,7 @@ function createHeadingsAll() {
                     scrollTrigger: {
                         trigger: heading,
                         start: scrollTriggerStart,
-                        once: true,
-                        toggleActions: "none play none reset"
+                        once: true
                     }
                 }).from(split.chars, {
                      opacity: 0,
@@ -95,14 +90,15 @@ function createHeadingsAll() {
                 });
             }
         });
-        gsap.set(heading, {autoAlpha: 1});
         gsap.registerPlugin(SplitText, ScrollTrigger);
     });
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    window.scrollTo(0,0)
     setTimeout(() => {
-        createHeadingsAll()
+        window.scrollTo(0,0)
+        setTimeout(() => {
+            createHeadingsAll()
+        }, 10)
     }, 10)
 });
