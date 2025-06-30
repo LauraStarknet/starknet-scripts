@@ -23,7 +23,7 @@ function intro(el) {
   el.classList.add('visible');
   if (el.querySelector('video')) el.querySelector('video').play();
   const elid = el.id.replace('scroll', 'text');
-  if (Number(el.id.replace('scroll-child--', '')) > 0 && !typeAnimationRunning) initType();
+  if (Number(el.id.replace('scroll-child--', '')) > 0 && !typeAnimationRunning && window.innerWidth > 479) initType();
   setTimeout(() => {
     document.querySelector(`.${elid}`).classList.add('visible');
   }, 500)
@@ -113,4 +113,7 @@ function finishType() {
 
 defineScrollSpeed()
 
-window.addEventListener('resize', defineScrollSpeed)
+window.addEventListener('resize', () => {
+  defineScrollSpeed()
+  if(window.innerWidth < 479) finishType()
+})
