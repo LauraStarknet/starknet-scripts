@@ -1,5 +1,13 @@
 const target = document.querySelectorAll('.scroll-child');
-const scrollSpeed = 1.27;
+let scrollSpeed = 1.27;
+let extraScroll;
+
+function defineScrollSpeed() {
+  if(window.innerWidth < 991) scrollSpeed = 2.5;
+  if(window.innerWidth < 479) scrollSpeed = 5;
+  extraScroll = (window.innerHeight/scrollSpeed);
+  if(document.querySelector('.sticky-scroll')) document.querySelector('.sticky-scroll').style.height = `${300*scrollSpeed}vw`
+}
 
 function outro(el) {
   el.classList.remove('visible');
@@ -44,7 +52,7 @@ window.addEventListener('scroll', (e) => {
     if (document.querySelector('.scroll-parent')) {
       document.querySelector('.scroll-parent').scrollTo({
         top: 0,
-        left: (-topScroll + 250) / scrollSpeed,
+        left: (-topScroll + extraScroll) / scrollSpeed,
         behavior: "smooth",
       });
       if (topScroll < -(5 * window.innerWidth / scrollSpeed) && typeAnimationRunning) finishType()
@@ -102,3 +110,7 @@ function finishType() {
   }
   typeAnimationRunning = false;
 }
+
+defineScrollSpeed()
+
+window.addEventListener('resize', defineScrollSpeed)

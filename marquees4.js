@@ -31,6 +31,7 @@ function marqueeInit() {
                 track.style.transform = `translateX(${newTranslate}px)`
                 translateNumber = newTranslate;
                 currentTransform = newTranslate;
+                console.log(newTranslate)
             }
     
             centerWhite(el);
@@ -96,7 +97,8 @@ function marqueeInit() {
                         myInterval = setInterval(() => {
                             let newTransform;
                             // If loop is close to end
-                            if ((totalWidth - translateNumber) - currentTransform < 3) {
+                             console.log(currentTransform - totalWidth - translateNumber)
+                            if (currentTransform - totalWidth + translateNumber < 3) {
                                 // If no hovering, finish animation
                                 if (!isHovering) {
                                     coloredTexts.forEach(el => el.style.opacity = '0');
@@ -110,13 +112,15 @@ function marqueeInit() {
                                     // Avoids slowing down when getting close to end of the loop
                                     restart = false;
                                 }
-                                newTransform = translateNumber;
+                                newTransform = -translateNumber;
                             }
                             // Normal animation
                             else {
                                 // If animation is less than 50px from ending, slowing down gradually
                                 // if (!isHovering && (currentTransform < (translateNumber - totalWidth) + 50)) {
+                                // console.log((totalWidth + translateNumber) - currentTransform);
                                 if (!isHovering && ((totalWidth - translateNumber) - currentTransform < 50)) {
+                                    console.log('anim is almost over')
                                     const diff = totalWidth - translateNumber - currentTransform;
                                     newTransform = (diff / 50) * 2 + currentTransform;
                                 }
