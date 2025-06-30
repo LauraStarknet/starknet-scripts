@@ -1,4 +1,5 @@
 function createHeadingsAll() {
+    // h2, h3, h4, h5, h6
     const headings = document.querySelectorAll('[data-split="heading"]');
     headings.forEach(heading => {
         const customStart = heading.getAttribute('data-trigger-start');
@@ -38,10 +39,12 @@ function createHeadingsAll() {
                 });
             }
         });
+        gsap.set(heading, {autoAlpha: 1});
         gsap.registerPlugin(SplitText, ScrollTrigger);
     });
-    const headingsSmall = document.querySelectorAll('.animated-heading-scroll, .heading-small');
 
+    // h1
+    const headingsSmall = document.querySelectorAll('.animated-heading-scroll, .heading-small');
     headingsSmall.forEach(heading => {
         const customStart = heading.getAttribute('data-trigger-start');
         const scrollTriggerStart = customStart || "top 70%";
@@ -71,11 +74,12 @@ function createHeadingsAll() {
                 });
             }
         });
+        gsap.set(heading, {autoAlpha: 1});
         gsap.registerPlugin(SplitText, ScrollTrigger);
     });
 
+    // Eyebrows
     const eyebrows = document.querySelectorAll('.text-anim');
-
     eyebrows.forEach(heading => {
         const customStart = heading.getAttribute('data-trigger-start');
         const scrollTriggerStart = customStart || "top 60%";
@@ -101,6 +105,7 @@ function createHeadingsAll() {
                 });
             }
         });
+        gsap.set(heading, {autoAlpha: 1});
         gsap.registerPlugin(SplitText, ScrollTrigger);
     });
 }
