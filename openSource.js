@@ -88,7 +88,7 @@ function createWord(i) {
     newSpan.style.position = 'absolute';
     newSpan.style.left = `${position.left + ((position.top / gridSize)%2 * gridSize)}px`;
     newSpan.style.top = `${position.top}px`;
-    newSpan.style.color = `#F3F2F140`
+    newSpan.style.color = `#EABE7040`
     newSpan.className = 'sparkling__span span-s';
     if(document.querySelector('.sparkling-wrapper') === null) clearInterval(wordInterval);
     else {
