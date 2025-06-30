@@ -112,7 +112,7 @@ function createHeadingsAll() {
 
 document.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => {
-        window.scrollTo(0,0)
+        if(window.location.href.indexOf('#jobs') === -1) window.scrollTo(0,0)
         setTimeout(() => {
             createHeadingsAll()
         }, 10)
