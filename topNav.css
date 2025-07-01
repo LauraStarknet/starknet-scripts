@@ -13,7 +13,7 @@
 }
 
 .megamenu-bg-overlay {
-    background-color: #0c0a1850;
+    background-color: rgba(12, 10, 24, 0.5);
     transition-duration: .5s;
     opacity: 0;
 }
