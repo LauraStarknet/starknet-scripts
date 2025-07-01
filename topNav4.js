@@ -20,10 +20,10 @@ function topNavFn() {
         gsap.to(items, {
             opacity: 1,
             y: 0,
-            duration: 0.3,
-            stagger: 0.1,
+            duration: 0.4,
+            stagger: 0.03,
             ease: 'power2.out',
-            delay: 0.1
+            delay: 0.03
         });
     }
 
