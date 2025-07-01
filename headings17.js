@@ -56,6 +56,8 @@ function createHeadingsAll() {
             type: "chars",
             charsClass: 'letter',
             autoSplit: true,
+            smartWrap: true,
+            mask: "lines",
             onSplit(split) {
                 return gsap.timeline({
                     scrollTrigger: {
