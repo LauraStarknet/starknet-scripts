@@ -12,6 +12,16 @@
     position: relative;
 }
 
+.megamenu-bg-overlay {
+    background-color: #0c0a1850;
+    transition-duration: .5s;
+    opacity: 0;
+}
+
+.navbar-wrapper:has(.visible) .megamenu-bg-overlay {
+    opacity: 1;
+}
+
 .megamenu-wrapper {
     -webkit-backdrop-filter: blur(50px);
     backdrop-filter: blur(50px);
@@ -19,9 +29,15 @@
     border: 1px solid #f3f2f10d;
     transition-duration: .5s;
     transition-property: height;
-    opacity: 0;
 }
 
-.navbar-wrapper:has(.visible) .megamenu-bg-overlay {
-    opacity: 1;
+/* NEW */
+
+.menu-link-bg {
+    opacity: 0;
+    width: 0;
+    transition-duration: .5s;
+    margin: .25rem 0;
+    height: calc(100% - .5rem);
+    pointer-events: none;
 }
