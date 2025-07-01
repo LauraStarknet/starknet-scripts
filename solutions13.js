@@ -11,7 +11,8 @@ function defineScrollSpeed() {
 
 function outro(el) {
   el.classList.remove('visible');
-  if (el.querySelector('video')) el.querySelector('video').pause();
+  const videoToCall = window.innerWidth < 991 ? '.video-tablet':'.video-desktop'
+  if (el.querySelector(videoToCall)) el.querySelector(videoToCall).pause();
   const elid = el.id.replace('scroll', 'text')
   document.querySelector(`.${elid}`).classList.remove('visible');
   setTimeout(() => {
@@ -21,7 +22,8 @@ function outro(el) {
 
 function intro(el) {
   el.classList.add('visible');
-  if (el.querySelector('video')) el.querySelector('video').play();
+  const videoToCall = window.innerWidth < 991 ? '.video-tablet':'.video-desktop'
+  if (el.querySelector(videoToCall)) el.querySelector(videoToCall).play();
   const elid = el.id.replace('scroll', 'text');
   if (Number(el.id.replace('scroll-child--', '')) > 0 && !typeAnimationRunning && window.innerWidth > 479) initType();
   setTimeout(() => {
