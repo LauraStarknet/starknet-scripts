@@ -98,7 +98,7 @@ function topNavFn() {
         }
 
         link.addEventListener('mouseenter', () => show(menu, link));
-        link.addEventListener('mouseleave', () => scheduleHide(menu, link));
+        // link.addEventListener('mouseleave', () => scheduleHide(menu, link));
 
         menu.addEventListener('mouseenter', () => clearTimeout(closeTimer));
         menu.addEventListener('mouseleave', () => scheduleHide(menu, link));
