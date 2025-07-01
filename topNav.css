@@ -1,0 +1,27 @@
+.megamenu-item {
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+    position: absolute;
+}
+
+.megamenu-item.visible {
+    opacity: 1;
+    pointer-events: auto;
+    display: block;
+    position: relative;
+}
+
+.megamenu-wrapper {
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    background-color: #11162099;
+    border: 1px solid #f3f2f10d;
+    transition-duration: .5s;
+    transition-property: height;
+    opacity: 0;
+}
+
+.navbar-wrapper:has(.visible) .megamenu-bg-overlay {
+    opacity: 1;
+}
