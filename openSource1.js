@@ -45,7 +45,7 @@ const usedPositions = new Set();
 
 function getRandomPositionAvoidingCenterXY(existingPositions) {
 
-  const cols = Math.floor(window.innerWidth / (gridSize * 2));
+  const cols = Math.floor(window.innerWidth / (gridSize * 4));
   const rows = Math.floor(window.innerHeight / gridSize);
 
   const centralColStart = Math.floor(cols / 3);
@@ -75,7 +75,7 @@ function getRandomPositionAvoidingCenterXY(existingPositions) {
     existingPositions.delete(`${xGrid},${yGrid}`);
   }, 2700)
   return {
-    left: xGrid * gridSize * 2,
+    left: xGrid * gridSize * 4,
     top: yGrid * gridSize
   };
 }
