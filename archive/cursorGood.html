@@ -83,15 +83,20 @@
     }
 
     .cursor__glow--blue {
-      width: 160px;
-      height: 160px;
-      margin-left: -75px;
-      margin-top: -75px;
+      pointer-events: none;
+      width: 200px;
+      height: 200px;
+      margin-left: -100px;
+      margin-top: -100px;
       background: radial-gradient(50% 50% at 50% 50%, rgba(91, 126, 207, 0.70) 0%, rgba(91, 126, 207, 0.00) 100%);
       border-radius: 50%;
       position: absolute;
       opacity: 0;
       transition: opacity .5s linear;
+      filter: blur(10px);
+      position: fixed;
+      left: 0;
+      top: 0;
     }
 
     .cursor__glow--pink {
@@ -141,15 +146,15 @@
       opacity: 0 !important;
     }
 
-    body:has(.glow--pink:hover) .cursor,
-    body:has(.glow--blue:hover) .cursor {
+    .glow--pink:hover .cursor,
+    .glow--blue:hover .cursor {
       opacity: 0;
     }
 
 
-    body:has(.glow--blue:hover) .cursor__glow--blue,
-    body:has(.glow--pink:hover) .cursor__glow--pink {
-      opacity: 0.6;
+    .glow--blue:hover .cursor__glow--blue,
+    .glow--pink:hover .cursor__glow--pink {
+      opacity: 0.3;
     }
 
     body:has(.glow--pink:hover) .cursor__inner,
@@ -173,7 +178,7 @@
     }
 
      body:has(.glow--pink:hover) .cursor__dot,
-         body:has(.glow--blue:hover) .cursor__dot {
+      body:has(.glow--blue:hover) .cursor__dot {
           background-color: #F3F2F1;
          }
 
@@ -260,9 +265,11 @@
     .card {
       width: 500px;
       height: 500px;
-      top: 100px;
-      left: 100px;
+      top: 300px;
+      left: 300px;
       background-color: darkslategrey;
+      overflow: hidden;
+      position: absolute;
     }
 
     img {
@@ -272,12 +279,13 @@
 </head>
 
 <body>
-  <img src="/homepage.png" class="cursor--drag"/>
-  <!-- <div class="card cursor--prev">
+  <!-- <img src="/homepage.png" class="cursor--drag"/> -->
+ <div class="card glow--blue">
     This is a test
     <button>HELLOOOOO</button>
+    <div class="cursor__glow--blue"></div>
   </div>
-  <div class="card cursor--drag">
+  <!-- <div class="card cursor--drag">
     This is a test
     <button>HELLOOOOO</button>
   </div> -->
@@ -292,10 +300,10 @@
     <div class="cursor--text cursor__click paragraph-s">Click</div>
     <div class="cursor--text cursor__next paragraph-m">→</div>
     <div class="cursor--text cursor__prev paragraph-m">←</div>
-        <img class="cursor__anim" src="/cursor.gif" />
+        <img class="cursor__anim" src="./cursor.gif" />
     </div>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="./osmoCursor2.js"></script>
+    <script src="../osmoCursor6.js"></script>
 </body>
 
 </html>

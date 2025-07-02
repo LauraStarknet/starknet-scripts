@@ -16,6 +16,32 @@ function initBasicCustomCursor() {
     xTo2(e.clientX);
     yTo2(e.clientY);
   });
+
+  const allGlow = Array.from(document.querySelectorAll('.glow--blue'));
+  allGlow.forEach((el) => {
+    let randomId = Array.from({length: 50}, () => String.fromCharCode(65 + Math.floor(Math.random() * 52) % 26 + (Math.random() < 0.5 ? 0 : 32))).join('');
+
+    el.id = randomId;
+    setTimeout(() => {
+      el.querySelector(`.cursor__glow--blue`).style.opacity = 0
+      el.addEventListener("mouseenter", e => {
+        setTimeout(() => document.querySelector(`#${randomId} .cursor__glow--blue`).style.opacity = 0.3, 100);
+        let xTo3 = gsap.quickTo(`#${randomId} .cursor__glow--blue`, "x", { duration: 0, ease: "none" });
+        let yTo3 = gsap.quickTo(`#${randomId} .cursor__glow--blue`, "y", { duration: 0, ease: "none" });
+        xTo3(e.clientX);
+        yTo3(e.clientY);
+      })
+      el.addEventListener("mousemove", e => {
+        let xTo3 = gsap.quickTo(`#${randomId} .cursor__glow--blue`, "x", { duration: 0.5, ease: "power3" });
+        let yTo3 = gsap.quickTo(`#${randomId} .cursor__glow--blue`, "y", { duration: 0.5, ease: "power3" });
+        xTo3(e.clientX);
+        yTo3(e.clientY);
+      })
+      el.addEventListener("mouseout", e => {
+        setTimeout(() => document.querySelector(`#${randomId} .cursor__glow--blue`).style.opacity = 0, 100);
+      })
+    }, 400);
+  })
 }
 
 let cursorTimeOut;
@@ -27,8 +53,8 @@ function showCursor() {
 }
 
 window.addEventListener("mousemove", e => {
-  if(window.innerWidth > 991) {
-    if(cursorShown === false) {
+  if (window.innerWidth > 991) {
+    if (cursorShown === false) {
       showCursor();
       cursorShown = true
     }
