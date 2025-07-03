@@ -72,7 +72,7 @@ function createHeadingsAll() {
                     duration: scrollTriggerDuration,
                     delay: scrollTriggerDelay,
                     ease: 'power2.out',
-                    filter: window.innerWidth > 1030 ? 'blur(10px)':''
+                    filter: window.innerWidth > 991 ? 'blur(10px)':''
                 });
             }
         });

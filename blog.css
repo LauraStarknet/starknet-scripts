@@ -224,7 +224,7 @@ figure {
     }
 }
 
-@media (max-width: 1030px) {
+@media (max-width: 991px) {
     .blog-button p {
         font-size: 0.875rem !important; /* Change this */
     }

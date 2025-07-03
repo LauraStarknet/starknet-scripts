@@ -53,7 +53,7 @@ function showCursor() {
 }
 
 window.addEventListener("mousemove", e => {
-  if (window.innerWidth > 1030) {
+  if (window.innerWidth > 991) {
     if (cursorShown === false) {
       showCursor();
       cursorShown = true
