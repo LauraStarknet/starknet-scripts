@@ -114,7 +114,7 @@ function createHeadingsAll() {
 
 document.fonts.ready.then(() => {
     if(window.location.href.indexOf('#jobs') === -1) window.scrollTo(0,0)
-    createHeadingsAll()
+    setTimeout(() => createHeadingsAll(), 200);
 })
 
 // document.addEventListener('DOMContentLoaded', function () {
