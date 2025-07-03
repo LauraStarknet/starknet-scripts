@@ -5,6 +5,10 @@ function addShareLinks2() {
         document.querySelector('.social-link--linkedin').href = `http://www.linkedin.com/shareArticle?mini=true&url=${window.location.href}`
         document.querySelector('.social-link--copy').addEventListener('click', () => {
             navigator.clipboard.writeText(window.location.href);
+            document.querySelector('.social--copied').style.opacity = 1;
+            setTimeout(() => {
+                document.querySelector('.social--copied').style.opacity = 0;
+            }, 2000)
         });
     }
 }

@@ -1,7 +1,7 @@
 let initIndex = 0;
 
 function marqueeInit() {
-    if(window.innerWidth > 991) {
+    if(window.innerWidth > 1030) {
 
         const wrapperList = document.querySelectorAll('.marquee-wrapper');
         wrapperList.forEach((el, index) => {

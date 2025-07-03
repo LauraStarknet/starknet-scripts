@@ -3,7 +3,7 @@ let scrollSpeed = 1.27;
 let extraScroll;
 
 function defineScrollSpeed() {
-  if(window.innerWidth < 991) scrollSpeed = 2.5;
+  if(window.innerWidth < 1030) scrollSpeed = 2.5;
   if(window.innerWidth < 479) scrollSpeed = 5;
   extraScroll = (window.innerHeight/scrollSpeed);
   if(document.querySelector('.sticky-scroll')) document.querySelector('.sticky-scroll').style.height = `${300*scrollSpeed}vw`
@@ -11,7 +11,7 @@ function defineScrollSpeed() {
 
 function outro(el) {
   el.classList.remove('visible');
-  const videoToCall = window.innerWidth < 991 ? '.video-tablet':'.video-desktop'
+  const videoToCall = window.innerWidth < 1030 ? '.video-tablet':'.video-desktop'
   if (el.querySelector(videoToCall)) el.querySelector(videoToCall).pause();
   const elid = el.id.replace('scroll', 'text')
   document.querySelector(`.${elid}`).classList.remove('visible');
@@ -22,7 +22,7 @@ function outro(el) {
 
 function intro(el) {
   el.classList.add('visible');
-  const videoToCall = window.innerWidth < 991 ? '.video-tablet':'.video-desktop'
+  const videoToCall = window.innerWidth < 1030 ? '.video-tablet':'.video-desktop'
   if (el.querySelector(videoToCall)) el.querySelector(videoToCall).play();
   const elid = el.id.replace('scroll', 'text');
   if (Number(el.id.replace('scroll-child--', '')) > 0 && !typeAnimationRunning && window.innerWidth > 479) initType();
