@@ -56,8 +56,8 @@ function topNavFn() {
                 });
             }
         }, 150)
-        linkBg.style.left = `${link.getBoundingClientRect().left - document.querySelector('.menu-wrapper').getBoundingClientRect().left}px`;
-        linkBg.style.width = `${link.getBoundingClientRect().width}px`
+        linkBg.style.left = `${link.getBoundingClientRect().left - document.querySelector('.menu-wrapper').getBoundingClientRect().left + 4}px`;
+        linkBg.style.width = `${link.getBoundingClientRect().width - 8}px`
         setTimeout(() => linkBg.style.opacity = 1, 300)
 
 
