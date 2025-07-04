@@ -42,7 +42,7 @@ function refreshVideos() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    if(window.location.href.indexOf('ecosystem') === -1) prepareVideos()
+    prepareVideos()
 })
 
 window.addEventListener('resize', function () {
