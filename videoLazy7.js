@@ -35,8 +35,8 @@ function refreshVideos() {
     let currentVideoList = Array.from(document.querySelectorAll('.currently-in-view video'));
     currentVideoList.forEach((vid) => {
         let portraitMode = window.innerWidth < window.innerHeight;
-        if(window.innerWidth > 1280 && entry.target.className.indexOf('desktop') > -1 && !portraitMode) vid.play()
-        if(window.innerWidth < 1280 && entry.target.className.indexOf('tablet') > -1 || portraitMode) vid.play()
+        if(window.innerWidth > 1280 && vid.className.indexOf('desktop') > -1 && !portraitMode) vid.play()
+        if(window.innerWidth < 1280 && vid.className.indexOf('tablet') > -1 || portraitMode) vid.play()
         else vid.pause()
     })
 }

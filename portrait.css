@@ -1,0 +1,103 @@
+@media (min-width: 991px) and (orientation:portrait) {
+    /* HOME WIDGET */
+    .widget-pannel {
+        grid-column: 9 / 13;
+        height: fit-content;
+        padding-bottom: 3.125rem;
+        padding-top: 3.125rem;
+        top: 300px;
+        border-bottom: solid 1px rgba(243, 242, 241, 0.05);
+    }
+
+    .widget-pannel .div-block-103 {
+        display: none;
+    }
+
+    /* HOME PAGE TOTEM */
+
+    .hero .video-embed.is--homepage {
+        transform: rotate(10deg);
+    }
+
+    /* GRANTEE CARDS */
+    #grantee-wrapper .w-dyn-items, .card-grid .w-dyn-items, .card-grid--solutions, .card-grid--community  {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    #grantee-wrapper .grantee-card, .card-grid .card {
+        min-height: 28vw;
+    }
+
+    /* LATEST GRANTS + NEXT EVENTS */
+
+    .upcoming-events-content .events-left {
+        grid-area: span 1 / span 12 / span 1 / span 12;
+        align-items: center;
+    }
+
+    .upcoming-events-content .latest-news {
+        grid-area: span 1 / span 4 !important;
+        margin-top: 0;
+    }
+
+    /* TESTIMONIAL NEXT BUTTON */
+
+    .w-slider-arrow-right {
+        width: 100%;
+        position: relative;
+    }
+    .w-slider-arrow-right .slider-button {
+        display: grid;
+    }
+}
+
+/* TESTIMONIAL NEXT BUTTON — DEFAULT */
+
+.w-slider-arrow-right {
+    width: 100%;
+    position: relative;
+}
+.w-slider-arrow-right .slider-button {
+    display: grid;
+}
+
+/* ONLY HIDE NEXT IF HOVER EXISTS */
+@media (hover: hover) and (min-width: 991px) {
+
+    /* TESTIMONIAL NEXT BUTTON */
+
+    .w-slider-arrow-right {
+        width: 50%;
+        position: absolute;
+    }
+    .w-slider-arrow-right .slider-button {
+        display: none;
+    }
+}
+
+@media (min-width: 991px) and (max-width: 1280px) {
+    /* GRANTEE CARDS */
+    #grantee-wrapper .w-dyn-items, .card-grid .w-dyn-items, .card-grid--solutions, .card-grid--community  {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    #grantee-wrapper .grantee-card, .card-grid .card, .card-grid--community .card-wrapper {
+        min-height: 28vw;
+    }
+
+    /* LATEST GRANTS + NEXT EVENTS */
+
+    .upcoming-events-content .events-left {
+        grid-area: span 1 / span 12 / span 1 / span 12;
+        align-items: center;
+    }
+
+    .upcoming-events-content .latest-news {
+        grid-area: span 1 / span 4 !important;
+        margin-top: 0;
+    }
+}
+
+    /* CHECK WIDGET CHANGE WIDTH */
+    /* Add .card-grid-solutions on card-grid on individual solutions page */
+    /* Add .card-grid-community on main-grid on community channels page */
