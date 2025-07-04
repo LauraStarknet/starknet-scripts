@@ -543,7 +543,7 @@
 
         .vimeo-lightbox {
             grid-column: 5/9;
-            background-image: url('./thumbnail.jpg');
+            background-image: url('https://cdn.prod.website-files.com/67af5865e760903137548d7a/686802e9f9b28abead22c90a_Snf-about-video-thumbnail.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             height: 20vw;
