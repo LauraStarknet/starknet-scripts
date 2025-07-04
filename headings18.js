@@ -112,10 +112,10 @@ function createHeadingsAll() {
     });
 }
 
-document.fonts.ready.then(() => {
+// document.fonts.ready.then(() => {
     if(window.location.href.indexOf('#jobs') === -1) window.scrollTo(0,0)
-    setTimeout(() => createHeadingsAll(), 200);
-})
+    setTimeout(() => createHeadingsAll(), 10);
+// })
 
 // document.addEventListener('DOMContentLoaded', function () {
 //     setTimeout(() => {

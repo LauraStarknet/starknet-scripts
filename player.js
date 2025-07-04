@@ -33,7 +33,7 @@ function initVimeoLightboxAdvanced() {
   function clampWrapSize(ar) {
     const w = calcEl.offsetWidth;
     const h = calcEl.offsetHeight;
-    wrapEl.style.maxWidth = Math.min(w, h / ar) + 'px';
+    // wrapEl.style.maxWidth = Math.min(w, h / ar) + 'px';
   }
 
   // Adjust sizing in "cover" mode
@@ -205,7 +205,7 @@ function initVimeoLightboxAdvanced() {
 
     // Build a brand-new player if needed
     if (!player) {
-      iframe.src = `https://player.vimeo.com/video/${id}?api=1&background=1&autoplay=0&loop=0&muted=0`;
+      iframe.src = `https://player.vimeo.com/video/${id}&api=1&background=1&autoplay=0&loop=0&muted=0`;
       player = new Vimeo.Player(iframe);
       setupPlayerEvents();
       currentVideoID = id;
@@ -279,7 +279,17 @@ function initVimeoLightboxAdvanced() {
   });
 }
 
+function firstClick() {
+    document.querySelector('.vimeo-lightbox').addEventListener('click', (e) => {
+        console.log(e.currentTarget.dataset)
+        console.log(e.currentTarget)
+        if(e.currentTarget.dataset.vimeoActivated === "false") document.querySelector('#chapter-1').click();
+        else console.log('video already played once')
+    })
+}
+
 // Initialize Vimeo Lightbox (Advanced)
 document.addEventListener('DOMContentLoaded', function() {
   initVimeoLightboxAdvanced();
+  firstClick()
 });
