@@ -13,6 +13,17 @@ function addShareLinks() {
     }
 }
 
+function tweetFn() {
+  Array.from( document.querySelectorAll(".twitter-tweet")).forEach((el) => {
+      if (el.hasAttribute("data-media-max-width")) {
+        el.classList.add("has-video");
+      } else {
+        el.classList.add("no-video");
+      }
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     addShareLinks()
+    tweetFn()
 })
