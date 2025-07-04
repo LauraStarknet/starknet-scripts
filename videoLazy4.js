@@ -1,4 +1,4 @@
-let videoList = Array.from(document.querySelectorAll('.responsive-embed-video video'));
+let videoList = Array.from(document.querySelectorAll('video'));
 
 function handleVideoIntersection(entries) {
     entries.map((entry) => {
@@ -6,6 +6,7 @@ function handleVideoIntersection(entries) {
             entry.target.parentElement.classList.add('currently-in-view');
             if(window.innerWidth > 1280 && entry.target.className.indexOf('desktop') > -1) entry.target.play()
             if(window.innerWidth < 1280 && entry.target.className.indexOf('tablet') > -1) entry.target.play()
+            if(entry.target.parentElement.className.indexOf('responsive-embed-video') === -1) entry.target.play()
         } else {
             entry.target.parentElement.classList.remove('currently-in-view');
             entry.target.pause()
