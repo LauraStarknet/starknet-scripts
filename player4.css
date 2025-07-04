@@ -162,6 +162,9 @@
 .vimeo-lightbox[data-vimeo-playing="true"][data-vimeo-loaded="true"] .vimeo-lightbox__loading {
     opacity: 0;
 }
+.vimeo-lightbox[data-vimeo-playing="false"][data-vimeo-loaded="true"] .vimeo-lightbox__pause {
+    opacity: 0 !important;
+}
 
 /* Dark (Overlay) */
 .vimeo-lightbox__dark {
@@ -218,10 +221,10 @@
 }
 
 .vimeo-lightbox__btn {
-    /* -webkit-backdrop-filter: blur(1em);
-            backdrop-filter: blur(1em);
-            background-color: #64646433;
-            border-radius: 50%; */
+    -webkit-backdrop-filter: blur(0) !important;
+    backdrop-filter: blur(0) !important;
+    background-color: transparent !important;
+    border-radius: 50%;
     justify-content: center;
     align-items: center;
     width: 6em;
