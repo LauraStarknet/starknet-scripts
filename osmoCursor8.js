@@ -28,14 +28,18 @@ function initBasicCustomCursor() {
         setTimeout(() => document.querySelector(`#${randomId} .cursor__glow--blue`).style.opacity = 0.3, 100);
         let xTo3 = gsap.quickTo(`#${randomId} .cursor__glow--blue`, "x", { duration: 0, ease: "none" });
         let yTo3 = gsap.quickTo(`#${randomId} .cursor__glow--blue`, "y", { duration: 0, ease: "none" });
-        xTo3(e.clientX);
-        yTo3(e.clientY);
+        let parentX = document.querySelector(`#${randomId}`).getBoundingClientRect().left;
+        let parentY = document.querySelector(`#${randomId}`).getBoundingClientRect().top;
+        xTo3(e.clientX - parentX);
+        yTo3(e.clientY - parentY);
       })
       el.addEventListener("mousemove", e => {
         let xTo3 = gsap.quickTo(`#${randomId} .cursor__glow--blue`, "x", { duration: 0.5, ease: "power3" });
         let yTo3 = gsap.quickTo(`#${randomId} .cursor__glow--blue`, "y", { duration: 0.5, ease: "power3" });
-        xTo3(e.clientX);
-        yTo3(e.clientY);
+        let parentX = document.querySelector(`#${randomId}`).getBoundingClientRect().left;
+        let parentY = document.querySelector(`#${randomId}`).getBoundingClientRect().top;
+        xTo3(e.clientX - parentX);
+        yTo3(e.clientY - parentY);
       })
       el.addEventListener("mouseout", e => {
         setTimeout(() => document.querySelector(`#${randomId} .cursor__glow--blue`).style.opacity = 0, 100);
