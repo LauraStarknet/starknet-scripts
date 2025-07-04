@@ -574,7 +574,6 @@
 .vimeo-lightbox[data-vimeo-activated="false"] {
     border: solid 1px rgba(243, 242, 241, 0.1) !important;
 }
-.vimeo-lightbox[data-vimeo-activated="true"] iframe,
 .vimeo-lightbox[data-vimeo-activated="loading"] iframe {
    border: solid 1px rgba(243, 242, 241, 0.1) !important;
 }
