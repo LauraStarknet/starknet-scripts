@@ -104,7 +104,7 @@ function initWords () {
     wordAnimPlaying = true;
     if(wordInterval) clearInterval(wordInterval)
     let i = 0;
-    const cols = Math.floor(window.innerWidth / (gridSize * 2));
+    const cols = Math.floor(window.innerWidth / (gridSize * 4));
     const rows = Math.floor(window.innerHeight / gridSize);
     const intervalCount = 10000 / (cols * rows)
     wordInterval = setInterval(() => {
