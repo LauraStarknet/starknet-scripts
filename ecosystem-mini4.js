@@ -15,7 +15,7 @@ function createTag() {
                 const newTag = document.createElement('div');
                 newTag.className = "tag is--border tag--subcategory jetboost-active-show-xdo5";
                 newTag.innerHTML = `<p class="span-xs _100">${allTags[j]}</p>`
-                allCards[i].querySelector('.tag-wrapper').appendChild(newTag)
+                allCards[i].querySelector('.grantees__subcategories').appendChild(newTag)
             }
         }
         allCards[i].classList.add('tag-fn')
