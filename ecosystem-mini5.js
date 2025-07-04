@@ -9,13 +9,13 @@ function createTag() {
     for (let i = 0; i < allCards.length; i++) {
         if (!allCards[i].querySelector('.grantees__subcategories')) return;
         const allTags = allCards[i].querySelector('.grantees__subcategories').querySelector('h2').innerHTML.split(',');
-        allCards[i].querySelector('.grantees__subcategories').innerHTML = ''
+        allCards[i].querySelector('.grantees__subcategories h2').remove()
         if (allTags[0] !== '') {
             for (let j = 0; j < allTags.length; j++) {
                 const newTag = document.createElement('div');
                 newTag.className = "tag is--border tag--subcategory jetboost-active-show-xdo5";
                 newTag.innerHTML = `<p class="span-xs _100">${allTags[j]}</p>`
-                allCards[i].querySelector('.grantees__subcategories').appendChild(newTag)
+                allCards[i].querySelector('.grantees-subcategory-list').appendChild(newTag)
             }
         }
         allCards[i].classList.add('tag-fn')
