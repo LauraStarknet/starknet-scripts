@@ -340,7 +340,7 @@ figure {
     }
 
     .blog-rich-text * {
-        grid-column: 2/8;
+        grid-column: 1/5;
     }
 
     .blog-rich-text .w-richtext-figure-type-video,
