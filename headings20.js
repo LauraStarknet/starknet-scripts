@@ -40,7 +40,6 @@ function createHeadingsAll() {
             }
         });
         gsap.set(heading, {autoAlpha: 1});
-        gsap.registerPlugin(SplitText, ScrollTrigger);
     });
 
     // h1
@@ -77,7 +76,6 @@ function createHeadingsAll() {
             }
         });
         gsap.set(heading, {autoAlpha: 1});
-        gsap.registerPlugin(SplitText, ScrollTrigger);
     });
 
     // Eyebrows
@@ -108,20 +106,23 @@ function createHeadingsAll() {
             }
         });
         gsap.set(heading, {autoAlpha: 1});
-        gsap.registerPlugin(SplitText, ScrollTrigger);
+
     });
 }
 
 // document.fonts.ready.then(() => {
-    if(window.location.href.indexOf('#jobs') === -1) window.scrollTo(0,0)
-    setTimeout(() => createHeadingsAll(), 10);
 // })
 
-// document.addEventListener('DOMContentLoaded', function () {
+
+document.addEventListener('DOMContentLoaded', function () {
+    if(typeof window.gsap === "undefined") document.documentElement.classList.add("gsap-not-found");
+    gsap.registerPlugin(SplitText, ScrollTrigger);
+        if(window.location.href.indexOf('#jobs') === -1) window.scrollTo(0,0)
+    setTimeout(() => createHeadingsAll(), 10);
 //     setTimeout(() => {
 //         if(window.location.href.indexOf('#jobs') === -1) window.scrollTo(0,0)
 //         setTimeout(() => {
 //             createHeadingsAll()
 //         }, 10)
 //     }, 100)
-// });
+});
