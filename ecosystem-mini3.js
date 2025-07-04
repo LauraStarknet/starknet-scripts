@@ -13,7 +13,7 @@ function createTag() {
         if (allTags[0] !== '') {
             for (let j = 0; j < allTags.length; j++) {
                 const newTag = document.createElement('div');
-                newTag.className = "tag is--border tag--subcategory";
+                newTag.className = "tag is--border tag--subcategory jetboost-active-show-xdo5";
                 newTag.innerHTML = `<p class="span-xs _100">${allTags[j]}</p>`
                 allCards[i].querySelector('.tag-wrapper').appendChild(newTag)
             }
