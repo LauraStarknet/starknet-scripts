@@ -1,40 +1,20 @@
-// const wordList = [
-// 'DeFi',
-// 'Gaming',
-// 'NFT',
-// 'Creator',
-// 'Social',
-// 'AI',
-// 'RWA',
-// 'Community',
-// 'Education',
-// 'Tooling',
-// 'Infrastructure',
-// 'Wallets',
-// 'Exchanges',
-// 'Custody',
-// 'Research',
-// 'Security/Audit'
-// ]
-
 const wordList = [
-'full_name',
-'starkware-libs/cairo',
-'starkware-libs/stwo',
-'starknet-io/starknet.js',
-'OpenZeppelin/cairo-contracts',
-'eqlabs/pathfinder',
-'argentlabs/argent-x',
-'keep-starknet-strange/madara',
-'starknet-edu/starknet-cairo-101',
-'ZeroSync/ZeroSync',
-'apibara/starknet-react/juno',
-'foundry-rs/starknet-foundry',
-'xJonathanLEI/starknet-rs',
-'software-mansion/starknet.py',
-'keep-starknet-strange/alexandria',
-'keep-starknet-strange/awesome-starknet/Audit',
-'starkscan/starkscan-verifier'
+'DeFi',
+'Gaming',
+'NFT',
+'Creator',
+'Social',
+'AI',
+'RWA',
+'Community',
+'Education',
+'Tooling',
+'Infrastructure',
+'Wallets',
+'Exchanges',
+'Custody',
+'Research',
+'Security/Audit'
 ]
 
 let wordInterval;
@@ -45,7 +25,7 @@ const usedPositions = new Set();
 
 function getRandomPositionAvoidingCenterXY(existingPositions) {
 
-  const cols = Math.floor(window.innerWidth / (gridSize * 4));
+  const cols = Math.floor(window.innerWidth / (gridSize * 2));
   const rows = Math.floor(window.innerHeight / gridSize);
 
   const centralColStart = Math.floor(cols / 3);
@@ -64,7 +44,7 @@ function getRandomPositionAvoidingCenterXY(existingPositions) {
   } while (
     attempts < maxAttempts &&
     // Reject only if x and y are BOTH in the central thirds
-    (xGrid >= centralColStart &&
+    (xGrid >= centralColStart && xGrid < centralColEnd &&
      yGrid >= centralRowStart && yGrid < centralRowEnd 
      ||existingPositions.has(`${xGrid},${yGrid}`)
     )
@@ -75,7 +55,7 @@ function getRandomPositionAvoidingCenterXY(existingPositions) {
     existingPositions.delete(`${xGrid},${yGrid}`);
   }, 2700)
   return {
-    left: xGrid * gridSize * 4,
+    left: xGrid * gridSize * 2,
     top: yGrid * gridSize
   };
 }
@@ -88,7 +68,7 @@ function createWord(i) {
     newSpan.style.position = 'absolute';
     newSpan.style.left = `${position.left + ((position.top / gridSize)%2 * gridSize)}px`;
     newSpan.style.top = `${position.top}px`;
-    newSpan.style.color = `#EABE7040`
+    newSpan.style.color = `#F3F2F140`
     newSpan.className = 'sparkling__span span-s';
     if(document.querySelector('.sparkling-wrapper') === null) clearInterval(wordInterval);
     else {
@@ -104,10 +84,13 @@ function initWords () {
     wordAnimPlaying = true;
     if(wordInterval) clearInterval(wordInterval)
     let i = 0;
+    const cols = Math.floor(window.innerWidth / (gridSize * 2));
+    const rows = Math.floor(window.innerHeight / gridSize);
+    const intervalCount = 10000 / (cols * rows)
     wordInterval = setInterval(() => {
         createWord(i%wordList.length)
         i++
-    }, 100)
+    }, intervalCount)
 }
 
 window.addEventListener('scroll', () => {
