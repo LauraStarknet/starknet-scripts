@@ -58,7 +58,7 @@ function calculateScroll() {
           intro(document.querySelector(`#scroll-child--${newCurrentStep}`));
       }
       currentStep = newCurrentStep;
-      document.querySelector('#step').innerHTML = currentStep;
+      // document.querySelector('#step').innerHTML = currentStep;
       let left = currentStep * (window.innerWidth / 2) + window.innerWidth / 2;
       document.querySelector(
         ".scroll-wrapper"
