@@ -4,7 +4,7 @@ let extraScroll;
 
 function defineScrollSpeed() {
   if (window.innerWidth < 1030) scrollSpeed = 2.5; extraScroll = 0;
-  if (window.innerWidth < 479) scrollSpeed = 10; extraScroll = 0;
+  if (window.innerWidth < 479) scrollSpeed = 5; extraScroll = 0;
   extraScroll = 0;
   if (document.querySelector(".sticky-scroll"))
     document.querySelector(".sticky-scroll").style.height = `${
