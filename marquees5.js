@@ -26,12 +26,11 @@ function marqueeInit() {
                 allSets.forEach((el, j) => { if (j !== 1) el.style.opacity = '0' });
                 let newTranslate;
                 if(index%2 === 0) newTranslate = (totalWidth*-2) + (window.innerWidth / 2) + (whiteWidth / 2) + 10;
-                else newTranslate = (totalWidth) - (window.innerWidth / 2) + (whiteWidth / 2) + 10;
+                else newTranslate = -(window.innerWidth / 2) + (whiteWidth / 2) + 10 + totalWidth;
                 track = el.querySelector('.marquee-track');
                 track.style.transform = `translateX(${newTranslate}px)`
                 translateNumber = newTranslate;
                 currentTransform = newTranslate;
-                console.log(newTranslate)
             }
     
             centerWhite(el);
@@ -96,10 +95,7 @@ function marqueeInit() {
                     if (!animationRunning) {
                         myInterval = setInterval(() => {
                             let newTransform;
-                            // If loop is close to end
-                             console.log(currentTransform - totalWidth - translateNumber)
-                            if (currentTransform - totalWidth + translateNumber < 3) {
-                                // If no hovering, finish animation
+                            if (currentTransform - translateNumber - totalWidth > 3) {
                                 if (!isHovering) {
                                     coloredTexts.forEach(el => el.style.opacity = '0');
                                     allSets.forEach((el, j) => { if (j !== 1) el.style.opacity = '0' });
@@ -112,21 +108,17 @@ function marqueeInit() {
                                     // Avoids slowing down when getting close to end of the loop
                                     restart = false;
                                 }
-                                newTransform = -translateNumber;
+                                newTransform = translateNumber;
                             }
                             // Normal animation
                             else {
-                                // If animation is less than 50px from ending, slowing down gradually
-                                // if (!isHovering && (currentTransform < (translateNumber - totalWidth) + 50)) {
-                                // console.log((totalWidth + translateNumber) - currentTransform);
-                                if (!isHovering && ((totalWidth - translateNumber) - currentTransform < 50)) {
-                                    console.log('anim is almost over')
-                                    const diff = totalWidth - translateNumber - currentTransform;
+                                if (!isHovering && (currentTransform < (translateNumber - totalWidth) + 50)) {
+                                    const diff = currentTransform - translateNumber - totalWidth;
                                     newTransform = (diff / 50) * 2 + currentTransform;
                                 }
                                 // Normal anim
                                 else {
-                                    const diff = translateNumber - currentTransform + 5;
+                                    const diff = currentTransform - translateNumber - totalWidth + 5;
                                     const newNumber = (diff > 50 && restart) ? (diff / 50) * 2 : +2;
                                     newTransform = currentTransform + newNumber;
                                 }
@@ -172,8 +164,6 @@ function marqueeInit() {
     }
 }
 
-
-console.log('Marquee code activating 2')
 marqueeInit()
 window.addEventListener('resize', () => {
     marqueeInit();
