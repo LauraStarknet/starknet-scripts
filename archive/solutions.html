@@ -24,20 +24,24 @@
         .scroll-parent {
             position: sticky;
             top: 0;
-            width: 100vw;
+            /* width: 100vw; */
             height: 100vh;
-            overflow: scroll;
-            scroll-snap-type: x mandatory;
-            -webkit-scroll-snap-type: x mandatory;
+              width: 100vw;
+                   overflow: hidden;
+            /* overflow: scroll; */
+            /* scroll-snap-type: x mandatory;
+            -webkit-scroll-snap-type: x mandatory; */
             /* scroll-snap-points-y: repeat(100vh); */
         }
         .scroll-wrapper {
             width: fit-content;
             display: flex;
             height: 100vh;
-            scroll-snap-type: x mandatory;
-            -webkit-scroll-snap-type: x mandatory;
-            padding: 0 50vw;
+            transition-duration: 1s;
+            transition-property: transform;
+            /* scroll-snap-type: x mandatory;
+            -webkit-scroll-snap-type: x mandatory; */
+                    padding: 0 75vw;
         }
         .scroll-child {
             width: 50vw;
@@ -139,12 +143,27 @@
             height: 100vh;
             overflow: scroll;
         }
+
+        #step {
+            font-size: 50px;
+            position: fixed;
+            left: 400px;
+            top: 200px;
+            color: green;
+            z-index: 1000;
+        }
+
+        .vh {
+            height: 100vh;
+        }
     </style>
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
 
 </head>
 
 <body>
+    <span id="step">step</span>
+    <div class="vh">TEST</div>
     <div class="sticky-scroll">
 
         <div class="scroll-parent">
@@ -247,7 +266,8 @@ zkorp<br>
 zKube<br>
         </div>
     </div>
-    <script src="../solutions13.js"></script>
+     <div class="vh">TEST</div>
+    <script src="../solutions14.js"></script>
 </body>
 
 </html>
