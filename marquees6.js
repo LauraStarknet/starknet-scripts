@@ -1,8 +1,7 @@
 let initIndex = 0;
+let hoverMarquee = undefined;
 
 function marqueeInit() {
-    if(window.innerWidth > 1030) {
-
         const wrapperList = document.querySelectorAll('.marquee-wrapper');
         wrapperList.forEach((el, index) => {
             let myInterval;
@@ -85,7 +84,7 @@ function marqueeInit() {
                 }
             }
     
-              function handleMouseEnterReverse(i) {
+            function handleMouseEnterReverse(i) {
                 // Prevents event from triggering if it's old (created before window resize)
                 if(i === initIndex) {
                     coloredTexts.forEach(chi => chi.style.opacity = '1');
@@ -147,24 +146,47 @@ function marqueeInit() {
                 animationRunning = false;
                 restart = true
             }
+
     
             if(index%2 === 0) el.removeEventListener('mouseenter', () => handleMouseEnter(currentIndex));
             else el.removeEventListener('mouseenter', () => handleMouseEnterReverse(currentIndex));
             el.removeEventListener('mouseleave', () => handleMouseLeave(currentIndex));
     
-            if(index%2 === 0) el.addEventListener('mouseenter', () => handleMouseEnter(nextIndex));
-            else el.addEventListener('mouseenter', () => handleMouseEnterReverse(nextIndex));
-            el.addEventListener('mouseleave', () => handleMouseLeave(nextIndex));
-            window.addEventListener('resize', stopAnim)
+            if(hoverMarquee !== true) {
+                if(index%2 === 0) el.addEventListener('mouseenter', () => handleMouseEnter(nextIndex));
+                else el.addEventListener('mouseenter', () => handleMouseEnterReverse(nextIndex));
+                el.addEventListener('mouseleave', () => handleMouseLeave(nextIndex));
+                window.addEventListener('resize', stopAnim)
+            }
+            else {
+                setTimeout(() => {
+                    el.querySelector('.marquee-track').style.width = "fit-content"
+                    if(index%2 === 0) handleMouseEnter(nextIndex);
+                    else handleMouseEnterReverse(nextIndex);
+                    window.addEventListener('resize', stopAnim)
+                }, 15)
+            }
         })
-        initIndex ++;
-    }
-    else {
-        initIndex ++;
-    }
+        setTimeout(() => {
+
+            initIndex ++;
+        }, 5)
 }
 
-marqueeInit()
+window.addEventListener('touchstart', (e) => {
+    if(hoverMarquee === false) {
+        hoverMarquee = true;
+        marqueeInit()
+    }
+})
+
+window.addEventListener('scroll', () => {
+    if(hoverMarquee === undefined) {
+        hoverMarquee = false
+        marqueeInit()
+    }
+})
+
 window.addEventListener('resize', () => {
     marqueeInit();
 })
