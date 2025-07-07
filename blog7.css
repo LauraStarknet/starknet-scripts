@@ -307,13 +307,6 @@ figure {
         grid-column: 2/6 !important;
     }
 
-    /* NEWSLETTER */
-    .sticky-blog-left-wrapper {
-      position: relative;
-      top: 0;
-      grid-area: 4/1/5/8;
-    }
-
     .blog-rich-text blockquote {
       font-size: 42px;
       line-height: 42px;
@@ -367,6 +360,13 @@ figure {
     .blog-rich-text {
         grid-template-columns: repeat(8, 1fr);
         column-gap: 10px;
+    }
+
+        /* NEWSLETTER */
+    .sticky-blog-left-wrapper {
+      position: relative;
+      top: 0;
+      grid-area: 4/1/5/8;
     }
 
     .blog-rich-text .w-richtext-figure-type-video,
