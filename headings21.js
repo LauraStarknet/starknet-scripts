@@ -30,7 +30,7 @@ function createHeadingsAll() {
                         once: true
                     }
                 }).from(split.lines, {
-                    opacity: 0.8,
+                    // opacity: 0.8,
                     yPercent: 110,
                     stagger: 0.1,
                     duration: scrollTriggerDuration,
@@ -103,7 +103,7 @@ function createHeadingsAll() {
                         once: true
                     }
                 }).from(split.chars, {
-                     opacity: 0,
+                    opacity: 0,
                     duration: 0.05,
                     ease: "power1.out",
                     delay: scrollTriggerDelay,
