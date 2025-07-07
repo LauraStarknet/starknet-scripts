@@ -60,9 +60,16 @@
 .w-slider-arrow-right {
     width: 100%;
     position: relative;
+    margin-top: 90px;
 }
 .w-slider-arrow-right .slider-button {
     display: grid;
+}
+
+@media (max-width: 479px) {
+    .w-slider-arrow-right {
+        margin-top: 50px;
+    }
 }
 
 /* ONLY HIDE NEXT IF HOVER EXISTS */
