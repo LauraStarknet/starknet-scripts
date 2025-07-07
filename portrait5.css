@@ -49,6 +49,10 @@
     .w-slider-arrow-right .slider-button {
         display: grid !important;
     }
+
+    .cta-wrapper {
+        height: 150vh !important;
+    }
 }
 
 /* TESTIMONIAL NEXT BUTTON — DEFAULT */
