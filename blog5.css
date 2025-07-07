@@ -211,6 +211,10 @@ figure {
         margin-left: -0.1rem;
     }
 
+    .blog-rich-text blockquote {
+      font-size: 42px;
+    }
+
 
     .divider {
         margin-bottom: 3rem;
@@ -304,6 +308,11 @@ figure {
       top: 0;
       grid-area: 4/1/5/8;
     }
+
+    .blog-rich-text blockquote {
+      font-size: 42px;
+    }
+
 }
 
 
@@ -463,5 +472,10 @@ figure {
 
     .blog-rich-text .w-embed:has(.twitter-tweet) {
         grid-column: 1/4 !important;
+    }
+
+
+    .blog-rich-text blockquote {
+      font-size: 30px;
     }
 }
