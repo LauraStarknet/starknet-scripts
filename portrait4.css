@@ -20,7 +20,7 @@
     }
 
     /* GRANTEE CARDS */
-    #grantee-wrapper .w-dyn-items, .card-grid .w-dyn-items, .card-grid--solutions, .card-grid--community, .card-grid-hp  {
+    #grantee-wrapper .w-dyn-items, .card-grid .w-dyn-items, .card-grid-solutions, .card-grid-community, .card-grid-hp  {
         grid-template-columns: 1fr 1fr 1fr !important;
     }
     
@@ -77,11 +77,11 @@
 
 @media (min-width: 991px) and (max-width: 1280px) {
     /* GRANTEE CARDS */
-    #grantee-wrapper .w-dyn-items, .card-grid .w-dyn-items, .card-grid--solutions, .card-grid--community, .card-grid-hp  {
+    #grantee-wrapper .w-dyn-items, .card-grid .w-dyn-items, .card-grid-solutions, .card-grid--community, .card-grid-hp  {
         grid-template-columns: 1fr 1fr 1fr !important;
     }
     
-    #grantee-wrapper .grantee-card, .card-grid .card, .card-grid--community .card-wrapper {
+    #grantee-wrapper .grantee-card, .card-grid .card, .card-grid-community .card-wrapper {
         min-height: 28vw !important;
     }
 
