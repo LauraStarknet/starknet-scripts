@@ -28,11 +28,9 @@ window.addEventListener('scroll', () => {
     if(document.querySelector('.sticky-nav')) document.querySelector('.sticky-nav').classList.remove('sticky-nav--out')
   }
   if(window.scrollY > mainWrapper.clientHeight - 200) {
-    console.log('hiding header')
     document.querySelector('.navigation-desktop').classList.add('navigation-desktop--anim')
   }
   else {
-    console.log('showing header')
     document.querySelector('.navigation-desktop').classList.remove('navigation-desktop--anim')
   }
 })
