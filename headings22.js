@@ -54,6 +54,7 @@ function createHeadingsAll() {
         if(heading.getAttribute('data-trigger-start') === "top 100%" && window.innerWidth < 991) {
             heading.style.opacity = 1;
             heading.style.transform = 'none';
+            heading.style.visibility = 'visible';
         }
         else {
             SplitText.create(heading, {
