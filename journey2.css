@@ -19,4 +19,8 @@
 .big-heading-wrapper.pink h1 div div  {
     background-image: linear-gradient(90deg,#eaaeae80,var(--_colors---red-30)50%,#eaaeae80);
 }
+
+.big-heading-wrapper.green h1 div div  {
+    background-image: linear-gradient(90deg,#7db3af80,var(--_colors---green--green-40)50%,#7db3af80)
+}
 /* CAREFUL: no anim on open source */

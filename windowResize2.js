@@ -28,10 +28,10 @@ window.addEventListener('scroll', () => {
     if(document.querySelector('.sticky-nav')) document.querySelector('.sticky-nav').classList.remove('sticky-nav--out')
   }
   if(window.scrollY > mainWrapper.clientHeight - 200) {
-    document.querySelector('.navigation-desktop').classList.add('navigation-desktop--anim')
+    document.querySelector('.navbars-wrapper').classList.add('navbars-wrapper--up')
   }
   else {
-    document.querySelector('.navigation-desktop').classList.remove('navigation-desktop--anim')
+    document.querySelector('.navbars-wrapper').classList.remove('navbars-wrapper--up')
   }
 })
 
