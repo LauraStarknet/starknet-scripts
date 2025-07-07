@@ -44,7 +44,7 @@
     color: #efeeec;
     isolation: isolate;
     background-color: #0C0A18;
-    border-radius: 1em;
+    /* border-radius: 1em; */
     justify-content: center;
     align-items: center;
     width: 100%;

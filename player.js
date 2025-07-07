@@ -233,18 +233,21 @@ function initVimeoLightboxAdvanced() {
   lightbox.querySelector('[data-vimeo-control="play"]').addEventListener('click', () => {
     if (isTouch) {
       if (!playedOnce.has(currentVideoID)) {
+        console.log('not played')
         player.setVolume(0).then(() => {
           lightbox.setAttribute('data-vimeo-playing', 'true');
           player.play();
           if (!globalMuted) {
             setTimeout(() => {
               player.setVolume(1);
+              console.log('jsp')
               lightbox.setAttribute('data-vimeo-muted', 'false');
             }, 100);
           }
           playedOnce.add(currentVideoID);
         });
       } else {
+        console.log('played')
         player.setVolume(globalMuted ? 0 : 1).then(() => {
           lightbox.setAttribute('data-vimeo-playing', 'true');
           player.play();
@@ -281,15 +284,12 @@ function initVimeoLightboxAdvanced() {
 
 function firstClick() {
     document.querySelector('.vimeo-lightbox').addEventListener('click', (e) => {
-        console.log(e.currentTarget.dataset)
-        console.log(e.currentTarget)
         if(e.currentTarget.dataset.vimeoActivated === "false") document.querySelector('#chapter-1').click();
-        else console.log('video already played once')
     })
 }
 
 // Initialize Vimeo Lightbox (Advanced)
 document.addEventListener('DOMContentLoaded', function() {
-  initVimeoLightboxAdvanced();
   firstClick()
 });
+initVimeoLightboxAdvanced();

@@ -1,0 +1,22 @@
+.big-heading-wrapper h1 div div {
+    background-clip: text;
+}
+.big-heading-wrapper.red h1 div div  {
+    background-image: linear-gradient(90deg,#c86a6a80,var(--_colors---red--red-50)50%,#c86a6ab3);
+}
+.big-heading-wrapper.orange h1 div div  {
+    background-image: linear-gradient(90deg,#f79a6480,var(--_colors---orange--orange-50)50%,#f79a6480);
+}
+.big-heading-wrapper.yellow h1 div div  {
+    background-image: linear-gradient(90deg,#7B6444,#BE9A5E,#7B6444);
+}
+.big-heading-wrapper.blue h1 div div  {
+    background-image: linear-gradient(90deg,#5b7ecf80,var(--_colors---blue--blue-50)50%,#5b7ecf80);
+}
+.big-heading-wrapper.purple h1 div div  {
+    background-image: linear-gradient(90deg,#8f7ad180,var(--_colors---purple--purple-40)50%,#8f7ad180);
+}
+.big-heading-wrapper.pink h1 div div  {
+    background-image: linear-gradient(90deg,#eaaeae80,var(--_colors---red-30)50%,#eaaeae80);
+}
+/* CAREFUL: no anim on open source */
