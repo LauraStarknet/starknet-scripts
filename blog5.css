@@ -242,6 +242,10 @@ figure {
         margin-bottom: 1.5rem;
     }
 
+    .blog-rich-text p {
+      margin-bottom: 1.5rem;
+    }
+
     .blog-rich-text>p:first-of-type::first-letter {
         font-size: 4.8rem;
         line-height: 2.5rem;
@@ -320,6 +324,11 @@ figure {
     .blog-button p {
         font-size: 0.75rem !important;
     }
+
+    .blog-rich-text p {
+      margin-bottom: 1rem;
+    }
+
 
     .blog-button,
     .w-richtext figure,
