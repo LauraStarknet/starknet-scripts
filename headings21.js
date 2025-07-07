@@ -51,7 +51,12 @@ function createHeadingsAll() {
         const customDuration = heading.getAttribute('data-trigger-duration');
         const scrollTriggerDuration = customDuration || "0.75";
         const scrollTriggerDelay = customDelay || 0.5;
-        SplitText.create(heading, {
+        if(heading.getAttribute('data-trigger-start') === "top 100%" && window.innerWidth < 991) {
+            heading.style.opacity = 1;
+            heading.style.transform = 'none';
+        }
+        else {
+            SplitText.create(heading, {
             type: "chars",
             charsClass: 'letter',
             autoSplit: true,
@@ -74,8 +79,9 @@ function createHeadingsAll() {
                     filter: window.innerWidth > 991 ? 'blur(10px)':''
                 });
             }
-        });
-        gsap.set(heading, {autoAlpha: 1});
+            });
+            gsap.set(heading, {autoAlpha: 1});
+        }
     });
 
     // Eyebrows
