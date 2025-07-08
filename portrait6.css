@@ -53,6 +53,16 @@
     .cta-wrapper {
         height: 150vh !important;
     }
+
+        /* PRESS & BLOG GRID */
+    .collection-list-5 {
+        grid-row-gap: 3.5rem !important;
+        grid-column-gap: 2.5rem !important;
+    }
+
+    .blog-content-wrapper {
+        grid-column: 1/13 !important;
+    }
 }
 
 /* TESTIMONIAL NEXT BUTTON — DEFAULT */
@@ -87,6 +97,13 @@
 }
 
 @media (min-width: 991px) and (max-width: 1280px) {
+
+    /* PRESS & BLOG GRID */
+     .collection-list-5 {
+        grid-row-gap: 3.5rem !important;
+        grid-column-gap: 2.5rem !important;
+    }
+
     /* GRANTEE CARDS */
     #grantee-wrapper .w-dyn-items, .card-grid .w-dyn-items, .card-grid-solutions, .card-grid--community, .card-grid-hp  {
         grid-template-columns: 1fr 1fr 1fr !important;
