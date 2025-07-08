@@ -322,7 +322,7 @@ figure {
     }
 
     .blog-rich-text p {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
 
@@ -405,6 +405,16 @@ figure {
     .blog-button p {
         font-size: 12px !important;
     }
+
+    .blog-rich-text p {
+      margin-bottom: 1rem;
+    }
+
+    .blog-rich-text h2 {
+      margin-top: 1.5rem;
+      margin-bottom: .75rem;
+    }
+
 
     .blog-button,
     .w-richtext figure,
