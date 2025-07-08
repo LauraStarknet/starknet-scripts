@@ -20,13 +20,13 @@ window.addEventListener('scroll', () => {
     document.querySelector('.navbar-brand').classList.add('nav-up')
     document.querySelector('.button_wrap').classList.add('nav-up')
     document.querySelector('.navigation-mobile').classList.add('nav-up')
-    document.querySelector('.footer #wf-form-Footer-Newsletter-Form input').classList.remove('input--out')
+    document.querySelector('.footer #wf-form-Footer-Newsletter-Form input.text-field').classList.remove('input--out')
   }
   else {
     document.querySelector('.navbar-brand').classList.remove('nav-up')
     document.querySelector('.button_wrap').classList.remove('nav-up')
     document.querySelector('.navigation-mobile').classList.remove('nav-up')
-    document.querySelector('.footer #wf-form-Footer-Newsletter-Form input').classList.add('input--out')
+    document.querySelector('.footer #wf-form-Footer-Newsletter-Form input.text-field').classList.add('input--out')
   }
 })
 
