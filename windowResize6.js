@@ -1,15 +1,18 @@
 window.addEventListener('scroll', () => {
+  if(!document.querySelector('.footer')) return;
   const mainWrapper = document.querySelector('.main-wrapper')
   if(window.scrollY > mainWrapper.clientHeight - window.innerHeight) {
     let footerOpacity = 1 + ((window.scrollY - mainWrapper.clientHeight) / window.innerHeight);
-    document.querySelector('.footer').style.opacity = footerOpacity+0.3 > 1 ? 1:footerOpacity+0.3;
-    document.querySelector('.footer').style.transform = `translateY(${footerOpacity > 1 ? 0: 20 -footerOpacity*20}vh)`;
+    document.querySelector('.footer').style.opacity = footerOpacity+0.15 > 1 ? 1:footerOpacity+0.15;
+    document.querySelector('.footer-logo').style.filter = `blur(${footerOpacity > 1 ? 0: 40 -footerOpacity*40}px)`;
+    document.querySelector('.footer').style.transform = `translateY(${footerOpacity > 1 ? 0: 10 -footerOpacity*10}vh)`;
     document.querySelector('.footer').classList.add('footer--anim')
     if(document.querySelector('.sticky-nav')) document.querySelector('.sticky-nav').classList.add('sticky-nav--out')
   }
   else {
     document.querySelector('.footer').classList.remove('footer--anim')
      document.querySelector('.footer').style.transform = `translateY(0vw)`;
+     document.querySelector('.footer-logo').style.filter = `blur(40px)`;
     document.querySelector('.footer').style.opacity = 0.3;
     if(document.querySelector('.sticky-nav')) document.querySelector('.sticky-nav').classList.remove('sticky-nav--out')
   }
@@ -17,11 +20,13 @@ window.addEventListener('scroll', () => {
     document.querySelector('.navbar-brand').classList.add('nav-up')
     document.querySelector('.button_wrap').classList.add('nav-up')
     document.querySelector('.navigation-mobile').classList.add('nav-up')
+    document.querySelector('.footer .wf-form-Footer-Newsletter-Form input').classList.remove('input--out')
   }
   else {
     document.querySelector('.navbar-brand').classList.remove('nav-up')
     document.querySelector('.button_wrap').classList.remove('nav-up')
     document.querySelector('.navigation-mobile').classList.remove('nav-up')
+    document.querySelector('.footer .wf-form-Footer-Newsletter-Form input').classList.add('input--out')
   }
 })
 
