@@ -20,11 +20,15 @@
     }
 
     /* GRANTEE CARDS */
-    #grantee-wrapper .w-dyn-items, .card-grid .w-dyn-items, .card-grid-solutions, .card-grid-community, .card-grid-hp  {
+    #grantees-wrapper .w-dyn-items, .card-grid .w-dyn-items, .card-grid-solutions, .card-grid-community, .card-grid-hp, .card-grid-grants  {
         grid-template-columns: 1fr 1fr 1fr !important;
     }
+
+    .card-grid-solutions .button-wrap {
+        grid-column: 3/4;
+    }
     
-    #grantee-wrapper .grantee-card, .card-grid .card {
+    #grantees-wrapper .grantee-card, .card-grid .card {
         min-height: 28vw !important;
     }
 
@@ -105,12 +109,16 @@
     }
 
     /* GRANTEE CARDS */
-    #grantee-wrapper .w-dyn-items, .card-grid .w-dyn-items, .card-grid-solutions, .card-grid--community, .card-grid-hp  {
+    #grantees-wrapper .w-dyn-items, .card-grid .w-dyn-items, .card-grid-solutions, .card-grid-community, .card-grid-hp, .card-grid-grants  {
         grid-template-columns: 1fr 1fr 1fr !important;
     }
     
-    #grantee-wrapper .grantee-card, .card-grid .card, .card-grid-community .card-wrapper {
+    #grantees-wrapper .grantee-card, .card-grid .card, .card-grid-community .card-wrapper {
         min-height: 28vw !important;
+    }
+
+    .card-grid-solutions .button-wrap {
+        grid-column: 3/4;
     }
 
     /* LATEST GRANTS + NEXT EVENTS */

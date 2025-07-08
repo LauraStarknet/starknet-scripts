@@ -3,7 +3,7 @@ window.addEventListener('scroll', () => {
   if(window.scrollY > mainWrapper.clientHeight - window.innerHeight) {
     let footerOpacity = 1 + ((window.scrollY - mainWrapper.clientHeight) / window.innerHeight);
     document.querySelector('.footer').style.opacity = footerOpacity+0.3 > 1 ? 1:footerOpacity+0.3;
-    document.querySelector('.footer').style.transform = `translateY(${footerOpacity > 1 ? 0: 20 -footerOpacity*20}vw)`;
+    document.querySelector('.footer').style.transform = `translateY(${footerOpacity > 1 ? 0: 20 -footerOpacity*20}vh)`;
     document.querySelector('.footer').classList.add('footer--anim')
     if(document.querySelector('.sticky-nav')) document.querySelector('.sticky-nav').classList.add('sticky-nav--out')
   }
