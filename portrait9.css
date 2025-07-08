@@ -34,7 +34,7 @@
         grid-column: 3/4;
     }
     
-    #grantees-wrapper .grantee-card, .card-grid .card {
+    #grantees-wrapper .grantee-card, .card-grid .card:not(.fivecol) {
         min-height: 28vw !important;
     }
 
@@ -119,7 +119,7 @@
         grid-template-columns: 1fr 1fr 1fr !important;
     }
     
-    #grantees-wrapper .grantee-card, .card-grid .card, .card-grid-community .card-wrapper {
+    #grantees-wrapper .grantee-card, .card-grid .card:not(.fivecol), .card-grid-community .card-wrapper {
         min-height: 28vw !important;
     }
 

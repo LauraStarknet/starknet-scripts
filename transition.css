@@ -32,3 +32,9 @@
     backdrop-filter: blur(100px);
     transition-duration: 0s !important;
 }
+
+@media (max-width: 991px) {
+    .section.is--cta .video-tablet {
+        object-fit: fill !important;
+    }
+}
