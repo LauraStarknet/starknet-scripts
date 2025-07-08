@@ -13,6 +13,12 @@
         display: none;
     }
 
+    /* SOLUTIONS OVERVIEW */
+
+    #solutions .solution-video {
+        transform: scale(0.9) !important;
+    }
+
     /* HOME PAGE TOTEM */
 
     .hero .video-embed.is--homepage {
