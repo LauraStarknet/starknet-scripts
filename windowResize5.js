@@ -1,13 +1,15 @@
 window.addEventListener('scroll', () => {
   const mainWrapper = document.querySelector('.main-wrapper')
   if(window.scrollY > mainWrapper.clientHeight - window.innerHeight) {
-    let footerOpacity = 1.3 + ((window.scrollY - mainWrapper.clientHeight) / window.innerHeight);
-    document.querySelector('.footer').style.opacity = footerOpacity > 1 ? 1:footerOpacity;
+    let footerOpacity = 1 + ((window.scrollY - mainWrapper.clientHeight) / window.innerHeight);
+    document.querySelector('.footer').style.opacity = footerOpacity+0.3 > 1 ? 1:footerOpacity+0.3;
+    document.querySelector('.footer').style.transform = `translateY(${footerOpacity > 1 ? 0: 20 -footerOpacity*20}vw)`;
     document.querySelector('.footer').classList.add('footer--anim')
     if(document.querySelector('.sticky-nav')) document.querySelector('.sticky-nav').classList.add('sticky-nav--out')
   }
   else {
     document.querySelector('.footer').classList.remove('footer--anim')
+     document.querySelector('.footer').style.transform = `translateY(0vw)`;
     document.querySelector('.footer').style.opacity = 0.3;
     if(document.querySelector('.sticky-nav')) document.querySelector('.sticky-nav').classList.remove('sticky-nav--out')
   }
