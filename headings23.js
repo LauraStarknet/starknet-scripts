@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if(typeof window.gsap === "undefined") document.documentElement.classList.add("gsap-not-found");
     gsap.registerPlugin(SplitText, ScrollTrigger);
     if(window.location.href.indexOf('#jobs') === -1) window.scrollTo(0,0)
-    setTimeout(() => createHeadingsAll(), 10);
+    setTimeout(() => createHeadingsAll(), 200);
 //     setTimeout(() => {
 //         if(window.location.href.indexOf('#jobs') === -1) window.scrollTo(0,0)
 //         setTimeout(() => {
