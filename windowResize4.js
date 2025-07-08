@@ -23,6 +23,32 @@ window.addEventListener('scroll', () => {
   }
 })
 
+window.addEventListener("DOMContentLoaded", () => {
+  if (!document.querySelector('.sticky_nav_link')) return;
+  new SplitType(".sticky_nav_link", {
+    types: "words",
+    tagName: "span"
+  });
+  const tl = gsap.timeline({ paused: true });
+  tl.from(".sticky_nav_link .word", {
+    opacity: 0,
+    y: 20,
+    duration: 1.5,
+    ease: "power2.out",
+    stagger: {
+      amount: 0.8,
+      from: "start"
+    }
+  });
+  ScrollTrigger.create({
+    trigger: ".sticky-nav",
+    start: "top 80%",
+    toggleActions: "play none none reverse",
+    onEnter: () => tl.play(),
+  });
+  gsap.set(".sticky_nav_link", { opacity: 1 });
+});
+
 
 window.addEventListener("resize", () => {
   if(ScrollTrigger) ScrollTrigger.update()
