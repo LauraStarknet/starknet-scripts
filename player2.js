@@ -226,6 +226,9 @@ function initVimeoLightboxAdvanced() {
         lightbox.setAttribute('data-vimeo-playing', 'true');
         player.play();
       });
+    } else {
+      lightbox.setAttribute('data-vimeo-playing', 'true');
+      player.play();
     }
   }
 
