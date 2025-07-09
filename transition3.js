@@ -46,10 +46,10 @@ function loadTransition() {
         }
     });
 
-    window.addEventListener('resize', () => {
-        showGrid();
-        setTimeout(() => hideGrid(), 500);
-    });
+    // window.addEventListener('resize', () => {
+    //     showGrid();
+    //     setTimeout(() => hideGrid(), 500);
+    // });
 }
 
 
@@ -57,4 +57,4 @@ document.addEventListener("DOMContentLoaded", () => {
     loadTransition()
 });
 
-loadTransition()
+// loadTransition()
