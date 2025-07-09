@@ -54,6 +54,8 @@ window.addEventListener('resize', () => {if(touch === false)  vh = vh;})
 window.addEventListener('touchstart', () => { 
     if(touch === false) {
         touch = true;
-        initJourney()
+        setTimeout(() => {
+            initJourney()
+        }, 2000)
     }
 })
