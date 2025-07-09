@@ -28,13 +28,14 @@ function marqueeInit() {
                 else newTranslate = -(window.innerWidth / 2) + (whiteWidth / 2) + 10 + totalWidth;
                 track = el.querySelector('.marquee-track');
                 track.style.transform = `translateX(${newTranslate}px)`
+                if(index === 1) console.log(newTranslate);
                 translateNumber = newTranslate;
                 currentTransform = newTranslate;
             }
     
             centerWhite(el);
     
-            function handleMouseEnter(i) {
+            function handleMouseEnter(i, speed) {
                 // Prevents event from triggering if it's old (created before window resize)
                 if(i === initIndex) {
                     coloredTexts.forEach(chi => chi.style.opacity = '1');
@@ -77,14 +78,14 @@ function marqueeInit() {
                             }
                             track.style.transform = `translateX(${newTransform}px)`
                             currentTransform = newTransform;
-                        }, 10)
+                        }, speed)
                         animationRunning = true;
                     }
                     isHovering = true;
                 }
             }
     
-            function handleMouseEnterReverse(i) {
+            function handleMouseEnterReverse(i, speed) {
                 // Prevents event from triggering if it's old (created before window resize)
                 if(i === initIndex) {
                     coloredTexts.forEach(chi => chi.style.opacity = '1');
@@ -124,7 +125,7 @@ function marqueeInit() {
                             }
                             track.style.transform = `translateX(${newTransform}px)`
                             currentTransform = newTransform;
-                        }, 10)
+                        }, speed)
                         animationRunning = true;
                     }
                     isHovering = true;
@@ -148,21 +149,21 @@ function marqueeInit() {
             }
 
     
-            if(index%2 === 0) el.removeEventListener('mouseenter', () => handleMouseEnter(currentIndex));
-            else el.removeEventListener('mouseenter', () => handleMouseEnterReverse(currentIndex));
-            el.removeEventListener('mouseleave', () => handleMouseLeave(currentIndex));
+            if(index%2 === 0) el.removeEventListener('mouseenter', () => handleMouseEnter(currentIndex, 10));
+            else el.removeEventListener('mouseenter', () => handleMouseEnterReverse(currentIndex, 10));
+            el.removeEventListener('mouseleave', () => handleMouseLeave(currentIndex, 10));
     
             if(hoverMarquee !== true) {
-                if(index%2 === 0) el.addEventListener('mouseenter', () => handleMouseEnter(nextIndex));
-                else el.addEventListener('mouseenter', () => handleMouseEnterReverse(nextIndex));
-                el.addEventListener('mouseleave', () => handleMouseLeave(nextIndex));
+                if(index%2 === 0) el.addEventListener('mouseenter', () => handleMouseEnter(nextIndex, 10));
+                else el.addEventListener('mouseenter', () => handleMouseEnterReverse(nextIndex, 10));
+                el.addEventListener('mouseleave', () => handleMouseLeave(nextIndex, 10));
                 window.addEventListener('resize', stopAnim)
             }
             else {
                 setTimeout(() => {
                     el.querySelector('.marquee-track').style.width = "fit-content"
-                    if(index%2 === 0) handleMouseEnter(nextIndex);
-                    else handleMouseEnterReverse(nextIndex);
+                    if(index%2 === 0) handleMouseEnter(nextIndex, 30);
+                    else handleMouseEnterReverse(nextIndex, 30);
                     window.addEventListener('resize', stopAnim)
                 }, 15)
             }

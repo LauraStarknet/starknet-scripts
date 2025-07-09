@@ -66,6 +66,8 @@ function topNavFn() {
     }
 
     function scheduleHide(menuToHide, relatedLink) {
+        if(menuToHide === undefined) menuToHide = currentMenu;
+        if(relatedLink === undefined) relatedLink = activeLinkElement;
         clearTimeout(closeTimer);
 
         closeTimer = setTimeout(() => {
@@ -103,6 +105,7 @@ function topNavFn() {
         menu.addEventListener('mouseenter', () => clearTimeout(closeTimer));
         menu.addEventListener('mouseleave', () => scheduleHide(menu, link));
     });
+    document.querySelector('.megamenu-bg-overlay').addEventListener('mouseover', scheduleHide);
 };
 
 document.addEventListener("DOMContentLoaded", function () {
