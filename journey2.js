@@ -23,6 +23,7 @@ function initJourney() {
     if(touch === true) {
         console.log('touch device')
         vh = window.innerHeight - 50;
+        div.querySelector('#journeys .content-item-0').style.height = `${vh*0.8}px`
         Array.from(document.querySelector('#journeys .layout-content-item')).forEach((div, i) => {
             if(i < 3) div.style.height = `${vh}px`
             else {
