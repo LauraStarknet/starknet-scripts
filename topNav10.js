@@ -91,6 +91,14 @@ function topNavFn() {
         }, 150);
     }
 
+    function quickHide() {
+        linkBg.style.opacity = 0;
+        currentMenu = null;
+        activeLinkElement = null;
+        menuToHide.classList.remove('visible')
+        links.forEach(link => link.classList.remove('is-active'));
+    }
+
     links.forEach(link => {
         const targetMenuClass = link.getAttribute('data-target-menu');
         const menu = menus[targetMenuClass];
@@ -103,11 +111,11 @@ function topNavFn() {
         // link.addEventListener('mouseleave', () => scheduleHide(menu, link));
 
         menu.addEventListener('mouseenter', () => clearTimeout(closeTimer));
-        menu.addEventListener('mouseleave', () => setTimeout(() => scheduleHide(menu, link), 200));
+        menu.addEventListener('mouseleave', () => setTimeout(() => scheduleHide(menu, link), 100));
     });
-    document.querySelector('.megamenu-bg-overlay').addEventListener('mouseover', scheduleHide);
-    document.querySelector('.megamenu-bg-overlay').addEventListener('mousemove', scheduleHide);
-    document.querySelector('.megamenu-bg-overlay').addEventListener('touchstart', scheduleHide);
+    document.querySelector('.megamenu-bg-overlay').addEventListener('mouseover', quickHide);
+    document.querySelector('.megamenu-bg-overlay').addEventListener('mousemove', quickHide);
+    document.querySelector('.megamenu-bg-overlay').addEventListener('touchstart', quickHide);
 };
 
 document.addEventListener("DOMContentLoaded", function () {
