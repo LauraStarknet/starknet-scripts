@@ -103,7 +103,7 @@ function topNavFn() {
         // link.addEventListener('mouseleave', () => scheduleHide(menu, link));
 
         menu.addEventListener('mouseenter', () => clearTimeout(closeTimer));
-        menu.addEventListener('mouseleave', () => scheduleHide(menu, link));
+        menu.addEventListener('mouseleave', () => setTimeout(() => scheduleHide(menu, link), 100));
     });
     document.querySelector('.megamenu-bg-overlay').addEventListener('mouseover', scheduleHide);
     document.querySelector('.megamenu-bg-overlay').addEventListener('mousemove', scheduleHide);
