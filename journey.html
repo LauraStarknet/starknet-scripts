@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrapper {
+            width: 100vw;
+            height: 100vh;
+            border: solid 2px red;
+            overflow: hidden;
+        }
+
+        .bg-img {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            top: 0;
+            opacity: 0.5;
+            left: 0;
+            z-index: -1;
+        }
+
+        .vh {
+            width: 100vw;
+            height: 100vh;
+            background-color: orange;
+            border: solid 1px white;
+        }
+
+        .title {
+            width: 100vw;
+            height: 80vh;
+            background-color: red;
+            top: 0;
+            position: sticky;
+            z-index: -1;
+        }
+
+        .cta {
+            background-color: rgba(0, 0, 255, 0.3);
+            z-index: 2;
+            height: 150vh;
+        }
+
+        .wrapper-cta {
+            height: 250vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="vh">1vh</div>
+    <div class="vh">2vh</div>
+    <div class="vh">3vh</div>
+    <div class="vh">4vh</div>
+    <div class="mega-wrapper">
+        <div class="title">
+            TITLE
+        </div>
+        <div class="wrapper">
+            <video class="bg-img bg-img--1" autoplay muted playsInline>
+                <source
+                    src="https://download-video-ak.vimeocdn.com/v3-1/playback/3af181b8-51ae-4848-a4f9-473894928fbc/93f07ccd?__token__=st=1752070877~exp=1752074477~acl=%2Fv3-1%2Fplayback%2F3af181b8-51ae-4848-a4f9-473894928fbc%2F93f07ccd%2A~hmac=367bad78b08b1bdbfb9b459964cc54711d55fbeb968065a1f32f261848ad952f&r=dXMtY2VudHJhbDE%3D">
+            </video>
+        </div>
+        <div class="wrapper wrapper--2">
+            <video class="bg-img bg-img--2" autoplay muted playsInline>
+                <source
+                    src="https://download-video-ak.vimeocdn.com/v3-1/playback/5a92cb6d-059b-4585-8985-76348607240d/c1fa6fbd?__token__=st=1752070806~exp=1752074406~acl=%2Fv3-1%2Fplayback%2F5a92cb6d-059b-4585-8985-76348607240d%2Fc1fa6fbd%2A~hmac=083967c84dd16936c3e75774475d403d1183dfa8be173470de943b1309dcbe9a&r=dXMtZWFzdDE%3D">
+            </video>
+        </div>
+        <div class="wrapper">
+            <video class="bg-img bg-img--3" autoplay muted playsInline>
+                <source
+                    src="https://download-video-ak.vimeocdn.com/v3-1/playback/3af181b8-51ae-4848-a4f9-473894928fbc/93f07ccd?__token__=st=1752070877~exp=1752074477~acl=%2Fv3-1%2Fplayback%2F3af181b8-51ae-4848-a4f9-473894928fbc%2F93f07ccd%2A~hmac=367bad78b08b1bdbfb9b459964cc54711d55fbeb968065a1f32f261848ad952f&r=dXMtY2VudHJhbDE%3D">
+            </video>
+        </div>
+        <div class="wrapper wrapper-cta">
+            <video class="bg-img bg-img--4" autoplay muted playsInline>
+                <source
+                    src="https://download-video-ak.vimeocdn.com/v3-1/playback/5a92cb6d-059b-4585-8985-76348607240d/c1fa6fbd?__token__=st=1752070806~exp=1752074406~acl=%2Fv3-1%2Fplayback%2F5a92cb6d-059b-4585-8985-76348607240d%2Fc1fa6fbd%2A~hmac=083967c84dd16936c3e75774475d403d1183dfa8be173470de943b1309dcbe9a&r=dXMtZWFzdDE%3D">
+            </video>
+            <div class="wrapper cta">
+                CTAAAA
+            </div>
+        </div>
+    </div>
+    <div class="vh">1vh</div>
+    <div class="vh">2vh</div>
+    <div class="vh">3vh</div>
+    <div class="vh">4vh</div>
+    <script>
+        // gsap.registerPlugin(ScrollTrigger);
+        // gsap.utils.toArray(".bg-img").forEach((video, i) => {
+        //     gsap.fromTo(video,
+        //         { y: '-100vh' },
+        //         {
+        //             y: '50vh',
+        //             scrollTrigger: {
+        //                 trigger: '.wrapper--2',
+        //                 start: "top 1%",
+        //                 end: "top 99%",
+        //                 scrub: true
+        //             }
+        //         }
+        //     );
+        // });
+        function calculateVideos() {
+            let currentScroll = - document.querySelector('.mega-wrapper').getBoundingClientRect().top - 0.8*window.innerHeight;
+            if(currentScroll > document.querySelector('.mega-wrapper').clientHeight || currentScroll < 0) return;
+            else {
+                let allVideos = Array.from(document.querySelectorAll('.bg-img'));
+                for (let i = 0; i < 4; i++) {
+                    allVideos[i].style.transform = `translateY(${currentScroll - (window.innerHeight * i)}px)`
+                    if(i === 3 && currentScroll > window.innerHeight * 3) {
+                        let percent = (currentScroll - window.innerHeight * 3) / window.innerHeight
+                        allVideos[i].style.transform = `translateY(${currentScroll - (window.innerHeight * i)}px) scale(${1+2.5*percent})`;
+                        allVideos[i].style.filter = `blur(${10*percent}px)`;
+                    }
+                }
+            }
+        }
+        function calculateVideos2() {
+            let currentScroll = - document.querySelector('#journeys').getBoundingClientRect().top - 0.8*window.innerHeight;
+            if(currentScroll > document.querySelector('#journeys').clientHeight || currentScroll < 0) return;
+            else {
+                let allVideos = Array.from(document.querySelectorAll('.video-wrap'));
+                for (let i = 0; i < 4; i++) {
+                    allVideos[i].style.transform = `translateY(${currentScroll - (window.innerHeight * i)}px)`
+                    if(i === 3 && currentScroll > window.innerHeight * 3) {
+                        let percent = (currentScroll - window.innerHeight * 3) / window.innerHeight
+                        allVideos[i].style.transform = `translateY(${currentScroll - (window.innerHeight * i)}px) scale(${1+2.5*percent})`;
+                        allVideos[i].style.filter = `blur(${20*percent}px)`;
+                        allVideos[i].style.opacity = 1-(0.2*percent);
+                    }
+                }
+            }
+        }
+
+        window.addEventListener('scroll', () => calculateVideos2())
+
+        window.addEventListener('scroll', () => calculateVideos())
+    </script>
+</body>
