@@ -21,8 +21,6 @@
 
 .transition.transition--in  .preloader-content {
     opacity: 1;
-    transition-duration: 0s;
-    transition-delay: .0s;
 }
 
 
