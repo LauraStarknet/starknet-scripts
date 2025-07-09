@@ -9,7 +9,7 @@
   overflow: hidden;
   color: #F3F2F1;
   display: none;
-  z-index: 1000000;
+  z-index: 100;
   top: 0;
   left: 0;
 }
@@ -113,6 +113,7 @@
   visibility: hidden;
   border-color: transparent !important;
   color: #F3F2F1 !important;
+  font-weight: 200;;
 }
 
 .vimeo-lightbox__close:hover {
@@ -226,6 +227,7 @@
   height: 100%;
   display: flex;
   position: absolute;
+
 }
 
 .vimeo-lightbox__btn {
@@ -239,6 +241,7 @@
   height: 6em;
   transition: opacity .3s linear;
   display: flex;
+  background-color: transparent !important;
   position: relative;
 }
 
