@@ -98,9 +98,9 @@ function topNavFn() {
     function quickHide() {
         console.log('quick hide')
         linkBg.style.opacity = 0;
+        currentMenu.classList.remove('visible')
         currentMenu = null;
         activeLinkElement = null;
-        menuToHide.classList.remove('visible')
         links.forEach(link => link.classList.remove('is-active'));
     }
 
