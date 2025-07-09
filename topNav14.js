@@ -103,7 +103,11 @@ function topNavFn() {
             currentMenu = null;
             activeLinkElement = null;
             links.forEach(link => link.classList.remove('is-active'));
+            megaWrapper.style.height = 0
         }, 160)
+        setTimeout(() => {
+            megaWrapper.style.height = 0
+        }, 460)
     }
 
     links.forEach(link => {
