@@ -88,7 +88,7 @@ function init() {
     document.querySelector('.jetboost-list-search-input-x9k3').addEventListener('keyup', () => {
         setTimeout(() => {
             document.querySelector('.is--ecosystem').scrollIntoView({ behavior: "instant", block: "start" });
-        }, 100)
+        }, 1000)
     })
     // Start observing the target node for configured mutations
     observer.observe(filterParent, config);

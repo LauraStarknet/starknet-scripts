@@ -106,6 +106,7 @@ function topNavFn() {
         menu.addEventListener('mouseleave', () => scheduleHide(menu, link));
     });
     document.querySelector('.megamenu-bg-overlay').addEventListener('mouseover', scheduleHide);
+    document.querySelector('.megamenu-bg-overlay').addEventListener('mousemove', scheduleHide);
 };
 
 document.addEventListener("DOMContentLoaded", function () {
