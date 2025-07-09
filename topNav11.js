@@ -29,6 +29,7 @@ function topNavFn() {
 
     function show(menu, link) {
         clearTimeout(closeTimer);
+        console.log('show')
 
         // Hide previous menu
         if (currentMenu && currentMenu !== menu) {
@@ -69,18 +70,21 @@ function topNavFn() {
         if(menuToHide === undefined) menuToHide = currentMenu;
         if(relatedLink === undefined) relatedLink = activeLinkElement;
         clearTimeout(closeTimer);
+        console.log('schedule hide')
 
         closeTimer = setTimeout(() => {
             if (menuToHide.matches(':hover') || relatedLink.matches(':hover')) {
                 clearTimeout(closeTimer);
                 return;
             }
+            console.log('sto1')
 
             menuToHide.classList.remove('visible')
             megaWrapper.style.height = `${0}px`;
 
             setTimeout(() => {
                 if (currentMenu === menuToHide) {
+                    console.log('sto2')
                     linkBg.style.opacity = 0;
                     currentMenu = null;
                     activeLinkElement = null;
@@ -92,6 +96,7 @@ function topNavFn() {
     }
 
     function quickHide() {
+        console.log('quick hide')
         linkBg.style.opacity = 0;
         currentMenu = null;
         activeLinkElement = null;
@@ -111,7 +116,7 @@ function topNavFn() {
         // link.addEventListener('mouseleave', () => scheduleHide(menu, link));
 
         menu.addEventListener('mouseenter', () => clearTimeout(closeTimer));
-        menu.addEventListener('mouseleave', () => setTimeout(() => scheduleHide(menu, link), 100));
+        menu.addEventListener('mouseleave', () => scheduleHide(menu, link));
     });
     document.querySelector('.megamenu-bg-overlay').addEventListener('mouseover', quickHide);
     document.querySelector('.megamenu-bg-overlay').addEventListener('mousemove', quickHide);
