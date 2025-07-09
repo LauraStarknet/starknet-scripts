@@ -23,6 +23,10 @@ function initJourney() {
     if(touch === true) {
         console.log('touch device')
         vh = window.innerHeight;
+        let allVideos = Array.from(document.querySelectorAll('.video-wrap'));
+        for (let i = 0; i < 4; i++) {
+            allVideos[i].style.willChange = 'transform';
+        }
         document.querySelector('#journeys .content-item-0').style.height = `${vh*0.8}px`
         Array.from(document.querySelector('#journeys .layout-content-item')).forEach((div, i) => {
             if(i < 3) div.style.height = `${vh}px`
