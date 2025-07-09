@@ -97,11 +97,13 @@ function topNavFn() {
 
     function quickHide() {
         console.log('quick hide')
-        linkBg.style.opacity = 0;
-        currentMenu.classList.remove('visible')
-        currentMenu = null;
-        activeLinkElement = null;
-        links.forEach(link => link.classList.remove('is-active'));
+        setTimeout(() => {
+            linkBg.style.opacity = 0;
+            currentMenu?.classList.remove('visible')
+            currentMenu = null;
+            activeLinkElement = null;
+            links.forEach(link => link.classList.remove('is-active'));
+        }, 160)
     }
 
     links.forEach(link => {
