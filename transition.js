@@ -10,7 +10,8 @@ function hideGrid() {
 
 function loadTransition() {
     showGrid()
-    setTimeout(() => hideGrid(), 10);
+    let timeOut = window.location.hash = '/' ? 2500:10;
+    setTimeout(() => hideGrid(), timeOut);
 
     // Pre-process all valid links
     const validLinks = Array.from(document.querySelectorAll("a")).filter(link => {
