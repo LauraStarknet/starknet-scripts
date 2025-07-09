@@ -8,10 +8,10 @@ function calculateVideosJourney() {
         let allVideos = Array.from(document.querySelectorAll('.video-wrap'));
         for (let i = 0; i < 4; i++) {
             allVideos[i].style.transform = `translateY(${currentScroll - (vh * i)}px)`
-            if(i === 3 && currentScroll > vh * 3) {
+            if(i === 3 && currentScroll > vh * 3 && !touch) {
                 let percent = (currentScroll - vh * 3) / vh
                 allVideos[i].style.transform = `translateY(${currentScroll - (vh * i)}px) scale(${1+(touch ? 1:3.5)*percent})`;
-                if(!touch) allVideos[i].style.filter = `blur(${(touch ? 10:20)*percent}px)`;
+                allVideos[i].style.filter = `blur(${(touch ? 10:20)*percent}px)`;
                 allVideos[i].style.opacity = 1-(0.2*percent);
             }
         }
