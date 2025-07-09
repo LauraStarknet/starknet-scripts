@@ -26,4 +26,9 @@ function tweetFn() {
 document.addEventListener('DOMContentLoaded', function () {
     addShareLinks()
     tweetFn()
+        document.querySelector('.jetboost-list-search-input-j2rx').addEventListener('keyup', () => {
+        setTimeout(() => {
+            document.querySelector('.sticky-section-wrapper').scrollIntoView({ behavior: "instant", block: "start" });
+        }, 100)
+    })
 })
