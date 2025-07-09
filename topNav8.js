@@ -107,6 +107,7 @@ function topNavFn() {
     });
     document.querySelector('.megamenu-bg-overlay').addEventListener('mouseover', scheduleHide);
     document.querySelector('.megamenu-bg-overlay').addEventListener('mousemove', scheduleHide);
+    document.querySelector('.megamenu-bg-overlay').addEventListener('touchstart', scheduleHide);
 };
 
 document.addEventListener("DOMContentLoaded", function () {

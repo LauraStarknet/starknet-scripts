@@ -45,7 +45,7 @@
         align-items: center !important;
     }
 
-    .upcoming-events-content .latest-news {
+    .upcoming-events-content .latest_news {
         grid-area: span 1 / span 4 !important;
         margin-top: 0 !important;
     }
@@ -134,7 +134,7 @@
         align-items: center !important;
     }
 
-    .upcoming-events-content .latest-news {
+    .upcoming-events-content .latest_news {
         grid-area: span 1 / span 4 !important;
         margin-top: 0 !important;
     }
