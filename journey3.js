@@ -40,8 +40,16 @@ function initJourney() {
 }
 
 window.addEventListener('scroll', () => {
-    if(vh === 0) initJourney()
-    else calculateVideosJourney()
+    calculateVideosJourney()
+})
+
+window.addEventListener('wheel', () => {
+    if(vh === 0) vh = window.innerHeight;
 })
 window.addEventListener('resize', () => {if(touch === false)  vh = vh;})
-window.addEventListener('touchstart', () => { touch = true })
+window.addEventListener('touchstart', () => { 
+    if(touch === false) {
+        touch = true;
+        initJourney()
+    }
+})
