@@ -197,7 +197,7 @@ function createProgram(gl, config) {
 
   const linked = gl.getProgramParameter(program, gl.LINK_STATUS)
   if (!linked) {
-    console.log(gl.getProgramInfoLog(program))
+    // console.log(gl.getProgramInfoLog(program))
     gl.deleteProgram(program)
     return
   }

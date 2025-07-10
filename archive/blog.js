@@ -3,7 +3,7 @@ const config = { attributes: true, childList: true, subtree: true };
 
 const callback = (mutationList, observer) => {
   for (const mutation of mutationList) {
-    console.log('mutation observed');
+    // console.log('mutation observed');
     if(document.querySelectorAll('.jetboost-filter-active').length > 0) {
         document.querySelector('.blog-list-wrapper').scrollIntoView({ behavior: "instant", block: "start"});
     }

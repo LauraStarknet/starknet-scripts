@@ -14,11 +14,11 @@ const categoryElement = document.getElementById('current-category');
     return;
   }
   const allItemsInCMSOrder = sliderContainer.querySelectorAll('.blog-post-wrapper');
-  console.log(allItemsInCMSOrder.length)
+  // console.log(allItemsInCMSOrder.length)
   let potentiallyVisibleItems = [];
   // First, filter by category and exclude current slug
   allItemsInCMSOrder.forEach(function(item) {
-    console.log('i')
+    // console.log('i')
     const itemCategoryElement = item.querySelector('.category');
     const itemSlugElement = item.querySelector('.slug');
     if (itemCategoryElement && itemSlugElement) {

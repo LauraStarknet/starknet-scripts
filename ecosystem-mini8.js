@@ -32,7 +32,7 @@ function unsortCards() {
 }
 
 function sortCards() {
-     const tierZero = document.querySelector('#grantees-wrapper').querySelectorAll('.grantee-card')
+    const tierZero = document.querySelector('#grantees-wrapper').querySelectorAll('.grantee-card')
     tierZero.forEach((el) => {
         if (el.querySelector('.tier').innerHTML.indexOf('0') > -1) el.style.display = 'block'
     })
@@ -55,12 +55,12 @@ const callback = (mutationList, observer) => {
         const isNotCard = targetElement.className?.indexOf('grantee-card') === -1;
         if (isNotCard && mutation.type === "attributes") {
             if (targetId === "grantees-wrapper") {
-                if(mutation.attributeName === 'style') {
+                if (mutation.attributeName === 'style') {
                     setTimeout(() => createTag(), 100)
                 }
             }
             else {
-                if(targetElement.className.indexOf('w-pagination-wrapper') > -1) setTimeout(() => checkFilters(), 100)
+                if (targetElement.className.indexOf('w-pagination-wrapper') > -1) setTimeout(() => checkFilters(), 100)
             }
         }
     }
@@ -71,7 +71,7 @@ const observer = new MutationObserver(callback);
 
 function loadAll() {
     let myInterval = setInterval(() => {
-        console.log('Interval happening')
+        // console.log('Interval happening')
         if (document.querySelector('#load-more-button') && document.querySelector('#load-more-button').className.indexOf('jetboost-hidden') === -1) document.querySelector('#load-more-button').click();
         else {
             checkFilters()
@@ -98,6 +98,11 @@ function init() {
 
 setTimeout(() => {
     init();
+    window.addEventListener('scroll', () => {
+        if (document.querySelector('.div-block-67 .close').style.opacity === '1') {
+            document.querySelector('#w-node-a02d841f-699d-49b5-1e3d-a319a97c645c-72c14d9c').click()
+        }
+    });
 }, 1000)
 
 

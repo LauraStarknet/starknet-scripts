@@ -29,7 +29,7 @@ function topNavFn() {
 
     function show(menu, link) {
         clearTimeout(closeTimer);
-        console.log('show')
+        // console.log('show')
 
         // Hide previous menu
         if (currentMenu && currentMenu !== menu) {
@@ -70,21 +70,21 @@ function topNavFn() {
         if(menuToHide === undefined) menuToHide = currentMenu;
         if(relatedLink === undefined) relatedLink = activeLinkElement;
         clearTimeout(closeTimer);
-        console.log('schedule hide')
+        // console.log('schedule hide')
 
         closeTimer = setTimeout(() => {
             if (menuToHide.matches(':hover') || relatedLink.matches(':hover')) {
                 clearTimeout(closeTimer);
                 return;
             }
-            console.log('sto1')
+            // console.log('sto1')
 
             menuToHide.classList.remove('visible')
             megaWrapper.style.height = `${0}px`;
 
             setTimeout(() => {
                 if (currentMenu === menuToHide) {
-                    console.log('sto2')
+                    // console.log('sto2')
                     linkBg.style.opacity = 0;
                     currentMenu = null;
                     activeLinkElement = null;
@@ -96,7 +96,7 @@ function topNavFn() {
     }
 
     function quickHide() {
-        console.log('quick hide')
+        // console.log('quick hide')
         setTimeout(() => {
             linkBg.style.opacity = 0;
             currentMenu?.classList.remove('visible')

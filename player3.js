@@ -236,21 +236,21 @@ function initVimeoLightboxAdvanced() {
   lightbox.querySelector('[data-vimeo-control="play"]').addEventListener('click', () => {
     if (isTouch) {
       if (!playedOnce.has(currentVideoID)) {
-        console.log('not played')
+        // console.log('not played')
         player.setVolume(0).then(() => {
           lightbox.setAttribute('data-vimeo-playing', 'true');
           player.play();
           if (!globalMuted) {
             setTimeout(() => {
               player.setVolume(1);
-              console.log('jsp')
+              // console.log('jsp')
               lightbox.setAttribute('data-vimeo-muted', 'false');
             }, 100);
           }
           playedOnce.add(currentVideoID);
         });
       } else {
-        console.log('played')
+        // console.log('played')
         player.setVolume(globalMuted ? 0 : 1).then(() => {
           lightbox.setAttribute('data-vimeo-playing', 'true');
           player.play();

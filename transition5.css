@@ -1,0 +1,75 @@
+.transition {
+    z-index: 100000;
+    background-color: rgba(12, 10, 24, 0);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    /* opacity: 0; */
+    pointer-events: none;
+    backdrop-filter: blur(0px);
+    transition-duration: .8s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transition .transition__lottie {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+    transition-duration: .2s;
+}
+.transition--in .transition__lottie {
+    opacity: 1;
+}
+
+.transition .transition__background {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    opacity: 0;
+    transition-duration: .1s;
+    transition-delay: .1s;
+    transition-property: opacity;
+    object-fit: contain;
+}
+
+/* .transition .transition__lottie { */
+.transition .transition__lottie:not(:has(svg)) .transition__background {
+    opacity: 1;
+}
+
+
+.transition.transition--in {
+    opacity: 1;
+    background-color: rgba(12, 10, 24, 1);
+    backdrop-filter: blur(50px);
+    /* transition-duration: 0s !important; */
+}
+
+@media (max-width: 991px) {
+    .section.is--cta .video-tablet {
+        object-fit: fill !important;
+    }
+
+    #rfps .video-tablet {
+        object-fit: contain !important;
+    }
+}
+
+@media (min-width: 991px) and (orientation:portrait) {
+    .section.is--cta .video-tablet {
+        object-fit: fill !important;
+    }
+
+    #rfps .video-tablet {
+        object-fit: contain !important;
+    }
+}
+
+body:has(.home-video) .transition--in .transition__background {
+    opacity: 0 !important;
+}

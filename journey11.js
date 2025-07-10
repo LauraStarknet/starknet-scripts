@@ -21,25 +21,25 @@ function calculateVideosJourney() {
 function initJourney() {
     vh = window.innerHeight;
     if(touch === true) {
-        console.log('touch device')
+        // console.log('touch device')
         vh = window.innerHeight;
         let allVideos = Array.from(document.querySelectorAll('.video-wrap'));
         for (let i = 0; i < 4; i++) {
             allVideos[i].style.willChange = 'transform';
         }
         document.querySelector('#journeys .content-item-0').style.height = `${vh*0.8}px`
-        Array.from(document.querySelector('#journeys .layout-content-item')).forEach((div, i) => {
-            if(i < 3) div.style.height = `${vh}px`
+        Array.from(document.querySelectorAll('#journeys .layout-content-item')).forEach((divItem, i) => {
+            if(i < 3) divItem.style.height = `${vh}px`
             else {
-                div.style.height = `${vh*2.5}px`
-                div.querySelector('.cta-wrapper').style.height = `${vh*1.5}px`
+                divItem.style.height = `${vh*2.5}px`
+                divItem.querySelector('.cta-wrapper').style.height = `${vh*1.5}px`
             }
         })
-        Array.from(document.querySelector('#journeys .video-wrap')).forEach((div, i) => {
-            div.style.height = `${vh}px`
+        Array.from(document.querySelectorAll('#journeys .video-wrap')).forEach((divItem, i) => {
+            divItem.style.height = `${vh}px`
         })
     }
-    else console.log('not touch device')
+    // else console.log('not touch device')
     
 }
 

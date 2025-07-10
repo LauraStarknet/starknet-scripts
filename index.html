@@ -3,148 +3,36 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>title</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-        .marquee-wrapper {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-            height: 100px;
-            background: black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            width: 100vw;
-        }
-
-        .marquee-track {
-            display: flex;
-            white-space: nowrap;
-            animation: none;
-            animation: scroll 4s infinite linear;
-            width: 100vw;
-        }
-
-        .marquee-wrapper:nth-child(2) .marquee-track{
-           flex-direction: row-reverse;
-        }
-
-        .marquee-set {
-            display: flex;
-            gap: 1rem;
-            padding-right: 20px;
-            transition-duration: .5s;
-            transition-property: opacity;;
-            /* spacing between loops */
-        }
-
-        .marquee-text {
-            font-size: 54px;
-            white-space: nowrap;
-            transition: opacity 0.3s ease;
-        }
-
-        .colored {
-            color: #f90;
-            opacity: 0;
-            transition-duration: .5s;
-            transition-property: opacity;
-        }
-
-        .white {
-            color: white;
-        }
-
-        .vh {
-            height: 100vh;
-        }
-
-    </style>
+    <title>Transition 1</title>
+    <link rel="stylesheet" href="./transition5.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.1/lottie.min.js" hover></script>   
 </head>
 
 <body>
+    <h1>TRANSITION 1</h1>
+    <div class="transition transition--in">
+        <div class="transition__lottie">
+            <img class="transition__background" src="./bg.png"/>
+        </div>
+    </div>
+    <a href="./transition2.html">Go to transition 2</a>
+    <div class='responsive-embed-video'>
 
-    
-    <div class="marquee-wrapper">
-        <div class="marquee-track">
-            <div class="marquee-set">
-                <span class="marquee-text colored">take a look at our</span>
-                <span class="marquee-text white">instagram</span>
-            </div>
-            <div class="marquee-set">
-                <span class="marquee-text colored">take a look at our</span>
-                <span class="marquee-text white">instagram</span>
-            </div>
-            <div class="marquee-set">
-                <span class="marquee-text colored">take a look at our</span>
-                <span class="marquee-text white">instagram</span>
-            </div>
-            <div class="marquee-set">
-                <span class="marquee-text colored">take a look at our</span>
-                <span class="marquee-text white">instagram</span>
-            </div>
-            <div class="marquee-set">
-                <span class="marquee-text colored">take a look at our</span>
-                <span class="marquee-text white">instagram</span>
-            </div>
-        </div>
+        <video class='video-desktop contain' playsinline loop muted preload='none'
+            poster='https://cdn.prod.website-files.com/67af5865e760903137548d7a/686ba16b87270569bd42c96e_hero_hero_home.webp'>
+            <source
+                src='https://player.vimeo.com/progressive_redirect/playback/1075963324/rendition/1440p/file.mp4?loc=external&signature=e2bffada6b78a56650c3ccdc005e966de07911dbc47d47a603317d3e2a601a73'
+                type='video/mp4' />
+        </video>
+
+        <video class='video-tablet contain' playsinline loop muted preload='none'
+            poster='https://cdn.prod.website-files.com/67af5865e760903137548d7a/686ba16b87270569bd42c96e_hero_hero_home.webp'>
+            <source
+                src='https://player.vimeo.com/progressive_redirect/playback/1075963324/rendition/1080p/file.mp4?loc=external&signature=52a852c10c1d438ab60e8939f8c778c60d4ede4006616557c5ebe7b41654ea1c'
+                type='video/mp4' />
+        </video>
+
     </div>
-     <div class="marquee-wrapper">
-        <div class="marquee-track">
-            <div class="marquee-set">
-                <span class="marquee-text colored">follow us on</span>
-                <span class="marquee-text white">community channels</span>
-            </div>
-            <div class="marquee-set">
-                <span class="marquee-text colored">follow us on</span>
-                <span class="marquee-text white">community channels</span>
-            </div>
-            <div class="marquee-set">
-                <span class="marquee-text colored">follow us on</span>
-                <span class="marquee-text white">community channels</span>
-            </div>
-            <div class="marquee-set">
-                <span class="marquee-text colored">follow us on</span>
-                <span class="marquee-text white">community channels</span>
-            </div>
-            <div class="marquee-set">
-                <span class="marquee-text colored">follow us on</span>
-                <span class="marquee-text white">community channels</span>
-            </div>
-        </div>
-    </div>
-     <div class="marquee-wrapper">
-        <div class="marquee-track">
-            <div class="marquee-set">
-                <span class="marquee-text colored">explore our</span>
-                <span class="marquee-text white">community channels</span>
-            </div>
-            <div class="marquee-set">
-                <span class="marquee-text colored">explore our</span>
-                <span class="marquee-text white">community channels</span>
-            </div>
-            <div class="marquee-set">
-                <span class="marquee-text colored">explore our</span>
-                <span class="marquee-text white">community channels</span>
-            </div>
-            <div class="marquee-set">
-                <span class="marquee-text colored">explore our</span>
-                <span class="marquee-text white">community channels</span>
-            </div>
-            <div class="marquee-set">
-                <span class="marquee-text colored">explore our</span>
-                <span class="marquee-text white">community channels</span>
-            </div>
-        </div>
-    </div>
-        <div class="vh"></div>
-    
-    <script src="./marquees6.js"></script>
+    <script src="./videoLazy7.js"></script>
+    <script src="./transition4.js"></script>
 </body>
-
-</html>

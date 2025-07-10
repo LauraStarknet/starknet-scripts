@@ -28,7 +28,7 @@ function marqueeInit() {
                 else newTranslate = -(window.innerWidth / 2) + (whiteWidth / 2) + 10 + totalWidth;
                 track = el.querySelector('.marquee-track');
                 track.style.transform = `translateX(${newTranslate}px)`
-                if(index === 1) console.log(newTranslate);
+                // if(index === 1) console.log(newTranslate);
                 translateNumber = newTranslate;
                 currentTransform = newTranslate;
             }
