@@ -1,5 +1,5 @@
-let homeLottieSrc = 'https://raw.githubusercontent.com/thesvbd/Lottie-examples/master/assets/animations/loading.json';
-let generalLottieSrc = './fadeout_test.json'
+let homeLottieSrc = 'https://cdn.prod.website-files.com/67af5865e760903137548d7a/686fa19d0b033b58b5c66259_fadeout_test.json';
+let generalLottieSrc = 'https://cdn.prod.website-files.com/67af5865e760903137548d7a/686fa19d0b033b58b5c66259_fadeout_test.json'
 let transitionTimingIn = 500;
 let transitionTimingOut = 1000;
 let isHomePage = (window.location.pathname === '/' || window.location.pathname === '')
