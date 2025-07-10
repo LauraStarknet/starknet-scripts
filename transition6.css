@@ -38,8 +38,14 @@
 }
 
 /* .transition .transition__lottie { */
-.transition .transition__lottie:not(:has(svg)) .transition__background {
+.transition .transition__lottie:not(:has(svg:not(.transition__background__svg))) .transition__background {
     opacity: 1;
+}
+
+.transition__background__svg {
+    width: 200px;
+    height: 200px;
+    position: absolute;
 }
 
 
