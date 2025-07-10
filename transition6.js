@@ -43,7 +43,7 @@ function loadTransition() {
     let timeOut = isHomePage ? transitionTimingIn*3:transitionTimingIn;
     setTimeout(() => {
         if(isHomePage) setTimeout(() => {
-            document.querySelector('.transition__lottie svg').remove();
+            document.querySelectorAll('.transition__lottie svg')[1].remove();
             initGrid(generalLottieSrc)
         }, transitionTimingIn)
         hideGrid()
