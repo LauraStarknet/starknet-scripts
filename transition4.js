@@ -65,7 +65,7 @@ function loadTransition() {
     // Add event listeners to pre-processed valid links
     validLinks.forEach(link => {
         link.addEventListener("click", (event) => {
-            console.log(link.getAttribute("href"), window.location.host);
+            // console.log(link.getAttribute("href"), window.location.host);
             if(link.getAttribute("href") !== `${window.location.host}`||link.getAttribute("href") !== `${window.location.host}/`) {
                 animation.setDirection(-1);
                 animation.play()
